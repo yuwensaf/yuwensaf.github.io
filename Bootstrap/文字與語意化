@@ -83,7 +83,7 @@
 <meta name="keywords" content="Bootstrap 4">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文字與語意化">
-<meta property="og:url" content="http://yoursite.com/2019/06/11/文字與語意化/index.html">
+<meta property="og:url" content="https://yuwensaf.github.io/Bootstrap/文字與語意化">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
 <meta property="og:description" content="tags: Bootstrap 4 基礎內容文件要點說明Section 4-基礎內容文件要點說明 文字與語意化文件網址：https://getbootstrap.com/docs/4.3/content/typography/ 這章節要講解的是 Content 的「Typography 文字排版」  這章節最大的陷阱在於「標籤的語意」  標籤的語意標籤的語意，分為兩個部分  第一部分：含語意的標籤">
 <meta property="og:locale" content="en">
@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://i.imgur.com/uWnpIzs.jpg">
 <meta property="og:image" content="https://i.imgur.com/kXOUa3J.jpg">
 <meta property="og:image" content="https://i.imgur.com/TFRvJYF.jpg">
-<meta property="og:updated_time" content="2019-06-11T13:15:07.414Z">
+<meta property="og:updated_time" content="2019-06-12T12:58:40.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文字與語意化">
 <meta name="twitter:description" content="tags: Bootstrap 4 基礎內容文件要點說明Section 4-基礎內容文件要點說明 文字與語意化文件網址：https://getbootstrap.com/docs/4.3/content/typography/ 這章節要講解的是 Content 的「Typography 文字排版」  這章節最大的陷阱在於「標籤的語意」  標籤的語意標籤的語意，分為兩個部分  第一部分：含語意的標籤">
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/11/文字與語意化/">
+  <link rel="canonical" href="https://yuwensaf.github.io/Bootstrap/文字與語意化">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/文字與語意化/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/Bootstrap/文字與語意化">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -353,6 +353,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bootstrap/" itemprop="url" rel="index">
+                    <span itemprop="name">Bootstrap</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -588,7 +610,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/11/hello-world/" rel="next" title="Hello World">
+              <a href="/uncategorized/hello-world" rel="next" title="Hello World">
                 <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
@@ -681,6 +703,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
             
 
             
