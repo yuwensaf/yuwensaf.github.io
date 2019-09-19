@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CSS技巧,">
 
 
 
@@ -81,16 +81,27 @@
 
 
 
-<meta name="description" content="Fear is Good">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Saffran&#39;s Blog">
-<meta property="og:url" content="https://yuwensaf.github.io/index.html">
+<meta name="description" content="position 總共有四種：（口訣：rafs）     position: 是否會 remain in the natural flow of the page 是否會被子元素當作定位點（anchor point）     static 會 不會   relative 會 會   absolute 不會，而是會以離它最近且有被下position（除了static之外）的父元素為定位點 會">
+<meta name="keywords" content="CSS技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS-position用法">
+<meta property="og:url" content="https://yuwensaf.github.io/post/CSS-position用法/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
-<meta property="og:description" content="Fear is Good">
+<meta property="og:description" content="position 總共有四種：（口訣：rafs）     position: 是否會 remain in the natural flow of the page 是否會被子元素當作定位點（anchor point）     static 會 不會   relative 會 會   absolute 不會，而是會以離它最近且有被下position（除了static之外）的父元素為定位點 會">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/VQnRnk0.jpg">
+<meta property="og:image" content="https://i.imgur.com/VkdLUl0.jpg">
+<meta property="og:image" content="https://i.imgur.com/VNOKLcc.jpg">
+<meta property="og:image" content="https://i.imgur.com/MxNfIeB.jpg">
+<meta property="og:image" content="https://i.imgur.com/E7Qgqek.jpg">
+<meta property="og:image" content="https://i.imgur.com/OQOB8xh.jpg">
+<meta property="og:image" content="https://i.imgur.com/q4cM7L6.jpg">
+<meta property="og:image" content="https://i.imgur.com/MpziALK.jpg">
+<meta property="og:updated_time" content="2019-09-19T13:19:04.839Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Saffran&#39;s Blog">
-<meta name="twitter:description" content="Fear is Good">
+<meta name="twitter:title" content="CSS-position用法">
+<meta name="twitter:description" content="position 總共有四種：（口訣：rafs）     position: 是否會 remain in the natural flow of the page 是否會被子元素當作定位點（anchor point）     static 會 不會   relative 會 會   absolute 不會，而是會以離它最近且有被下position（除了static之外）的父元素為定位點 會">
+<meta name="twitter:image" content="https://i.imgur.com/VQnRnk0.jpg">
 
 
 
@@ -120,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://yuwensaf.github.io/">
+  <link rel="canonical" href="https://yuwensaf.github.io/post/CSS-position用法/">
 
 
 
 
 
-  <title>Saffran's Blog</title>
+  <title>CSS-position用法 | Saffran's Blog</title>
   
 
 
@@ -154,8 +165,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,9 +296,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -318,9 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/CSS-position用法/" itemprop="url">CSS-position用法</a></h1>
+          <h1 class="post-title" itemprop="name headline">CSS-position用法</h1>
         
 
         <div class="post-meta">
@@ -413,9 +421,7 @@
       
 
       
-        
-          
-            <a id="more"></a>
+        <a id="more"></a>
 <ul>
 <li><code>position</code> 總共有四種：（口訣：rafs）</li>
 </ul>
@@ -537,8 +543,6 @@
 <h3 id="results-v4"><a class="header-anchor" href="#results-v4"></a>Results:</h3>
 <p><img src="https://i.imgur.com/MpziALK.jpg" alt></p>
 
-          
-        
       
     </div>
     
@@ -553,14 +557,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CSS技巧/" rel="tag"><i class="fa fa-tag"></i> CSS技巧</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -570,10 +580,17 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d02565793bcab93" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -581,6 +598,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -601,8 +632,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -664,6 +704,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#position-static"><span class="nav-number">1.</span> <span class="nav-text">position-static</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法說明："><span class="nav-number">1.1.</span> <span class="nav-text">用法說明：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css語法："><span class="nav-number">1.1.1.</span> <span class="nav-text">css語法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例html語法："><span class="nav-number">1.2.</span> <span class="nav-text">範例html語法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例css語法："><span class="nav-number">1.3.</span> <span class="nav-text">範例css語法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#說明："><span class="nav-number">1.4.</span> <span class="nav-text">說明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#results"><span class="nav-number">1.5.</span> <span class="nav-text">results</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position-relative"><span class="nav-number">2.</span> <span class="nav-text">position-relative</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法說明：-v2"><span class="nav-number">2.1.</span> <span class="nav-text">用法說明：-v2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css語法：-v2"><span class="nav-number">2.1.1.</span> <span class="nav-text">css語法：-v2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例html語法：-v2"><span class="nav-number">2.2.</span> <span class="nav-text">範例html語法：-v2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例css語法：-v2"><span class="nav-number">2.3.</span> <span class="nav-text">範例css語法：-v2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#說明：-v2"><span class="nav-number">2.4.</span> <span class="nav-text">說明：-v2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#results-v2"><span class="nav-number">2.5.</span> <span class="nav-text">results-v2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position-absolute"><span class="nav-number">3.</span> <span class="nav-text">position-absolute</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法說明：-v3"><span class="nav-number">3.1.</span> <span class="nav-text">用法說明：-v3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css語法：-v3"><span class="nav-number">3.1.1.</span> <span class="nav-text">css語法：-v3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例html語法：-v3"><span class="nav-number">3.2.</span> <span class="nav-text">範例html語法：-v3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例css語法：-v3"><span class="nav-number">3.3.</span> <span class="nav-text">範例css語法：-v3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#說明：-v3"><span class="nav-number">3.4.</span> <span class="nav-text">說明：-v3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#results-v3"><span class="nav-number">3.5.</span> <span class="nav-text">results-v3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position-fixed"><span class="nav-number">4.</span> <span class="nav-text">position-fixed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法說明：-v4"><span class="nav-number">4.1.</span> <span class="nav-text">用法說明：-v4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css語法：-v4"><span class="nav-number">4.1.1.</span> <span class="nav-text">css語法：-v4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例html語法：-v4"><span class="nav-number">4.2.</span> <span class="nav-text">範例html語法：-v4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例css語法：-v4"><span class="nav-number">4.3.</span> <span class="nav-text">範例css語法：-v4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#說明：-v4"><span class="nav-number">4.4.</span> <span class="nav-text">說明：-v4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#results-v4"><span class="nav-number">4.5.</span> <span class="nav-text">results-v4</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -801,6 +857,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -818,6 +878,18 @@
       <script id="dsq-count-scr" src="https://yuwensaf.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://yuwensaf.github.io/post/CSS-position用法/';
+          this.page.identifier = 'post/CSS-position用法/';
+          this.page.title = 'CSS-position用法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yuwensaf.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
