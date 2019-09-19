@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,13 +81,16 @@
 
 
 
+<meta name="description" content="Fear is Good">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Saffran&#39;s Blog">
 <meta property="og:url" content="https://yuwensaf.github.io/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="Fear is Good">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Saffran&#39;s Blog">
+<meta name="twitter:description" content="Fear is Good">
 
 
 
@@ -95,7 +98,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
@@ -298,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/Bootstrap-4/重置排版-Reboot/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/post/null/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -317,7 +320,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Bootstrap-4/重置排版-Reboot/" itemprop="url">重置排版 Reboot</a></h1>
+                <a class="post-title-link" href="/post/null/" itemprop="url">免費網頁空間隨你開</a></h1>
         
 
         <div class="post-meta">
@@ -329,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-12T22:49:15+08:00">
-                2019-06-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T20:29:35+08:00">
+                2019-09-19
               </time>
             
 
@@ -340,28 +343,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bootstrap-4/" itemprop="url" rel="index">
-                    <span itemprop="name">Bootstrap 4</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -370,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Bootstrap-4/重置排版-Reboot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Bootstrap-4/重置排版-Reboot/" itemprop="commentCount"></span>
+                <a href="/post/null/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/null/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +360,7 @@
 
           
           
-             <span id="/Bootstrap-4/重置排版-Reboot/" class="leancloud_visitors" data-flag-title="重置排版 Reboot">
+             <span id="/post/null/" class="leancloud_visitors" data-flag-title="免費網頁空間隨你開">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,427 +392,14 @@
 
       
         
-          
-            <h6 id="tags-Bootstrap-4"><a href="#tags-Bootstrap-4" class="headerlink" title="tags: Bootstrap 4"></a>tags: <code>Bootstrap 4</code></h6><p>Section 4-基礎內容文件要點說明</p>
-<h1 id="重置排版-Reboot"><a href="#重置排版-Reboot" class="headerlink" title="重置排版 Reboot"></a>重置排版 Reboot</h1><p>這章節要介紹的是官方文件中 Content 的「Reboot」：<br><a href="https://getbootstrap.com/docs/4.3/content/reboot/" target="_blank" rel="noopener">https://getbootstrap.com/docs/4.3/content/reboot/</a></p>
-<ul>
-<li>載入 Bootstrap  就會一起載入 Reboot</li>
-<li>bs 的 Reboot，就像是 css reset，作用是：將瀏覽器的預設樣式，都設定為一致</li>
-</ul>
-<p>:::danger<br>:heavy_exclamation_mark:<br>==使用 Bootstrap 時，因為已經有 Reboot 了，就 “不會” 另外載入 CSS Reset==<br>（Reboot 目的是讓所有瀏覽器均有 “相同的樣式” ）</p>
-<p>[補充說明]<br>CSS reset 有兩種：</p>
-<ol>
-<li>第一種是「完全清除樣式」（例如 meyerweb 的 css reset）</li>
-<li>第二種稱為「normalize」，會加上統一的瀏覽器預設，但並‘不會’完全清除樣式（例如 Bootstrap 的 Reboot）<br>:::</li>
-</ol>
-<ul>
-<li>「Reboot」章節有兩大重點，分別介紹如下</li>
-</ul>
-<h2 id="重點一：box-sizing"><a href="#重點一：box-sizing" class="headerlink" title="重點一：box-sizing"></a>重點一：<code>box-sizing</code></h2><h3 id="Bootstrap-預設載入box-sizing-border-box"><a href="#Bootstrap-預設載入box-sizing-border-box" class="headerlink" title="Bootstrap 預設載入box-sizing: border-box"></a>Bootstrap 預設載入<code>box-sizing: border-box</code></h3><p><img src="https://i.imgur.com/LFDGwVC.jpg" alt></p>
-<h3 id="先講解-html-在計算「實際呈現的寬度」時的「預設」方法："><a href="#先講解-html-在計算「實際呈現的寬度」時的「預設」方法：" class="headerlink" title="先講解 html 在計算「實際呈現的寬度」時的「預設」方法："></a>先講解 html 在計算「實際呈現的寬度」時的「預設」方法：</h3><ul>
-<li>有一個寬高都是 300px 的正方形</li>
-<li>加入 padding 後，會「向外擴張」</li>
-<li>加入 border 後，也會再「向外擴張」</li>
-<li>加入 margin 後，又會再「向外擴張」</li>
-</ul>
-<p><img src="https://i.imgur.com/ZNPFpSz.jpg" alt></p>
-<p>正方形的「實際呈現的寬度」，會是「width + padding + border」，要加總這麼多東西，非常麻煩！<br>（margin 不在寬度的計算範圍內）</p>
-<p><img src="https://i.imgur.com/vRvkGTH.jpg" alt></p>
-<h3 id="加入box-sizing-border-box之後"><a href="#加入box-sizing-border-box之後" class="headerlink" title="加入box-sizing: border-box之後"></a>加入<code>box-sizing: border-box</code>之後</h3><p>就不用再做複雜的加總了！<br>:::danger<br>我設定的寬度 = 最終的寬度（實際呈現的寬度）<br>:::</p>
-<p>不管是加上了 padding 或是 border，都不會影響<code>div</code>「實際呈現的寬度」（300px）</p>
-<ul>
-<li>因為 padding、border 會是「向內擴張」</li>
-<li>margin 依然是「向外擴張」（margin 不在寬度的計算範圍內）</li>
-</ul>
-<p><img src="https://i.imgur.com/kKEUcUn.jpg" alt></p>
-<p>因此，加上 padding、border 後，<code>div</code>的寬度是被壓縮的<br>（扣掉 padding、border 後，<code>div</code>的寬度 = 180px）<br><img src="https://i.imgur.com/XZvYomh.jpg" alt></p>
-<hr>
-<h2 id="重點二：Native-font-stack（字體堆疊）"><a href="#重點二：Native-font-stack（字體堆疊）" class="headerlink" title="重點二：Native font stack（字體堆疊）"></a>重點二：Native font stack（字體堆疊）</h2><p>文件網址：<br><a href="https://getbootstrap.com/docs/4.3/content/reboot/#native-font-stack" target="_blank" rel="noopener">https://getbootstrap.com/docs/4.3/content/reboot/#native-font-stack</a></p>
-<h3 id="內容說明"><a href="#內容說明" class="headerlink" title="內容說明"></a>內容說明</h3><p>在 Bootstrap 4 中，已經不再使用「Helvetica Neue, Helvetica, and Arial」做為預設的字體了。而是使用「native font stack」來讓字體在各個裝置和作業系統中，都能有最佳化的呈現。</p>
-<p>使用的是<code>$font-family-sans-serif</code>這個變數：</p>
-<pre><code class="css">$font-family-sans-serif:
-  // Safari for macOS and iOS (San Francisco)
-  -apple-system,
-  // Chrome &lt; 56 for macOS (San Francisco)
-  BlinkMacSystemFont,
-  // Windows
-  &quot;Segoe UI&quot;,
-  // Android
-  &quot;Roboto&quot;,
-  // Basic web fallback
-  &quot;Helvetica Neue&quot;, Arial, sans-serif,
-  // Emoji fonts
-  &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot; !default;</code></pre>
-<p>:::warning<br>只要使用 Bootstrap，上面的 font-family 就會被套用在<code>&lt;body&gt;</code>上。</p>
-<p>:::</p>
-<h3 id="補充說明-字體"><a href="#補充說明-字體" class="headerlink" title="[補充說明] 字體"></a>[補充說明] 字體</h3><p><img src="https://i.imgur.com/G2mEFXu.jpg" alt></p>
-<p>例如：<br>Helvetica 是 Mac OS 的預設字體（Windows 並沒有 Helvetica 字體）。</p>
-<p>所以 Bootstrap 4 提出了一套新的字體管理方法：<br>（綠色框框代表：舊版使用的預設字體）</p>
-<p><img src="https://i.imgur.com/iHNGujg.jpg" alt></p>
-<ul>
-<li><p>蘋果系統</p>
-<ul>
-<li>不管是 pc 還是手機版，使用的字體都是一樣的</li>
-<li>預設英文字體：San Francisco</li>
-<li>預設中文字體：蘋方（PingFang）</li>
-</ul>
-</li>
-<li><p>Windows 和 Android 都沒有系統預設的字體</p>
-</li>
-</ul>
-<h3 id="Windows-系統的字體問題"><a href="#Windows-系統的字體問題" class="headerlink" title="Windows 系統的字體問題"></a>Windows 系統的字體問題</h3><p>:::danger<br>問題來了：</p>
-<ul>
-<li>Windows 系統，英文會載入 Segoe UI 和 Roboto 這兩種字體–&gt; 都是「黑體」</li>
-<li>Windows 系統預設的中文字體是「新細明體」</li>
-</ul>
-<p>導致「英文是黑體，中文卻是明體」的問題，看起來很奇怪<br>:::</p>
-<h3 id="建議解決方法"><a href="#建議解決方法" class="headerlink" title="建議解決方法"></a>建議解決方法</h3><p>在使用 bs 4 時，可以將「Microsoft JhengHei」加入到 css 的字體裡面，讓字體的協調性更為一致</p>
-<p>:::danger<br>==加到 css 時，不要使用「微軟正黑體」，要用「Microsoft JhengHei」==</p>
-<p>這樣才能確保所有瀏覽器都可以正確載入<br>:::</p>
-<h2 id="在-css-載入字體"><a href="#在-css-載入字體" class="headerlink" title="在 css 載入字體"></a>在 css 載入字體</h2><p><img src="https://i.imgur.com/avwl4Cp.jpg" alt></p>
-<p>在載入字體時，分為三個部分</p>
-<ol>
-<li>第一部分：蘋果的預設字體</li>
-</ol>
-<ul>
-<li>也就是「系統預設字體」（包含中文、英文字體）</li>
-</ul>
-<ol start="2">
-<li>第二部分：指定已知的系統 UI 字體</li>
-</ol>
-<ul>
-<li>只有英文字體，沒有中文（因此要自己指定）</li>
-</ul>
-<ol start="3">
-<li>第三部分：指定「備援的字體」</li>
-</ol>
-<ul>
-<li>sans-serif 是「無襯線字體」</li>
-</ul>
-<h2 id="如何在-css-加入-Microsoft-JhengHei-呢？"><a href="#如何在-css-加入-Microsoft-JhengHei-呢？" class="headerlink" title="如何在 css 加入 Microsoft JhengHei 呢？"></a>如何在 css 加入 Microsoft JhengHei 呢？</h2><p><code>&#39;Microsoft JhengHei&#39;</code>加入的位置是「第二部分：指定已知的系統 UI 字體」</p>
-<p>將<code>font-family</code>寫在 css 中，如下：</p>
-<p>:::success</p>
-<p>此段加在自訂的 css 即可，也就是另外新增一個 css 檔案加在 bootstrap.min.css 後方即可（就可以覆蓋掉 bs 原先的設定）<br>:::</p>
-<pre><code class="css">body{
-    font-family: -apple-system, BlinkMacSystemFont, &#39;Microsoft JhengHei&#39;, &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;
-}</code></pre>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q-我查了-Windows-fonts-資料夾中的字體，發現有-Microsoft-JhengHei-UI-多了UI兩個字-，但沒有-Microsoft-JhengHei，不知-Microsoft-JhengHei-UI-跟老師提的-Microsoft-JhengHei-是同一個字體嗎？"><a href="#Q-我查了-Windows-fonts-資料夾中的字體，發現有-Microsoft-JhengHei-UI-多了UI兩個字-，但沒有-Microsoft-JhengHei，不知-Microsoft-JhengHei-UI-跟老師提的-Microsoft-JhengHei-是同一個字體嗎？" class="headerlink" title="Q: 我查了 Windows fonts 資料夾中的字體，發現有 Microsoft JhengHei UI(多了UI兩個字)，但沒有 Microsoft JhengHei，不知 Microsoft JhengHei UI 跟老師提的 Microsoft JhengHei 是同一個字體嗎？"></a>Q: 我查了 Windows fonts 資料夾中的字體，發現有 Microsoft JhengHei UI(多了UI兩個字)，但沒有 Microsoft JhengHei，不知 Microsoft JhengHei UI 跟老師提的 Microsoft JhengHei 是同一個字體嗎？</h3><p>A:<br>這兩者我無法確認是否相同 (我不是使用 Windows 系統)<br>而我是依據微軟的設定方法<br>可以參考相關旗下產品：<a href="https://azure.microsoft.com/zh-tw/" target="_blank" rel="noopener">https://azure.microsoft.com/zh-tw/</a><br>因此我還是建議使用 Microsoft JhengHei</p>
-<h3 id="Q-Reboot-Forms-問題"><a href="#Q-Reboot-Forms-問題" class="headerlink" title="Q: Reboot Forms 問題"></a>Q: Reboot Forms 問題</h3><p><a href="https://bootstrap.hexschool.com/docs/4.1/content/reboot/#forms" target="_blank" rel="noopener">文件連結</a></p>
-<p>上面的文件中，「表單」有提到：</p>
-<p>:::info</p>
-<p><code>&lt;label&gt;</code> 被設定為<code>display: inline-block</code> 以便讓 <code>margin</code> 應用。<br>:::</p>
-<p>請問這是什麼意思呢？</p>
-<p>A:<br><code>&lt;label&gt;</code>預設是<code>display: inline</code><br>==<code>inline</code> 預設是沒有垂直高，設定<code>margin</code>的話，<br>只有「水平方向」的<code>margin</code>有效果，「垂直方向」的 <code>margin</code> 是沒有效果的。==<br>需要轉為 <code>inline-block</code> 後，「垂直方向」的<code>margin</code>才有效果。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/Bootstrap-4/文字與語意化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Saffran">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.ibb.co/t2w33GG/yuwen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saffran's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Bootstrap-4/文字與語意化/" itemprop="url">文字與語意化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-11T21:00:06+08:00">
-                2019-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bootstrap-4/" itemprop="url" rel="index">
-                    <span itemprop="name">Bootstrap 4</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Bootstrap-4/文字與語意化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Bootstrap-4/文字與語意化/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/Bootstrap-4/文字與語意化/" class="leancloud_visitors" data-flag-title="文字與語意化">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h6 id="tags-Bootstrap-4-基礎內容文件要點說明"><a href="#tags-Bootstrap-4-基礎內容文件要點說明" class="headerlink" title="tags: Bootstrap 4 基礎內容文件要點說明"></a>tags: <code>Bootstrap 4</code> <code>基礎內容文件要點說明</code></h6><p>Section 4-基礎內容文件要點說明</p>
-<h1 id="文字與語意化"><a href="#文字與語意化" class="headerlink" title="文字與語意化"></a>文字與語意化</h1>
+          <h1 id="github-pages-免費網頁空間隨你開"><a class="header-anchor" href="#github-pages-免費網頁空間隨你開"></a>Github Pages - 免費網頁空間隨你開</h1>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Bootstrap-4/文字與語意化/#more" rel="contents">
+            <a class="btn" href="/post/null/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/uncategorized/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Saffran">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.ibb.co/t2w33GG/yuwen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saffran's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/uncategorized/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-11T16:31:42+08:00">
-                2019-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/uncategorized/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="uncategorized/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/uncategorized/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
-          
         
       
     </div>
@@ -903,7 +471,7 @@
               <img class="site-author-image" itemprop="image" src="https://i.ibb.co/t2w33GG/yuwen.jpg" alt="Saffran">
             
               <p class="site-author-name" itemprop="name">Saffran</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">Fear is Good</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -913,32 +481,14 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
             
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
             
 
           </nav>
@@ -981,6 +531,7 @@
   
 </div>
 
+<!--
 
   <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
@@ -990,8 +541,9 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
+-->
 
 
 
@@ -1091,13 +643,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 
