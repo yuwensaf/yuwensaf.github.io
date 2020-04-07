@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="RWD,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -81,21 +81,24 @@
 
 
 
-<meta name="description" content="css順序：由小到大 會先寫手機的樣式，再寫平板，再寫pc–&amp;gt;解析度慢慢越來越寬 這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式 class 名稱，前後要一模一樣  注意！ @media 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式  例如 css（正確寫法）: 1234567891011.header .box li a&amp;">
-<meta name="keywords" content="RWD">
+<meta name="description" content="當我輸入這行程式碼，電腦會如何去運行這行程式碼呢？">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3_Media-Query觀念">
-<meta property="og:url" content="https://yuwensaf.github.io/post/CSS3_Media-Query觀念/index.html">
+<meta property="og:title" content="JavaScript 是如何運行的">
+<meta property="og:url" content="https://yuwensaf.github.io/post/JavaScript是如何運行的/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
-<meta property="og:description" content="css順序：由小到大 會先寫手機的樣式，再寫平板，再寫pc–&amp;gt;解析度慢慢越來越寬 這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式 class 名稱，前後要一模一樣  注意！ @media 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式  例如 css（正確寫法）: 1234567891011.header .box li a&amp;">
+<meta property="og:description" content="當我輸入這行程式碼，電腦會如何去運行這行程式碼呢？">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/Lx96Aoh.png">
-<meta property="og:image" content="https://i.imgur.com/RAQyoOX.png">
-<meta property="og:updated_time" content="2019-09-19T13:49:00.102Z">
+<meta property="og:image" content="https://i.imgur.com/uVCuQa1.jpg">
+<meta property="og:image" content="https://i.imgur.com/ipyplS3.jpg">
+<meta property="og:image" content="https://i.imgur.com/GQ5eQgP.jpg">
+<meta property="og:image" content="https://i.imgur.com/hJP25T9.jpg">
+<meta property="og:image" content="https://i.imgur.com/gjf2xG3.jpg">
+<meta property="og:updated_time" content="2020-04-07T08:59:37.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3_Media-Query觀念">
-<meta name="twitter:description" content="css順序：由小到大 會先寫手機的樣式，再寫平板，再寫pc–&amp;gt;解析度慢慢越來越寬 這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式 class 名稱，前後要一模一樣  注意！ @media 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式  例如 css（正確寫法）: 1234567891011.header .box li a&amp;">
-<meta name="twitter:image" content="https://i.imgur.com/Lx96Aoh.png">
+<meta name="twitter:title" content="JavaScript 是如何運行的">
+<meta name="twitter:description" content="當我輸入這行程式碼，電腦會如何去運行這行程式碼呢？">
+<meta name="twitter:image" content="https://i.imgur.com/uVCuQa1.jpg">
 
 
 
@@ -125,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://yuwensaf.github.io/post/CSS3_Media-Query觀念/">
+  <link rel="canonical" href="https://yuwensaf.github.io/post/JavaScript是如何運行的/">
 
 
 
 
 
-  <title>CSS3_Media-Query觀念 | Saffran's Blog</title>
+  <title>JavaScript 是如何運行的 | Saffran's Blog</title>
   
 
 
@@ -305,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/post/CSS3_Media-Query觀念/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/post/JavaScript是如何運行的/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -322,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS3_Media-Query觀念</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript 是如何運行的</h1>
         
 
         <div class="post-meta">
@@ -334,8 +337,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T21:46:31+08:00">
-                2019-09-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-07T16:39:15+08:00">
+                2020-04-07
               </time>
             
 
@@ -357,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RWD/" itemprop="url" rel="index">
-                    <span itemprop="name">RWD</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -375,8 +378,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/post/CSS3_Media-Query觀念/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/CSS3_Media-Query觀念/" itemprop="commentCount"></span>
+                <a href="/post/JavaScript是如何運行的/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/JavaScript是如何運行的/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,7 +387,7 @@
 
           
           
-             <span id="/post/CSS3_Media-Query觀念/" class="leancloud_visitors" data-flag-title="CSS3_Media-Query觀念">
+             <span id="/post/JavaScript是如何運行的/" class="leancloud_visitors" data-flag-title="JavaScript 是如何運行的">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -415,46 +418,101 @@
       
 
       
-        <a id="more"></a>
-<h2 id="css順序：由小到大"><a class="header-anchor" href="#css順序：由小到大"></a>css順序：由小到大</h2>
-<p>會先寫手機的樣式，再寫平板，再寫pc–&gt;解析度慢慢越來越寬</p>
-<p>這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式</p>
-<h3 id="class-名稱-前後要一模一樣"><a class="header-anchor" href="#class-名稱-前後要一模一樣"></a>class 名稱，前後要一模一樣</h3>
-<div class="danger">
-<p>注意！<br>
-<code>@media</code> 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式</p>
+        <div class="success">
+<p>當我輸入這行程式碼，電腦會如何去運行這行程式碼呢？</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="其實-電腦-瀏覽器無法直接閱讀我們所撰寫的-js"><a class="header-anchor" href="#其實-電腦-瀏覽器無法直接閱讀我們所撰寫的-js"></a>其實，電腦、瀏覽器無法直接閱讀我們所撰寫的 JS</h3>
+<p>💡 電腦閱讀程式碼的邏輯，跟「我撰寫程式碼的邏輯」是不同的因此，在運行程式碼前，要先經過「編譯 or 直譯」</p>
 </div>
-<p>例如</p>
-<p>css（正確寫法）:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// @media裡面的 class 名稱，要跟前面的一模一樣</span><br><span class="line">	<span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>css（錯誤寫法）:</p>
-<ul>
-<li><code>@media</code>裡面的 class 名稱沒有跟前面一樣，<code>@media</code>的權重較低，無法覆蓋前面的樣式</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// 少寫了.header，導致@media的權重較低</span><br><span class="line">	<span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="橫向裝置設定可以使用如下"><a class="header-anchor" href="#橫向裝置設定可以使用如下"></a>橫向裝置設定可以使用如下</h2>
-<p><img src="https://i.imgur.com/Lx96Aoh.png" alt width="300"></p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation</a></p>
-<h2 id="q-a"><a class="header-anchor" href="#q-a"></a>Q&amp;A</h2>
-<h3 id="q-關於尺寸設定順序"><a class="header-anchor" href="#q-關於尺寸設定順序"></a>Q: 關於尺寸設定順序</h3>
-<p>老師最後有提到相反的順序設定，請問是怎麼做的呢~?因為如果照老師所講的，應該是：<br>
-<img src="https://i.imgur.com/RAQyoOX.png" alt></p>
-<p>是由大到小逐步覆蓋的。相反要怎麼做呢？下面的不是會優先覆蓋前面的嗎?</p>
-<p>A:<br>
-用min-width可以解決</p>
-<h3 id="q-請教一下-media範圍設定"><a class="header-anchor" href="#q-請教一下-media範圍設定"></a>Q: 請教一下@media範圍設定</h3>
-<p>有些人只設定一個範圍，像是pc就設定768以上，平版 768 ，手機320。但有些是設定介於XX~XX之間的範圍，想請教老師哪種設定上會比較好？</p>
-<p>A:<br>
-我的教法是逐步覆蓋，而你提的這個是範圍內容就吃該設定，其實都可以，只要你確保你都有兼顧到各種載具就 ok，如果一開始不熟，建議先依照我課程裡提供的斷點建議先寫出一個感覺，後面你就可以自己多方嘗試哩</p>
-<h3 id="q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><a class="header-anchor" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"></a>Q: 可不可以使用BS4的框架以及部份自己寫的CSS，然後使用max-width  的邏輯去做RWD呢？</h3>
-<p>那我有疑慮的點是，因為我看BS4的官方文件的斷點是min-width ，所以我不確定我自己寫的CSS如果是用max-width去做RWD會不會有衝突，所以才向老師確認說如果要BS4混搭自己寫的CSS，那media query的設置是不是最好也跟著BS4?</p>
-<p>A:<br>
-課程的安排是使用 max-width<br>
-是比較符合大多人的思考邏輯，學習上會比較順利但其實使用 min-width 開發是更好的主要是行動優先是主流的趨勢所以如果你學會了 min-width<br>
-就大可多利用 min-width 的方式去開發</p>
-<p>混搭上就需要多了解 Bootstrap 的原始碼我是比較推薦都是配合 Bootstsrap 的邏輯去思考 (官方文件也有說明 max-width 是沒有問題的)<br>
-另外官方其實有提供 media query sass mixin 方法可以利用就是用來管理這些中斷點使用的相關運用可以參考以下連結：<br>
-<a href="https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints" target="_blank" rel="noopener">https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints</a></p>
+<h1 id="直譯式語言-interpreted-language"><a class="header-anchor" href="#直譯式語言-interpreted-language"></a>直譯式語言（Interpreted language）</h1>
+<div class="warning">
+<h2 id="🎃-javascript-是屬於-直譯式語言-在執行之前-沒有經過編譯"><a class="header-anchor" href="#🎃-javascript-是屬於-直譯式語言-在執行之前-沒有經過編譯"></a>🎃 JavaScript 是屬於「直譯式語言」–&gt; 在執行之前，沒有經過編譯</h2>
+<p>📖 「直譯式語言」的運作邏輯：</p>
+<ol>
+<li>將原始碼透過「直譯器」，直接「生成代碼」</li>
+<li>生成代碼後，就可以直接運行了</li>
+</ol>
+<p>💡 電腦無法直接看懂「我所撰寫的原始碼」，電腦需要透過「直譯器」來閱讀我所寫的原始碼</p>
+<p><img src="https://i.imgur.com/uVCuQa1.jpg" alt></p>
+<hr>
+<h2 id="直譯式語言-錯誤會直接反映在-執行環境-中"><a class="header-anchor" href="#直譯式語言-錯誤會直接反映在-執行環境-中"></a>‼️ 「直譯式語言」–&gt; 錯誤會直接反映在「執行環境」中</h2>
+<p>因為 JS 不會預先編譯（不會“預先除錯”），因此「JS 的錯誤都會直接呈現在 Console 上」</p>
+</div>
+<h2 id="直譯式語言-的優點"><a class="header-anchor" href="#直譯式語言-的優點"></a>「直譯式語言」的優點</h2>
+<div class="info">
+<h2 id="📍-優點：更有彈性-不需要-預先定義型別"><a class="header-anchor" href="#📍-優點：更有彈性-不需要-預先定義型別"></a>📍 優點：更有彈性、不需要「預先定義型別」</h2>
+<ol>
+<li>先將語法「基本單元化」：把 JS 語法中的「詞彙、標點符號」一一解析出來（轉為 token）</li>
+<li>把「一個一個的 token」轉為「抽象結構樹」，將整個「原始碼的結構」定義出來 （此時，還沒有執行程式碼）</li>
+<li>最後，再將代碼生成出來 （代碼生成出來後，才會運行程式碼）</li>
+</ol>
+<p><img src="https://i.imgur.com/ipyplS3.jpg" alt></p>
+</div>
+<h3 id="步驟一：語法基本單元化-tokenizing"><a class="header-anchor" href="#步驟一：語法基本單元化-tokenizing"></a>步驟一：語法基本單元化（Tokenizing）</h3>
+<h3 id="🔧-直譯網站-esprima"><a class="header-anchor" href="#🔧-直譯網站-esprima"></a>🔧 直譯網站 Esprima</h3>
+<div class="success">
+<p>📖 「token」是「標誌；表示；象徵」的意思（noun）<br>
+–&gt; 「Tokenizing」就是：將一個一個字詞都轉成「token」</p>
+</div>
+<div class="info">
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>;</span><br></pre></td></tr></table></figure>
+<p>當我輸入這行程式碼，電腦不會直接了解到「我現在要宣告一個變數，叫做’小明’」，而是直接先將「各個字詞的意思」一一解析出來</p>
+<h2 id="那麼-電腦到底是如何解析這行程式碼呢？"><a class="header-anchor" href="#那麼-電腦到底是如何解析這行程式碼呢？"></a>那麼，電腦到底是如何解析這行程式碼呢？</h2>
+<p>就好像小時候學寫作文，只是先把結構取出來</p>
+<h3 id="📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"><a class="header-anchor" href="#📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"></a>📖 <a href="https://esprima.org/demo/parse.html" target="_blank" rel="noopener">Esprima</a> 這個工具可以呈現出原始碼在「基本單元化」之後的結構</h3>
+<p>把這行<code>var ming = '小明';</code>貼到左側框框內後，在右側選擇「Tokens」頁籤，就可以看到，它把詞彙一一解析出來的結果：</p>
+<p>1️⃣ 辨識出<code>var</code>是一個「關鍵字」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"Keyword"</span>,</span><br><span class="line">    <span class="string">"value"</span>: <span class="string">"var"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>2️⃣ 電腦不會知道<code>ming</code>是一個「變數」，電腦只知道<code>ming</code>是一個「被 user 定義出來的文字」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"Identifier"</span>,</span><br><span class="line">    <span class="string">"value"</span>: <span class="string">"ming"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>3️⃣ 電腦不會知道<code>=</code>是用來「賦予值的」，電腦只知道<code>=</code>是一個「標點符號」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"Punctuator"</span>,</span><br><span class="line">    <span class="string">"value"</span>: <span class="string">"="</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>4️⃣ 電腦不會知道<code>'小明'</code>是代表什麼意思，電腦只知道<code>'小明'</code>是一個「字串」</p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"String"</span>,</span><br><span class="line">    <span class="string">"value"</span>: <span class="string">"'</span>小明<span class="string">'"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>5️⃣ 電腦不會知道<code>;</code>是用來「做為語句的結尾」，電腦只知道<code>;</code>是一個「標點符號」</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"type"</span>: <span class="string">"Punctuator"</span>,</span><br><span class="line">    <span class="attr">"value"</span>: <span class="string">";"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+<h3 id="步驟二：轉為-抽象結構樹"><a class="header-anchor" href="#步驟二：轉為-抽象結構樹"></a>步驟二：轉為「抽象結構樹」</h3>
+<div class="info">
+<p>接下來，電腦會把「剛剛解析出來的 token」，轉為電腦看得懂的「抽象結構樹」</p>
+<p>點擊「Tree」頁籤，就可以看到「抽象結構樹」，它類似於 JSON 的格式</p>
+<h2 id="一直到-定義出抽象結構樹-這個步驟-電腦才知道-現在正在定義一個變數-但是-還沒有執行-定義變數的動作-真正的執行是在-代碼生成-之後"><a class="header-anchor" href="#一直到-定義出抽象結構樹-這個步驟-電腦才知道-現在正在定義一個變數-但是-還沒有執行-定義變數的動作-真正的執行是在-代碼生成-之後"></a>‼️ 一直到「定義出抽象結構樹」這個步驟，電腦才知道「現在正在定義一個變數」，但是「還沒有執行」定義變數的動作（真正的執行是在“代碼生成”之後）</h2>
+<p>🎃 「VariableDeclarator」代表：<code>var ming = '小明';</code> 這行程式碼主要就是要「定義一個變數」<br>
+🎃 「name: ming」代表：user 自訂的變數字詞<br>
+🎃 「value: 小明」代表：把「小明」這個詞彙，賦予到變數上<br>
+🎃 最下方有個「kind: var」代表：定義變數所使用的方法是「var」</p>
+<p><img src="https://i.imgur.com/GQ5eQgP.jpg" alt width="450"></p>
+</div>
+<h3 id="步驟三：代碼生成"><a class="header-anchor" href="#步驟三：代碼生成"></a>步驟三：代碼生成</h3>
+<div class="info">
+<p>🎃 會因為執行環境不同，生成的代碼都不一樣</p>
+<p>執行環境有可能是：瀏覽器 或是 Node.js</p>
+</div>
+<hr>
+<div class="success">
+<p>如果將程式碼改成這樣寫：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ming = <span class="string">'小明'</span>;</span><br></pre></td></tr></table></figure>
+<p>透過「抽象結構樹」，可以看到，這樣寫的話，會跟<code>var ming = '小明';</code>是完全不一樣的意思<br>
+🎃 「AssignmentExpression」代表：是一個「assign 的表達式」–&gt; 把「<code>'小明'</code>這個值」直接賦予（指派）在「變數<code>ming</code>」上</p>
+<h3 id="根本就沒有做-宣告"><a class="header-anchor" href="#根本就沒有做-宣告"></a>‼️ 根本就沒有做「宣告」</h3>
+<p><img src="https://i.imgur.com/hJP25T9.jpg" alt width="450"></p>
+</div>
+<h1 id="編譯式語言"><a class="header-anchor" href="#編譯式語言"></a>編譯式語言</h1>
+<div class="warning">
+<p>📖 「編譯式語言」的運作邏輯：</p>
+<h2 id="🎃-會-預先編譯-編譯完成後-才執行"><a class="header-anchor" href="#🎃-會-預先編譯-編譯完成後-才執行"></a>🎃 會「預先編譯」，編譯完成後，才執行</h2>
+<ol>
+<li>先撰寫完「原始碼」</li>
+<li>把原始碼「預先編譯」後，就會直接「生成代碼」</li>
+<li>把代碼丟到「執行環境」去運行</li>
+</ol>
+<p><img src="https://i.imgur.com/gjf2xG3.jpg" alt></p>
+</div>
+<h2 id="編譯式語言-的優點"><a class="header-anchor" href="#編譯式語言-的優點"></a>「編譯式語言」的優點</h2>
+<div class="info">
+<h2 id="✔-預先編譯-就可以-預先除錯-執行效能較佳"><a class="header-anchor" href="#✔-預先編譯-就可以-預先除錯-執行效能較佳"></a>✔️ 預先編譯，就可以「預先除錯」–&gt; 執行效能較佳</h2>
+</div>
 
       
     </div>
@@ -472,7 +530,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/RWD/" rel="tag"><i class="fa fa-tag"></i> RWD</a>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
           
         </div>
       
@@ -485,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/CSS_background-size用法/" rel="next" title="CSS_background-size用法">
-                <i class="fa fa-chevron-left"></i> CSS_background-size用法
+              <a href="/post/背景圖加上半透明遮罩/" rel="next" title="背景圖加上半透明遮罩">
+                <i class="fa fa-chevron-left"></i> 背景圖加上半透明遮罩
               </a>
             
           </div>
@@ -494,10 +552,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/CSS_animation用法/" rel="prev" title="CSS_animation用法">
-                CSS_animation用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css順序：由小到大"><span class="nav-number">1.</span> <span class="nav-text">css順序：由小到大</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-名稱-前後要一模一樣"><span class="nav-number">1.1.</span> <span class="nav-text">class-名稱-前後要一模一樣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#橫向裝置設定可以使用如下"><span class="nav-number">2.</span> <span class="nav-text">橫向裝置設定可以使用如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-a"><span class="nav-number">3.</span> <span class="nav-text">q-a</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#q-關於尺寸設定順序"><span class="nav-number">3.1.</span> <span class="nav-text">q-關於尺寸設定順序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-請教一下-media範圍設定"><span class="nav-number">3.2.</span> <span class="nav-text">q-請教一下-media範圍設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><span class="nav-number">3.3.</span> <span class="nav-text">q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#其實-電腦-瀏覽器無法直接閱讀我們所撰寫的-js"><span class="nav-number">1.</span> <span class="nav-text">其實-電腦-瀏覽器無法直接閱讀我們所撰寫的-js</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#直譯式語言-interpreted-language"><span class="nav-number"></span> <span class="nav-text">直譯式語言-interpreted-language</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-javascript-是屬於-直譯式語言-在執行之前-沒有經過編譯"><span class="nav-number"></span> <span class="nav-text">🎃-javascript-是屬於-直譯式語言-在執行之前-沒有經過編譯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直譯式語言-錯誤會直接反映在-執行環境-中"><span class="nav-number"></span> <span class="nav-text">直譯式語言-錯誤會直接反映在-執行環境-中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直譯式語言-的優點"><span class="nav-number"></span> <span class="nav-text">直譯式語言-的優點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#📍-優點：更有彈性-不需要-預先定義型別"><span class="nav-number"></span> <span class="nav-text">📍-優點：更有彈性-不需要-預先定義型別</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟一：語法基本單元化-tokenizing"><span class="nav-number">1.</span> <span class="nav-text">步驟一：語法基本單元化-tokenizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🔧-直譯網站-esprima"><span class="nav-number">2.</span> <span class="nav-text">🔧-直譯網站-esprima</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那麼-電腦到底是如何解析這行程式碼呢？"><span class="nav-number"></span> <span class="nav-text">那麼-電腦到底是如何解析這行程式碼呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"><span class="nav-number">1.</span> <span class="nav-text">📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟二：轉為-抽象結構樹"><span class="nav-number">2.</span> <span class="nav-text">步驟二：轉為-抽象結構樹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一直到-定義出抽象結構樹-這個步驟-電腦才知道-現在正在定義一個變數-但是-還沒有執行-定義變數的動作-真正的執行是在-代碼生成-之後"><span class="nav-number"></span> <span class="nav-text">一直到-定義出抽象結構樹-這個步驟-電腦才知道-現在正在定義一個變數-但是-還沒有執行-定義變數的動作-真正的執行是在-代碼生成-之後</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟三：代碼生成"><span class="nav-number">1.</span> <span class="nav-text">步驟三：代碼生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根本就沒有做-宣告"><span class="nav-number">2.</span> <span class="nav-text">根本就沒有做-宣告</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#編譯式語言"><span class="nav-number"></span> <span class="nav-text">編譯式語言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-會-預先編譯-編譯完成後-才執行"><span class="nav-number"></span> <span class="nav-text">🎃-會-預先編譯-編譯完成後-才執行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#編譯式語言-的優點"><span class="nav-number"></span> <span class="nav-text">編譯式語言-的優點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#✔-預先編譯-就可以-預先除錯-執行效能較佳"><span class="nav-number"></span> <span class="nav-text">✔-預先編譯-就可以-預先除錯-執行效能較佳</span></a></li></ol></li></div>
             
 
           </div>
@@ -814,9 +868,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://yuwensaf.github.io/post/CSS3_Media-Query觀念/';
-          this.page.identifier = 'post/CSS3_Media-Query觀念/';
-          this.page.title = 'CSS3_Media-Query觀念';
+          this.page.url = 'https://yuwensaf.github.io/post/JavaScript是如何運行的/';
+          this.page.identifier = 'post/JavaScript是如何運行的/';
+          this.page.title = 'JavaScript 是如何運行的';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://yuwensaf.disqus.com/embed.js';
