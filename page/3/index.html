@@ -414,276 +414,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
-<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
-<hr>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: orange;</span><br><span class="line"><span class="comment">/*  設定動畫  */</span></span><br><span class="line"><span class="comment">/*  一定要寫「position: relative;」！！  */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">animation-name</span>: playbox;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-timing-function</span>: ease-in-out;</span><br><span class="line">  <span class="attribute">animation-delay</span>: <span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">animation-direction</span>: reverse;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">  <span class="attribute">animation-play-state</span>: paused;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> playbox&#123;</span><br><span class="line">  <span class="selector-tag">from</span>&#123;<span class="attribute">left</span>: <span class="number">0px</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">left</span>: <span class="number">300px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="danger">
-<p>注意！</p>
-<ul>
-<li>
-<p>一定要寫「<code>position: relative;</code>」！！</p>
-</li>
-<li>
-<p>在寫 <code>@keyframes</code> 時<br>
-<img src="https://i.imgur.com/5SeyL0p.jpg" alt></p>
-</li>
-</ul>
-</div>
-<h3 id="animation-name"><a class="header-anchor" href="#animation-name"></a>animation-name</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-name</span>: <span class="selector-tag">playbox</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p><code>animation-name</code> 後面的名稱，就會對應到<code>@keyframes</code>後面的名稱<br>
-The <code>animation-name</code> property specifies a name for the <code>@keyframes</code> animation.</p>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-name: keyframename</code></p>
-<div class="warning">
-<ul>
-<li>keyframename</li>
-</ul>
-<p>Specifies the name of the keyframe you want to bind to the selector</p>
-</div>
-<h3 id="animation-duration"><a class="header-anchor" href="#animation-duration"></a>animation-duration</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-duration</span>: 3<span class="selector-tag">s</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The <code>animation-duration</code> property defines how long an animation should take to complete one cycle.</p>
-<div class="danger">
-<p><code>animation-duration</code>一定要寫！！否則 duration 就會預設是 0，動畫就不會跑</p>
-</div>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-duration: time</code></p>
-<div class="warning">
-<ul>
-<li>time
-<ul>
-<li>設定「動畫跑完一次需要的時間」</li>
-<li>單位可以是「秒」或是「毫秒」</li>
-</ul>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">單位：秒</span><br><span class="line"><span class="selector-tag">animation-duration</span><span class="selector-pseudo">:10s</span>;</span><br><span class="line"></span><br><span class="line">單位：毫秒</span><br><span class="line"><span class="selector-tag">animation-duration</span><span class="selector-pseudo">:500ms</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</div>
-<h3 id="animation-timing-function"><a class="header-anchor" href="#animation-timing-function"></a>animation-timing-function</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-timing-function</span>: <span class="selector-tag">ease-in-out</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The <code>animation-timing-function</code> specifies the speed curve of an animation.</p>
-<p>The speed curve defines the TIME an animation uses to change from one set of CSS styles to another.</p>
-<p>The speed curve is used to make the changes smoothly.</p>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)</code></p>
-<div class="warning">
-<ul>
-<li>The animation-timing-function uses a mathematical function, called the Cubic Bezier curve, to make the speed curve. You can use your own values in this function, or use one of the pre-defined values:
-<ul>
-<li>linear: The animation has the same speed from start to end</li>
-<li>ease: Default value. The animation has a slow start, then fast, before it ends slowly</li>
-<li>ease-in: The animation has a slow start</li>
-<li>ease-out: The animation has a slow end</li>
-<li>ease-in-out: The animation has both a slow start and a slow end</li>
-<li>cubic-bezier(n,n,n,n): Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1</li>
-</ul>
-</li>
-</ul>
-</div>
-<h3 id="animation-delay"><a class="header-anchor" href="#animation-delay"></a>animation-delay</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-delay</span>: 2<span class="selector-tag">s</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The <code>animation-delay</code> property specifies a delay for the start of an animation.</p>
-<div class="danger">
-<p>單位可以是「秒」或是「毫秒」</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">單位是「秒」</span><br><span class="line"><span class="selector-tag">animation-delay</span>: 2<span class="selector-tag">s</span>;</span><br><span class="line"></span><br><span class="line">單位是「毫秒」</span><br><span class="line"><span class="selector-tag">animation-delay</span>: 2<span class="selector-tag">ms</span>;</span><br></pre></td></tr></table></figure>
-</div>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-delay: time</code></p>
-<div class="warning">
-<ul>
-<li>time
-<ul>
-<li>Optional. Defines the number of seconds (s) or milliseconds (ms) to wait before the animation will start.</li>
-<li>Default value is 0.</li>
-<li>❗️  可以填入「負值」<br>
-Negative values are allowed. If you use negative values, the animation will start as if it had already been playing for N seconds/milliseconds.</li>
-</ul>
-   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-delay</span>: <span class="selector-tag">-2s</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</div>
-<h3 id="animation-iteration-count-動畫重複次數"><a class="header-anchor" href="#animation-iteration-count-動畫重複次數"></a>animation-iteration-count （動畫重複次數）</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-iteration-count</span>: 2;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The <code>animation-iteration-count</code> property specifies the number of times an animation should be played.</p>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-iteration-count: number|infinite</code></p>
-<div class="warning">
-<ul>
-<li>number</li>
-</ul>
-<p>A number that defines how many times an animation should be played. Default value is 1</p>
-<p>❗️</p>
-<ul>
-<li>infinite</li>
-</ul>
-<p>讓動畫跑無限次<br>
-Specifies that the animation should be played infinite times (forever)</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-iteration-count</span>: <span class="selector-tag">infinite</span>;</span><br></pre></td></tr></table></figure>
-</div>
-<h3 id="animation-direction"><a class="header-anchor" href="#animation-direction"></a>animation-direction</h3>
-<p>我的codepen練習：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-direction</span>: <span class="selector-tag">reverse</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The <code>animation-direction</code> property defines whether an animation should be <mark>played forwards, backwards or in alternate cycles.（正向、反向、正反交替跑）</mark></p>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-direction: normal|reverse|alternate|alternate-reverse</code></p>
-<div class="warning">
-<ul>
-<li>normal</li>
-</ul>
-<p>正向跑<br>
-Default value. The animation is played as normal (forwards)</p>
-<ul>
-<li>reverse</li>
-</ul>
-<p>反向跑<br>
-The animation is played in reverse direction (backwards)</p>
-<ul>
-<li>alternate</li>
-</ul>
-<p>先正向跑，再反向跑<br>
-The animation is played forwards first, then backwards</p>
-<ul>
-<li>alternate-reverse</li>
-</ul>
-<p>先反向跑，再正向跑<br>
-The animation is played backwards first, then forwards</p>
-</div>
-<h3 id="animation-fill-mode"><a class="header-anchor" href="#animation-fill-mode"></a>animation-fill-mode</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-fill-mode</span>: <span class="selector-tag">forwards</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The animation-fill-mode property specifies a style for the element when the animation is not playing (before it starts, after it ends, or both).</p>
-<p>CSS animations do not affect the element before the first keyframe is played or after the last keyframe is played. The animation-fill-mode property can override this behavior.</p>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-fill-mode: none|forwards|backwards|both</code></p>
-<div class="warning">
-<ul>
-<li>
-<p>none</p>
-<ul>
-<li>Default value.</li>
-<li>在動畫執行前後，都不會給元素加上任何樣式<br>
-Animation will not apply any styles to the element before or after it is executing.</li>
-</ul>
-</li>
-<li>
-<p>forwards</p>
-<ul>
-<li>元素會保有「動畫結束前的樣式」<br>
-The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)</li>
-<li>在此範例中，<code>.box</code>的動畫是「往右位移300px，且背景顏色由橘色變為綠色」。因為加上<code>animation-fill-mode: forwards;</code>，動畫跑完後，<code>.box</code>會維持在這個狀態。範例：<a href="https://codepen.io/saffranwang/pen/axrOqX" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/axrOqX</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>backwards</p>
-<ul>
-<li>在動畫開始前（在<code>animation-delay</code>這段期間），元素就可以先拿到「動畫開始時的樣式」<br>
-The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period</li>
-<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」。原本，要在動畫開始跑才會變紫色，但因為加上<code>animation-fill-mode: backwards;</code>，因此在<code>animation-delay</code>那兩秒鐘，<code>.box</code>也會是紫色的。範例：<a href="https://codepen.io/saffranwang/pen/LvoVvY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/LvoVvY</a></li>
-</ul>
-</li>
-<li>
-<p>both</p>
-<ul>
-<li>元素會「先拿到動畫開始時的樣式」以及「保有動畫結束時的樣式」<br>
-The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions</li>
-<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」，動畫結束時「背景會是綠色」。因為加上<code>animation-fill-mode: both;</code>，所以「動畫開始前，<code>.box</code>也會先拿到紫色」，「動畫結束後，<code>.box</code>會一直維持紫色」。範例：<a href="https://codepen.io/saffranwang/pen/dLEYMM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/dLEYMM</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<h3 id="animation-play-state"><a class="header-anchor" href="#animation-play-state"></a>animation-play-state</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-play-state</span>: <span class="selector-tag">paused</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Definition and Usage:</li>
-</ul>
-<p>The <code>animation-play-state</code> property specifies whether the animation is running or paused.</p>
-<p>Note: Use this property in a JavaScript to pause an animation in the middle of a cycle.</p>
-<ul>
-<li>CSS Syntax</li>
-</ul>
-<p><code>animation-play-state: paused|running</code></p>
-<div class="warning">
-<ul>
-<li>
-<p>paused</p>
-<ul>
-<li>Specifies that the animation is paused</li>
-<li>在此範例中，設定當<code>.box</code>被hover時，動畫會暫停。範例：<a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/bJJPwM</a></li>
-</ul>
-</li>
-<li>
-<p>running</p>
-<ul>
-<li>Default value.</li>
-<li>Specifies that the animation is running</li>
-</ul>
-</li>
-</ul>
-</div>
-<h2 id="animation-縮寫法"><a class="header-anchor" href="#animation-縮寫法"></a>animation 縮寫法</h2>
-<p><code>animation</code> 是下面這些的縮寫：</p>
-<ul>
-<li>animation-name</li>
-<li>animation-duration</li>
-<li>animation-timing-function</li>
-<li>animation-delay</li>
-<li>animation-iteration-count</li>
-<li>animation-direction</li>
-<li>animation-fill-mode</li>
-<li>animation-play-state</li>
-</ul>
-<div class="danger">
-<p><code>animation-duration</code>一定要寫，否則 duration 會為 0，動畫就不會跑了</p>
-</div>
-<h3 id="縮寫語法順序"><a class="header-anchor" href="#縮寫語法順序"></a>縮寫語法順序</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation</span>: <span class="selector-tag">name</span> <span class="selector-tag">duration</span> <span class="selector-tag">timing-function</span> <span class="selector-tag">delay</span> <span class="selector-tag">iteration-count</span> <span class="selector-tag">direction</span> <span class="selector-tag">fill-mode</span> <span class="selector-tag">play-state</span>;</span><br></pre></td></tr></table></figure>
-<p>例如：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">animation</span>: playbox <span class="number">5s</span> infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <p>在 CSS 使用「animation」寫出自己想要的動畫效果</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_animation用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -749,7 +487,7 @@ The animation will follow the rules for both forwards and backwards, extending t
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/CSS3_Media-Query觀念/" itemprop="url">CSS3_Media-Query觀念</a></h1>
+                <a class="post-title-link" href="/post/CSS3_Media-Query觀念/" itemprop="url">CSS3_Media-Query 觀念</a></h1>
         
 
         <div class="post-meta">
@@ -811,7 +549,7 @@ The animation will follow the rules for both forwards and backwards, extending t
 
           
           
-             <span id="/post/CSS3_Media-Query觀念/" class="leancloud_visitors" data-flag-title="CSS3_Media-Query觀念">
+             <span id="/post/CSS3_Media-Query觀念/" class="leancloud_visitors" data-flag-title="CSS3_Media-Query 觀念">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -843,49 +581,14 @@ The animation will follow the rules for both forwards and backwards, extending t
 
       
         
-          
-            <a id="more"></a>
-<h2 id="css順序：由小到大"><a class="header-anchor" href="#css順序：由小到大"></a>css順序：由小到大</h2>
-<p>會先寫手機的樣式，再寫平板，再寫pc–&gt;解析度慢慢越來越寬</p>
-<p>這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式</p>
-<h3 id="class-名稱-前後要一模一樣"><a class="header-anchor" href="#class-名稱-前後要一模一樣"></a>class 名稱，前後要一模一樣</h3>
-<div class="danger">
-<p>注意！<br>
-<code>@media</code> 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式</p>
-</div>
-<p>例如</p>
-<p>css（正確寫法）:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// @media裡面的 class 名稱，要跟前面的一模一樣</span><br><span class="line">	<span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>css（錯誤寫法）:</p>
-<ul>
-<li><code>@media</code>裡面的 class 名稱沒有跟前面一樣，<code>@media</code>的權重較低，無法覆蓋前面的樣式</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// 少寫了.header，導致@media的權重較低</span><br><span class="line">	<span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="橫向裝置設定可以使用如下"><a class="header-anchor" href="#橫向裝置設定可以使用如下"></a>橫向裝置設定可以使用如下</h2>
-<p><img src="https://i.imgur.com/Lx96Aoh.png" alt width="300"></p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation</a></p>
-<h2 id="q-a"><a class="header-anchor" href="#q-a"></a>Q&amp;A</h2>
-<h3 id="q-關於尺寸設定順序"><a class="header-anchor" href="#q-關於尺寸設定順序"></a>Q: 關於尺寸設定順序</h3>
-<p>老師最後有提到相反的順序設定，請問是怎麼做的呢~?因為如果照老師所講的，應該是：<br>
-<img src="https://i.imgur.com/RAQyoOX.png" alt></p>
-<p>是由大到小逐步覆蓋的。相反要怎麼做呢？下面的不是會優先覆蓋前面的嗎?</p>
-<p>A:<br>
-用min-width可以解決</p>
-<h3 id="q-請教一下-media範圍設定"><a class="header-anchor" href="#q-請教一下-media範圍設定"></a>Q: 請教一下@media範圍設定</h3>
-<p>有些人只設定一個範圍，像是pc就設定768以上，平版 768 ，手機320。但有些是設定介於XX~XX之間的範圍，想請教老師哪種設定上會比較好？</p>
-<p>A:<br>
-我的教法是逐步覆蓋，而你提的這個是範圍內容就吃該設定，其實都可以，只要你確保你都有兼顧到各種載具就 ok，如果一開始不熟，建議先依照我課程裡提供的斷點建議先寫出一個感覺，後面你就可以自己多方嘗試哩</p>
-<h3 id="q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><a class="header-anchor" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"></a>Q: 可不可以使用BS4的框架以及部份自己寫的CSS，然後使用max-width  的邏輯去做RWD呢？</h3>
-<p>那我有疑慮的點是，因為我看BS4的官方文件的斷點是min-width ，所以我不確定我自己寫的CSS如果是用max-width去做RWD會不會有衝突，所以才向老師確認說如果要BS4混搭自己寫的CSS，那media query的設置是不是最好也跟著BS4?</p>
-<p>A:<br>
-課程的安排是使用 max-width<br>
-是比較符合大多人的思考邏輯，學習上會比較順利但其實使用 min-width 開發是更好的主要是行動優先是主流的趨勢所以如果你學會了 min-width<br>
-就大可多利用 min-width 的方式去開發</p>
-<p>混搭上就需要多了解 Bootstrap 的原始碼我是比較推薦都是配合 Bootstsrap 的邏輯去思考 (官方文件也有說明 max-width 是沒有問題的)<br>
-另外官方其實有提供 media query sass mixin 方法可以利用就是用來管理這些中斷點使用的相關運用可以參考以下連結：<br>
-<a href="https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints" target="_blank" rel="noopener">https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints</a></p>
-
-          
+          <p>這一篇是關於「CSS3 Media-Query」的重要觀念</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS3_Media-Query觀念/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1045,136 +748,14 @@ The animation will follow the rules for both forwards and backwards, extending t
 
       
         
-          
-            <a id="more"></a>
-<h2 id="教學網站"><a class="header-anchor" href="#教學網站"></a>教學網站</h2>
-<p><a href="https://www.w3schools.com/cssref/css3_pr_background-size.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/css3_pr_background-size.asp</a></p>
-<h2 id="definition-and-usage"><a class="header-anchor" href="#definition-and-usage"></a>Definition and Usage</h2>
-<p>The <code>background-size</code> property specifies the size of the background images.</p>
-<h3 id="有-5-種方式可以設定background-size：-口訣：acclp"><a class="header-anchor" href="#有-5-種方式可以設定background-size：-口訣：acclp"></a>有 5 種方式可以設定<code>background-size</code>：<mark>（口訣：ACCLP）</mark></h3>
-<ol>
-<li>“auto”</li>
-<li>“cover”</li>
-<li>“contain”</li>
-<li>length</li>
-</ol>
-<div class="info">
-<ul>
-<li>長寬，兩個值都設定：
-<ul>
-<li>第一個值：<code>width</code></li>
-<li>第二個值：<code>height</code></li>
-</ul>
-</li>
-</ul>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-size</span>: 300<span class="selector-tag">px</span> 100<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>長寬，只設定「一個值」：那個值會是「width」，「height」就會是 “auto”（height 按照原本的長寬比例，自動縮放）</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-size</span>: 200<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-</div>
-<ol start="5">
-<li>percentage</li>
-</ol>
-<div class="info">
-<p>以「<mark>佔父元素長寬的比例</mark>」來為圖片設定「width, height」</p>
-</div>
-<h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-size: <span class="built_in">auto</span>|<span class="type">cover</span>|<span class="type">contain</span>|<span class="type">length</span>|<span class="type">percentage</span></span><br></pre></td></tr></table></figure>
-<p>[以下分別介紹這 5 種]</p>
-<p><mark>（口訣：ACCLP）</mark></p>
-<h3 id="auto"><a class="header-anchor" href="#auto"></a>auto</h3>
-<div class="info">
-<ul>
-<li>是 Default value.</li>
-<li>圖片以「原始的長寬」來呈現</li>
-</ul>
-</div>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/XqDTh9Z.jpg" alt></p>
-<h3 id="cover"><a class="header-anchor" href="#cover"></a>cover</h3>
-<div class="info">
-<p>將圖片 resize 來 <mark>cover 住整個容器</mark>，圖片可能會被強行縮放，也可能被切掉其中一部份</p>
-</div>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/0scAIS8.jpg" alt></p>
-<h3 id="contain"><a class="header-anchor" href="#contain"></a>contain</h3>
-<div class="info">
-<p>將圖片 resize，<mark>以確保在容器內，能夠完整的看到整張圖片</mark></p>
-</div>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: contain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/TCf1qZP.jpg" alt></p>
-<h3 id="length"><a class="header-anchor" href="#length"></a>length</h3>
-<div class="info">
-<p><mark>為圖片設定「width, height」</mark></p>
-</div>
-<ul>
-<li>第一個值：width。第二個值：height</li>
-</ul>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">30px</span> <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/8WtKamm.jpg" alt></p>
-<ul>
-<li>如果只有設定一個值，那個值就是「width」，而「height」則會是&quot;auto 按比例縮放&quot;</li>
-</ul>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/2SUtBPX.jpg" alt></p>
-<h3 id="percentage"><a class="header-anchor" href="#percentage"></a>percentage</h3>
-<div class="info">
-<p>以「<mark>佔父元素長寬的比例</mark>」來為圖片設定「width, height」</p>
-</div>
-<ul>
-<li>第一個值：width。第二個值：height</li>
-</ul>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">50%</span> <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="danger">
-<ul>
-<li>圖片的<code>width</code>：佔「父元素寬度」的50%</li>
-<li>圖片的<code>height</code>：佔「父元素高度」的100%</li>
-</ul>
-</div>
-<p><img src="https://i.imgur.com/TWxZBuT.jpg" alt></p>
-<ul>
-<li>如果只有設定一個值，那個值就是「width」，而「height」則會是&quot;auto 按比例縮放&quot;</li>
-</ul>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="danger">
-<ul>
-<li>圖片的<code>width</code>：佔「父元素寬度」的50%</li>
-<li>圖片的<code>height</code>：按原始比例縮放</li>
-</ul>
-</div>
-<p><img src="https://i.imgur.com/Z9MqEVI.jpg" alt></p>
-<h2 id="更多範例"><a class="header-anchor" href="#更多範例"></a>更多範例</h2>
-<h3 id="兩張背景圖重疊"><a class="header-anchor" href="#兩張背景圖重疊"></a>兩張背景圖重疊</h3>
-<p>有兩張背景圖片</p>
-<ul>
-<li>第一張「tree.png」，設定為「contain」，才能完整地看到整張圖片</li>
-<li>第二張「keyboard.png」，設定為「cover」，才能把整個外圍容器（父元素）給 cover 住</li>
-</ul>
-<div class="danger">
-<ul>
-<li>兩個 url 用「逗號」隔開</li>
-<li>兩個 <code>background-size</code> 也用「逗號」隔開</li>
-</ul>
-</div>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(tree.png), <span class="built_in">url</span>(keyboard.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: contain, cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/qxwDPND.jpg" alt></p>
-<h3 id="做出-滿版的banner圖-hero-image"><a class="header-anchor" href="#做出-滿版的banner圖-hero-image"></a>做出「滿版的banner圖」- “hero” image</h3>
-<p>我的 codepen 範例：<a href="https://codepen.io/saffranwang/pen/jRjNNq" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/jRjNNq</a></p>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hero-image</span>&#123;</span><br><span class="line"><span class="comment">/*  在 div 插入背景圖片  */</span></span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/z6d3q2h/photographer.jpg);</span><br><span class="line"><span class="comment">/*  使用 background-color，萬一圖片無法顯示，至少還有背景顏色  */</span></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#cccccc</span>;</span><br><span class="line"><span class="comment">/*  這個 div 因為設定了「相對定位」，所以一定要給它「高度」，否則高度會為 0  */</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line"><span class="comment">/*  讓圖片「不重複」  */</span></span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line"><span class="comment">/*  讓圖片「置中」  */</span></span><br><span class="line">  <span class="attribute">background-position</span>: center;</span><br><span class="line"><span class="comment">/*  重新 resize 圖片，讓圖片能夠 cover 住整個 div  */</span></span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line"><span class="comment">/*  設定「相對定位」，做為.hero-text的定位點  */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>就可以做出像這樣：<br>
-<img src="https://i.imgur.com/WpoxWEP.jpg" alt></p>
-
-          
+          <p>這一篇要介紹的是：background-size 的多種設定方式</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_background-size用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1334,89 +915,14 @@ The animation will follow the rules for both forwards and backwards, extending t
 
       
         
-          
-            <a id="more"></a>
-<h2 id="教學網站"><a class="header-anchor" href="#教學網站"></a>教學網站</h2>
-<p><a href="https://www.w3schools.com/cssref/pr_background-position.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/pr_background-position.asp</a></p>
-<p>我的codepen練習：<br>
-<a href="https://codepen.io/saffranwang/pen/mYJJbR" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/mYJJbR</a></p>
-<h2 id="definition-and-usage"><a class="header-anchor" href="#definition-and-usage"></a>Definition and Usage</h2>
-<p><code>background-position</code>是用來設定背景圖片的「起始位置 starting position」</p>
-<div class="success">
-<p>背景圖的「預設值」：</p>
-<ul>
-<li>置於容器的左上角</li>
-<li>於「水平、垂直」方向都會 repeat</li>
-</ul>
-</div>
-<h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">background</span>-<span class="built_in">position</span>: value;</span><br></pre></td></tr></table></figure>
-<p>value 可以填入的值：</p>
-<h3 id="第一種：方位的-keyword"><a class="header-anchor" href="#第一種：方位的-keyword"></a>第一種：方位的 keyword</h3>
-<ul>
-<li>left top</li>
-<li>left center</li>
-<li>left bottom</li>
-<li>right top</li>
-<li>right center</li>
-<li>right bottom</li>
-<li>center top</li>
-<li>center center</li>
-<li>center bottom</li>
-</ul>
-<div class="danger">
-<p>如果只有填入一個值，另一個值就會被設定為「center」</p>
-</div>
-<p>範例 css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-position</span>: right bottom;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/Vp3NsBy.jpg" alt width="300"></p>
-<h2 id="第二種：x-y"><a class="header-anchor" href="#第二種：x-y"></a>第二種：x% y%</h2>
-<ul>
-<li>第一個值是「水平方向」的位置，第二個值是「垂直方向」的位置</li>
-<li>最左上角是「<code>0% 0%</code>」，最右下角是「<code>100% 100%</code>」</li>
-</ul>
-<div class="danger">
-<ul>
-<li>如果只有填入一個值，另一個值就會被設定為「50%」</li>
-<li>預設值為「<code>0% 0%</code>」</li>
-</ul>
-</div>
-<p>範例 css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">25%</span> <span class="number">75%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/rBCkY3e.jpg" alt width="300"></p>
-<h2 id="第三種：xpos-ypos"><a class="header-anchor" href="#第三種：xpos-ypos"></a>第三種：xpos ypos</h2>
-<ul>
-<li>第一個值是「水平方向」的位置，第二個值是「垂直方向」的位置</li>
-<li>最左上角是「<code>0 0</code>」</li>
-<li>單位可以是 pixels (<code>0px 0px</code>) 或是其他的 <a href="https://www.w3schools.com/cssref/css_units.asp" target="_blank" rel="noopener">CSS units</a></li>
-</ul>
-<div class="danger">
-<ul>
-<li>如果只有填入一個值，另一個值就會被設定為「50%」</li>
-<li>「百分比%」和「方位keywords」可以混搭著用</li>
-</ul>
-</div>
-<p>範例 css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">50px</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/9gexNLL.jpg" alt width="300"></p>
-<h2 id="更多範例"><a class="header-anchor" href="#更多範例"></a>更多範例</h2>
-<h3 id="背景圖置中於上方"><a class="header-anchor" href="#背景圖置中於上方"></a>背景圖置中於上方</h3>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/RDFV9t6/iconfinder-instagram-386648.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-position</span>: center top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/2BGgI3R.jpg" alt width="300"></p>
-<h3 id="下方要完整呈現"><a class="header-anchor" href="#下方要完整呈現"></a>下方要完整呈現</h3>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/TRgySw0/jquery-lightbox.png);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line"><span class="comment">/*  背景圖的下方要完整呈現  */</span></span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line">  <span class="attribute">background-position</span>: bottom center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>背景圖的下方完整呈現</li>
-</ul>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">background-size: </span>cover<span class="comment">;</span></span><br><span class="line"><span class="keyword">background-position: </span><span class="keyword">bottom </span>center<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>上方被裁切沒關係</li>
-</ul>
-<p><img src="https://i.imgur.com/70pBK68.jpg" alt></p>
-
-          
+          <p>這一篇要介紹：background-position 的多種設定方式</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_background-position用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1576,130 +1082,14 @@ The animation will follow the rules for both forwards and backwards, extending t
 
       
         
-          
-            <a id="more"></a>
-<ul>
-<li><code>position</code> 總共有四種：（口訣：rafs）</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>position:</th>
-<th style="text-align:center">是否會 remain in the natural flow of the page</th>
-<th style="text-align:center">是否會被子元素當作定位點（anchor point）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>static</td>
-<td style="text-align:center">會</td>
-<td style="text-align:center"><mark>不會</mark></td>
-</tr>
-<tr>
-<td>relative</td>
-<td style="text-align:center">會</td>
-<td style="text-align:center">會</td>
-</tr>
-<tr>
-<td>absolute</td>
-<td style="text-align:center">不會，而是會以<mark>離它最近</mark>且<mark>有被下position</mark>（除了static之外）的父元素為定位點</td>
-<td style="text-align:center">會</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td style="text-align:center">不會，而是以<mark>瀏覽器viewport</mark>為定位點</td>
-<td style="text-align:center">會</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://www.w3schools.com/cssref/pr_class_position.asp" target="_blank" rel="noopener">教學網址</a></p>
-<h2 id="position-static"><a class="header-anchor" href="#position-static"></a>position: static;</h2>
-<h3 id="用法說明："><a class="header-anchor" href="#用法說明："></a>用法說明：</h3>
-<ul>
-<li>position的「預設值」</li>
-<li>按照元素的自然方式排列</li>
-</ul>
-<h4 id="css語法："><a class="header-anchor" href="#css語法："></a>css語法：</h4>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#myDIV</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>:static;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/VQnRnk0.jpg" alt width="400"></p>
-<hr>
-<h3 id="範例html語法："><a class="header-anchor" href="#範例html語法："></a>範例html語法：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;parent1&quot;&gt;Parent1: position: static.</span><br><span class="line">  &lt;div id=&quot;child1&quot;&gt;Child1: position: absolute, right: 15px, top: 70px&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="範例css語法："><a class="header-anchor" href="#範例css語法："></a>範例css語法：</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#parent1</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: static;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#child1</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="說明："><a class="header-anchor" href="#說明："></a>說明：</h3>
-<p><code>#parent1</code>有下<code>position: static;</code></p>
-<ul>
-<li>It will remain in the natural flow of the page.</li>
-<li><code>#parent1</code> <mark>不會被子元素<code>#child1</code>當作是 <code>position: absolute;</code> 的定位點</mark></li>
-</ul>
-<h3 id="results"><a class="header-anchor" href="#results"></a>Results:</h3>
-<p><img src="https://i.imgur.com/VkdLUl0.jpg" alt></p>
-<h2 id="position-relative"><a class="header-anchor" href="#position-relative"></a>position: relative;</h2>
-<h3 id="用法說明：-v2"><a class="header-anchor" href="#用法說明：-v2"></a>用法說明：</h3>
-<ul>
-<li>元素會相較於「<mark>它自己原本的位置</mark>」去做移動</li>
-</ul>
-<h4 id="css語法：-v2"><a class="header-anchor" href="#css語法：-v2"></a>css語法：</h4>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#myDIV</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>:relative;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/VNOKLcc.jpg" alt width="400"></p>
-<hr>
-<h3 id="範例html語法：-v2"><a class="header-anchor" href="#範例html語法：-v2"></a>範例html語法：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;parent2&quot;&gt;Parent2: position: relative.</span><br><span class="line">  &lt;div id=&quot;child2&quot;&gt;Child2: position: absolute, right: 15px, top: 70px&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="範例css語法：-v2"><a class="header-anchor" href="#範例css語法：-v2"></a>範例css語法：</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#parent2</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#child2</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="說明：-v2"><a class="header-anchor" href="#說明：-v2"></a>說明：</h3>
-<p><code>#parent2</code> 有下 <code>position: relative;</code></p>
-<ul>
-<li>It will remain in the natural flow of the page.</li>
-<li><code>#parent2</code> <mark>會被子元素 <code>#child2</code> 當作是 <code>position: absolute;</code> 的定位點</mark></li>
-</ul>
-<h3 id="results-v2"><a class="header-anchor" href="#results-v2"></a>Results:</h3>
-<p><img src="https://i.imgur.com/MxNfIeB.jpg" alt></p>
-<h2 id="position-absolute"><a class="header-anchor" href="#position-absolute"></a>position: absolute;</h2>
-<h3 id="用法說明：-v3"><a class="header-anchor" href="#用法說明：-v3"></a>用法說明：</h3>
-<ul>
-<li>元素會以<mark>離它最近</mark>且<mark>有被下position</mark>（除了static之外）的<mark>父元素</mark>為定位點去移動</li>
-</ul>
-<h4 id="css語法：-v3"><a class="header-anchor" href="#css語法：-v3"></a>css語法：</h4>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#myDIV</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>:absolute;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/E7Qgqek.jpg" alt width="500"></p>
-<hr>
-<h3 id="範例html語法：-v3"><a class="header-anchor" href="#範例html語法：-v3"></a>範例html語法：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;parent3&quot;&gt;Parent3: position: absolute, top: 750px, right: 15px.</span><br><span class="line">  &lt;div id=&quot;child3&quot;&gt;Child3: position: absolute, right: 15px, top: 70px&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="範例css語法：-v3"><a class="header-anchor" href="#範例css語法：-v3"></a>範例css語法：</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#parent3</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">750px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#child3</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="說明：-v3"><a class="header-anchor" href="#說明：-v3"></a>說明：</h3>
-<p><code>#parent3</code> 有下 <code>position: absolute;</code></p>
-<ul>
-<li>It will NOT remain in the natural flow of the page. 而是會以<mark>離它最近</mark>且<mark>有被下position</mark>（除了static之外）的父元素為定位點</li>
-<li><code>#parent3</code> <mark>會被子元素 <code>#child3</code> 當作是 <code>position: absolute;</code> 的定位點</mark></li>
-</ul>
-<h3 id="results-v3"><a class="header-anchor" href="#results-v3"></a>Results:</h3>
-<p><img src="https://i.imgur.com/OQOB8xh.jpg" alt></p>
-<h2 id="position-fixed"><a class="header-anchor" href="#position-fixed"></a>position: fixed;</h2>
-<h3 id="用法說明：-v4"><a class="header-anchor" href="#用法說明：-v4"></a>用法說明：</h3>
-<ul>
-<li>元素會以<mark>瀏覽器視窗為定位點</mark>去移動</li>
-</ul>
-<h4 id="css語法：-v4"><a class="header-anchor" href="#css語法：-v4"></a>css語法：</h4>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-id">#myDIV</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>:fixed;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/q4cM7L6.jpg" alt width="500"></p>
-<hr>
-<h3 id="範例html語法：-v4"><a class="header-anchor" href="#範例html語法：-v4"></a>範例html語法：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;parent4&quot;&gt;Parent4: position: fixed, bottom: 0, left: 0, right: 0.</span><br><span class="line">  &lt;div id=&quot;child4&quot;&gt;Child4: position: absolute, right: 15px, top: 70px&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="範例css語法：-v4"><a class="header-anchor" href="#範例css語法：-v4"></a>範例css語法：</h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#parent4</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(255,200,200,0.5);  </span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#child4</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="說明：-v4"><a class="header-anchor" href="#說明：-v4"></a>說明：</h3>
-<p><code>#parent4</code> 有下 <code>position: fixed;</code></p>
-<ul>
-<li>It will NOT remain in the natural flow of the page. 而是以<mark>瀏覽器viewport</mark>為定位點</li>
-<li><code>#parent4</code> <mark>會被子元素 <code>#child4</code> 當作是 <code>position: absolute;</code> 的定位點</mark></li>
-</ul>
-<h3 id="results-v4"><a class="header-anchor" href="#results-v4"></a>Results:</h3>
-<p><img src="https://i.imgur.com/MpziALK.jpg" alt></p>
-
-          
+          <p>在 CSS 中，總共有四種 position</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_position用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1807,7 +1197,7 @@ The animation will follow the rules for both forwards and backwards, extending t
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

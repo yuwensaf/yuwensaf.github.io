@@ -414,37 +414,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p>要製作出按鈕的「下底線」，除了用<code>border-bottom</code>之外，這裡要提供另一種方式：使用<code>box-shadow</code></p>
-<h2 id="使用box-shadow做出下底線"><a class="header-anchor" href="#使用box-shadow做出下底線"></a>使用<code>box-shadow</code>做出下底線</h2>
-<p>可看此<a href="https://codepen.io/saffranwang/pen/YbpYjQ" target="_blank" rel="noopener">範例</a>中，兩種方式都可以做出下底線</p>
-<ul>
-<li>使用<code>box-shadow</code></li>
-</ul>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-shadow-1</span>&#123;</span><br><span class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> purple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用<code>border-bottom</code></li>
-</ul>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-bottom-1</span>&#123;</span><br><span class="line">	<span class="attribute">border-bottom</span>: <span class="number">4px</span> solid purple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>長這樣：<br>
-<img src="https://i.imgur.com/pFqMnoy.jpg" alt width="300"></p>
-<h2 id="那麼-box-shadow-跟-border-有什麼差別呢？"><a class="header-anchor" href="#那麼-box-shadow-跟-border-有什麼差別呢？"></a>那麼，<code>box-shadow</code> 跟 <code>border</code> 有什麼差別呢？</h2>
-<div class="danger">
-<p><code>box-shadow</code> 跟 <code>border</code> 最大的不同就是：<mark><code>box-shadow</code>不佔實體空間</mark></p>
-<p>如果是用在按鈕、表單上，<code>box-shadow</code> 可以避免影響到其他物件的位置</p>
-</div>
-<p>以下提供一個<a href="https://codepen.io/saffranwang/pen/YbpYjQ" target="_blank" rel="noopener">範例</a>：</p>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-shadow-2</span>&#123;</span><br><span class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">15px</span> <span class="built_in">rgb</span>(0,214,214);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-2</span>&#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">15px</span> solid <span class="built_in">rgb</span>(0,214,214);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>對照圖片：<br>
-<img src="https://i.imgur.com/482Jpzb.jpg" alt width="400"></p>
-<h2 id="那麼-往後在寫border的時候會建議都修改成box-shadow嗎？"><a class="header-anchor" href="#那麼-往後在寫border的時候會建議都修改成box-shadow嗎？"></a>那麼，往後在寫<code>border</code>的時候會建議都修改成<code>box-shadow</code>嗎？</h2>
-<p>這段要看需求，兩者可以並存，可以依據設計去做調整，很常見的是按鈕有固定的實線用 <code>border</code>，然後靠 <code>box-shadow</code> 來點綴提升質感</p>
-
-          
+          <p>要製作出按鈕的「下底線」，除了用<code>border-bottom</code>之外，這裡要提供另一種方式：使用<code>box-shadow</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/用box-shadow取代border/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -604,59 +581,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="教學網站"><a class="header-anchor" href="#教學網站"></a>教學網站</h2>
-<p><a href="https://www.w3schools.com/cssref/pr_pos_overflow.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/pr_pos_overflow.asp</a></p>
-<h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
-<p><a href="https://codepen.io/saffranwang/pen/KLMyRx" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/KLMyRx</a></p>
-<h2 id="definition-and-usage"><a class="header-anchor" href="#definition-and-usage"></a>Definition and Usage</h2>
-<ul>
-<li>
-<p><code>overflow</code>是用來設定「當 content 超出元素的範圍時，content 會如何呈現」</p>
-</li>
-<li>
-<p>當元素裡面的 content 因為太多而無法塞進元素時，<code>overflow</code>有兩種呈現方式可以設定：</p>
-<ul>
-<li>裁切 content</li>
-<li>加上 scrollbar</li>
-</ul>
-</li>
-</ul>
-<div class="info">
-<p>Note:<br>
-<code>overflow</code>只能<mark>用在「區塊元素」，並且要「寫死元素的高度」</mark></p>
-</div>
-<h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow: visible|<span class="type">hidden</span>|<span class="type">scroll</span>|<span class="type">auto</span></span><br></pre></td></tr></table></figure>
-<p>[語法說明]</p>
-<h3 id="visible"><a class="header-anchor" href="#visible"></a>visible</h3>
-<ul>
-<li>此為預設值</li>
-<li>超出的內容不會被裁切，會完整的呈現（超出元素的範圍也沒關係）</li>
-</ul>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: visible;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/DwPJS3Y.jpg" alt width="300"></p>
-<h3 id="hidden"><a class="header-anchor" href="#hidden"></a>hidden</h3>
-<ul>
-<li>超出的內容會被裁切掉，且是看不到的</li>
-</ul>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: hidden;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/z97lVzB.jpg" alt width="300"></p>
-<h3 id="scroll"><a class="header-anchor" href="#scroll"></a>scroll</h3>
-<ul>
-<li>超出的內容會被裁切掉，但因為有加上了「scrollbar」，滾動就可以看到超出的內容</li>
-</ul>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: scroll;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/NK1V7I9.jpg" alt width="300"></p>
-<h3 id="auto"><a class="header-anchor" href="#auto"></a>auto</h3>
-<ul>
-<li>如果超出的內容有被裁切，就會自動加上「scrollbar」來看到超出的內容</li>
-</ul>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">overflow</span>: <span class="keyword">auto</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/w5PKABL.jpg" alt width="300"></p>
-
-          
+          <p>這一篇要介紹「overflow」的各種用法</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_overflow用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -816,87 +748,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="教學網址"><a class="header-anchor" href="#教學網址"></a>教學網址</h2>
-<p><a href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp</a></p>
-<h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
-<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
-<h2 id="definition-and-usage"><a class="header-anchor" href="#definition-and-usage"></a>Definition and Usage</h2>
-<ul>
-<li>用<code>@keyframes</code>來跟「選擇器」產生連結<br>
-<img src="https://i.imgur.com/s2gEeSr.jpg" alt></li>
-</ul>
-<ul>
-<li><code>@keyframes</code> 中，是用來寫「動畫」的程式碼</li>
-<li>「動畫」是由 css 樣式「逐漸轉變的過程」來產生的</li>
-<li>在動畫期間，css 樣式可以有多次的轉變</li>
-</ul>
-<div class="danger">
-<ul>
-<li>可以用<code>“from”</code>  <code>“to”</code> 來訂定動畫的開始/結束</li>
-<li>也可以用<code>百分比%</code>，來標示動畫期間的時間點
-<ul>
-<li><code>“from”</code>就是<code>0%</code>（動畫一開始）</li>
-<li><code>“to”</code>就是<code>100%</code>（動畫跑完時）</li>
-<li><code>「在動畫期間的1/4」</code>就是<code>25%</code></li>
-</ul>
-</li>
-</ul>
-<p>⭐️<br>
-小提醒：為了有最佳的瀏覽器支援度，記得一定要寫上「<code>0% 和 100%</code>」時的樣式</p>
-</div>
-<ul>
-<li>
-<p>在<code>@keyframes</code>中，<code>!important</code>是沒有效用的</p>
-</li>
-<li>
-<p>在寫 <code>@keyframes</code> 時<br>
-<img src="https://i.imgur.com/5SeyL0p.jpg" alt></p>
-</li>
-</ul>
-<h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> animationname &#123;</span><br><span class="line">	keyframes-selector &#123;css-styles;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="animationname"><a class="header-anchor" href="#animationname"></a>animationname</h3>
-<ul>
-<li>Required.</li>
-<li>動畫的名稱（自己隨便命名）</li>
-</ul>
-<h3 id="keyframes-selector"><a class="header-anchor" href="#keyframes-selector"></a>keyframes-selector</h3>
-<ul>
-<li>Required.</li>
-<li>標示出「動畫期間」的時間點可填入的值有：
-<ul>
-<li>0-100%</li>
-<li>from (same as 0%)</li>
-<li>to (same as 100%)</li>
-</ul>
-</li>
-</ul>
-<div class="success">
-<p>在一個 keyframes 中，可以標示出多個時間點</p>
-</div>
-<h3 id="css-styles"><a class="header-anchor" href="#css-styles"></a>css-styles</h3>
-<ul>
-<li>Required.</li>
-<li>填入一個或多個css樣式</li>
-</ul>
-<h2 id="加上-兼容各種瀏覽器的前綴詞"><a class="header-anchor" href="#加上-兼容各種瀏覽器的前綴詞"></a>加上「兼容各種瀏覽器的前綴詞」</h2>
-<p>css這樣寫：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 標準寫法 */</span></span><br><span class="line">@<span class="keyword">keyframes</span> playbox&#123;</span><br><span class="line">  <span class="selector-tag">from</span>&#123;<span class="attribute">left</span>: <span class="number">0px</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">left</span>: <span class="number">300px</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 加上safari的前綴詞 */</span></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> playbox&#123;</span><br><span class="line">  <span class="selector-tag">from</span>&#123;<span class="attribute">left</span>: <span class="number">0px</span>;&#125;</span><br><span class="line">  <span class="selector-tag">to</span>&#123;<span class="attribute">left</span>: <span class="number">300px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="各式範例"><a class="header-anchor" href="#各式範例"></a>各式範例</h2>
-<h3 id="在一個動畫期間-標示出多個時間點"><a class="header-anchor" href="#在一個動畫期間-標示出多個時間點"></a>在一個動畫期間，標示出多個時間點</h3>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> funny&#123;</span><br><span class="line">  0%&#123;<span class="attribute">left</span>: <span class="number">0</span>;&#125;</span><br><span class="line">  25%&#123;<span class="attribute">left</span>: <span class="number">300px</span>;&#125;</span><br><span class="line">  75%&#123;<span class="attribute">left</span>: <span class="number">50px</span>;&#125;</span><br><span class="line">  100%&#123;<span class="attribute">left</span>: <span class="number">200px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="在一個動畫期間-設定多個css樣式的變化"><a class="header-anchor" href="#在一個動畫期間-設定多個css樣式的變化"></a>在一個動畫期間，設定多個css樣式的變化</h3>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: orange;</span><br><span class="line"><span class="comment">/*  設定動畫  */</span></span><br><span class="line"><span class="comment">/*  一定要寫「position: relative;」！！  */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">animation-name</span>: funny;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: infinite;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 設定多個css樣式的變化 */</span></span><br><span class="line">@<span class="keyword">keyframes</span> funny&#123;</span><br><span class="line">  0%&#123;<span class="attribute">top</span>: <span class="number">0px</span>; <span class="attribute">width</span>: <span class="number">100px</span>;&#125;</span><br><span class="line">  100%&#123;<span class="attribute">top</span>: <span class="number">100px</span>; <span class="attribute">width</span>: <span class="number">300px</span>; <span class="attribute">background</span>: purple;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="多個時間標示-多個css樣式變化"><a class="header-anchor" href="#多個時間標示-多個css樣式變化"></a>多個時間標示 + 多個css樣式變化</h3>
-<p>我的codepen：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
-
-          
+          <p>要怎麼用「@keyframes」在 CSS 寫動畫效果呢？</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_@keyframes用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1056,120 +915,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p>用途：<code>content</code>搭配<code>:before</code>和<code>:after</code>這兩個偽元素，可以插入指定的內容</p>
-<div class="success">
-<p>為了相容於IE8，要使用單冒號的<code>:before</code>，不能使用雙冒號<code>::before</code></p>
-</div>
-<h2 id="可插入的-property-values"><a class="header-anchor" href="#可插入的-property-values"></a>可插入的 Property Values</h2>
-<h3 id="normal"><a class="header-anchor" href="#normal"></a><code>normal</code></h3>
-<p>預設值。可以將原本有插入的content，還原為<code>normal</code>，也就是預設的“none”（nothing 什麼都沒有）</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Niga Higa&lt;/p&gt;</span><br><span class="line">  &lt;p id=&quot;hometown&quot;&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"Read this- "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#hometown</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line"><span class="comment">/*  將原本插入的"Read this-"給移除  */</span></span><br><span class="line">  <span class="attribute">content</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/y5S06un.jpg" alt width="300"></p>
-<h3 id="none"><a class="header-anchor" href="#none"></a><code>none</code></h3>
-<p>將原本有插入的內容移除掉</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Niga Higa&lt;/p&gt;</span><br><span class="line">  &lt;p id=&quot;hometown&quot;&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"Read this- "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#hometown</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line"><span class="comment">/*  將原本插入的"Read this-"給移除  */</span></span><br><span class="line">  <span class="attribute">content</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/dDIVfHW.jpg" alt width="300"></p>
-<h3 id="counter"><a class="header-anchor" href="#counter"></a><code>counter</code></h3>
-<p>Sets the content as a counter<br>
-[作法]</p>
-<ol>
-<li>
-<p>先建立一個變數（myNumber），讓它隨著p元素每一次出現而遞增</p>
-</li>
-<li>
-<p>然後在每個p元素前，插入這個<code>counter</code></p>
-</li>
-</ol>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;First make a variable (myNumber) and make it increase every time a p element occurs.&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;Then insert the counter in front of all p elements&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">counter-increment</span>: myNumber;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">counter</span>(myNumber);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/7XpPKaQ.jpg" alt width="400"></p>
-<h3 id="attr-attribute"><a class="header-anchor" href="#attr-attribute"></a><code>attr(attribute)</code></h3>
-<p>將「屬性」作為插入的內容</p>
-<h4 id="範例一"><a class="header-anchor" href="#範例一"></a>範例一</h4>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.airbnb.com.tw&quot;&gt;(Airbnb)&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line"><span class="comment">/* content後面不用加"" */</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(href);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/hRTdyeq.jpg" alt width="300"></p>
-<h4 id="範例二"><a class="header-anchor" href="#範例二"></a>範例二</h4>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.tripadvisor.com.tw&quot;&gt;TripAdvisor&lt;/a&gt;</span><br><span class="line">  &lt;br&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/&quot;&gt;CSS Reference&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">" ("</span><span class="built_in">attr</span>(href)<span class="string">")"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/jQEU3eV.jpg" alt width="400"></p>
-<h3 id="文字string"><a class="header-anchor" href="#文字string"></a><code>文字string</code></h3>
-<p>插入指定的文字</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Ryan&lt;/p&gt;</span><br><span class="line">&lt;p&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"Read this- "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/pTKx0RQ.jpg" alt width="200"></p>
-<h3 id="前引號open-quote"><a class="header-anchor" href="#前引號open-quote"></a><code>前引號open-quote</code></h3>
-<p>插入前引號</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Ryan&lt;/p&gt;</span><br><span class="line">&lt;p&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: open-quote;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/IQIRcja.jpg" alt width="200"></p>
-<h3 id="後引號close-quote"><a class="header-anchor" href="#後引號close-quote"></a><code>後引號close-quote</code></h3>
-<p>插入後引號</p>
-<div class="danger">
-<p>沒有「前引號」，就不能插入「後引號」</p>
-</div>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Ryan&lt;/p&gt;</span><br><span class="line">&lt;p&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: close-quote;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/dJE13Xm.jpg" alt width="200"></p>
-<h3 id="移除前後引號"><a class="header-anchor" href="#移除前後引號"></a>移除前後引號</h3>
-<p>將插入的前、後引號移除</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Ryan&lt;/p&gt;</span><br><span class="line">&lt;p id=&quot;hometown&quot;&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 移除前引號 */</span></span><br><span class="line"><span class="selector-id">#hometown</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: no-open-quote;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 移除後引號 */</span></span><br><span class="line"><span class="selector-id">#hometown</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: no-close-quote;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/hXMKx68.jpg" alt width="200"></p>
-<h3 id="url-url"><a class="header-anchor" href="#url-url"></a><code>url(url)</code></h3>
-<p>可以用網址插入多媒體（圖片、聲音檔、影片等）</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;My name is Zoe&lt;/p&gt;</span><br><span class="line">&lt;p&gt;I live in Ducksburg&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">url</span>(https://i.ibb.co/WnVF5Q4/twitter.png);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/Wh9XPK2.jpg" alt width="200"></p>
-<h2 id="自訂bullets的顏色-額外補充"><a class="header-anchor" href="#自訂bullets的顏色-額外補充"></a>自訂bullets的顏色[額外補充]</h2>
-<p>先移除<code>ul</code>或<code>ol</code>預設的bullets後，再自己插入一個看起來像bullets的點點(•)，並自訂顏色:</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;Coffee&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Tea&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;Coca Cola&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 先移除預設的bullets */</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line"><span class="comment">/*  自己插入點點  */</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"•"</span>;</span><br><span class="line"><span class="comment">/*  點點右邊的間距  */</span></span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">5px</span>;</span><br><span class="line"><span class="comment">/*  自訂點點的顏色  */</span></span><br><span class="line">  <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>results:<br>
-<img src="https://i.imgur.com/Q1M6vXE.jpg" alt width="150"></p>
-<hr>
-<h3 id="教學網址"><a class="header-anchor" href="#教學網址"></a>教學網址</h3>
-<p><a href="https://www.w3schools.com/cssref/pr_gen_content.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/pr_gen_content.asp</a></p>
-<h3 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h3>
-<p><a href="https://codepen.io/saffranwang/pen/PgKpmR" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/PgKpmR</a></p>
-
-          
+          <p><code>content</code>搭配<code>:before</code>和<code>:after</code>這兩個偽元素，可以插入指定的內容</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_content用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1329,97 +1082,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p>教學網址：<br>
-<a href="https://www.w3schools.com/cssref/css3_pr_box-shadow.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/css3_pr_box-shadow.asp</a></p>
-<p>我的codepen練習：<br>
-<a href="https://codepen.io/saffranwang/pen/JVNYNY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/JVNYNY</a></p>
-<h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
-<p>box-shadow: <code>none</code> --&gt; No shadow is displayed</p>
-<p>(畫<mark>黃色底</mark>為必填)<br>
-box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></mark> <code>blur</code> <code>spread</code> <code>color</code> |<code>inset</code>|</p>
-<p>html語法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>[說明]</p>
-<h3 id="x軸位移"><a class="header-anchor" href="#x軸位移"></a>x軸位移</h3>
-<ul>
-<li><mark>必填</mark></li>
-<li>正值：陰影在元素的<strong>右側</strong></li>
-<li>負值：陰影在元素的<strong>左側</strong></li>
-</ul>
-<h3 id="y軸位移"><a class="header-anchor" href="#y軸位移"></a>y軸位移</h3>
-<ul>
-<li><mark>必填</mark></li>
-<li>正值：陰影在元素的<strong>下方</strong></li>
-<li>負值：陰影在元素的<strong>上方</strong></li>
-</ul>
-<p>⭐️ css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/vtbgrEv.jpg" alt width="200"></p>
-<h3 id="blur"><a class="header-anchor" href="#blur"></a>blur</h3>
-<ul>
-<li>非必填</li>
-<li>數值越高，陰影越模糊</li>
-</ul>
-<p>⭐️ css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">30px</span> <span class="number">7px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/Eci11zd.jpg" alt width="200"></p>
-<h3 id="spread"><a class="header-anchor" href="#spread"></a>spread</h3>
-<ul>
-<li>非必填</li>
-<li>正值：陰影<strong>擴散</strong></li>
-<li>負值：陰影<strong>縮小</strong></li>
-</ul>
-<p>⭐️ css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">30px</span> <span class="number">7px</span> <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/cf5tVST.jpg" alt width="200"></p>
-<h3 id="color"><a class="header-anchor" href="#color"></a>color</h3>
-<ul>
-<li>非必填</li>
-<li>沒有設定color的話，陰影預設會是「文字的顏色」</li>
-<li>注意：在Safari (on PC)，color為必填，否則陰影不會顯示出來</li>
-</ul>
-<p>⭐️ css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">30px</span> <span class="number">7px</span> <span class="number">15px</span> purple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/Wl1szOG.jpg" alt width="200"></p>
-<h3 id="inset"><a class="header-anchor" href="#inset"></a>inset</h3>
-<ul>
-<li>非必填</li>
-<li>沒有設定inset的話，預設會是「陰影在外」</li>
-<li>❗️ 設定inset：陰影會在內 ❗️</li>
-</ul>
-<p>⭐️ css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">30px</span> <span class="number">7px</span> <span class="number">15px</span> purple inset;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/m56LlCp.jpg" alt width="200"></p>
-<h2 id="加入多個陰影"><a class="header-anchor" href="#加入多個陰影"></a>加入多個陰影</h2>
-<p>想加入多個陰影，將多個陰影使用「<mark>逗號</mark>」隔開</p>
-<p>html語法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">5px</span> <span class="number">5px</span> red, <span class="number">10px</span> <span class="number">10px</span> blue, <span class="number">15px</span> <span class="number">15px</span> orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/Bydo05k.jpg" alt width="200"></p>
-<h3 id="多個陰影-blur效果"><a class="header-anchor" href="#多個陰影-blur效果"></a>多個陰影＋blur效果</h3>
-<p>css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">5px</span> <span class="number">5px</span> <span class="number">8px</span> red, <span class="number">10px</span> <span class="number">10px</span> <span class="number">8px</span> blue, <span class="number">15px</span> <span class="number">15px</span> <span class="number">8px</span> orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/d6HHjJS.jpg" alt width="200"></p>
-<h2 id="四邊都有陰影"><a class="header-anchor" href="#四邊都有陰影"></a>四邊都有陰影</h2>
-<p>如何在input加上「四邊都有的內陰影」？</p>
-<p>html語法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<p>css語法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#000</span>;</span><br><span class="line"><span class="comment">/*  四邊都要有陰影，且陰影在內  */</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">15px</span> orange inset;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/Lsizs3L.jpg" alt width="200"></p>
-<div class="success">
-<p>要讓四邊都有陰影，只要：</p>
-<ul>
-<li>把「x軸位移、y軸位移」都設為0px</li>
-<li>使用blur數值（也可以再加上spread）讓陰影出現</li>
-</ul>
-<p>就可以了！</p>
-</div>
-
-          
+          <p>利用「box-shadow」可以做出各種陰影效果</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/post/CSS_box-shadow用法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1527,7 +1197,7 @@ box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
