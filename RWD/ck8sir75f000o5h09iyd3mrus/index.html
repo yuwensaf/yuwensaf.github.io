@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="CSS,">
+  <meta name="keywords" content="RWD,">
 
 
 
@@ -81,20 +81,21 @@
 
 
 
-<meta name="description" content="要如何「單純用 CSS 做出 hover 效果」呢？">
-<meta name="keywords" content="CSS">
+<meta name="description" content="這一篇是關於「CSS3 Media-Query」的重要觀念">
+<meta name="keywords" content="RWD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="單純用 CSS 做出 hover 效果">
-<meta property="og:url" content="https://yuwensaf.github.io/CSS/單純用css做出hover效果/index.html">
+<meta property="og:title" content="CSS3_Media-Query 觀念">
+<meta property="og:url" content="https://yuwensaf.github.io/RWD/ck8sir75f000o5h09iyd3mrus/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
-<meta property="og:description" content="要如何「單純用 CSS 做出 hover 效果」呢？">
+<meta property="og:description" content="這一篇是關於「CSS3 Media-Query」的重要觀念">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/FZGhCBB.jpg">
-<meta property="og:updated_time" content="2020-04-07T09:09:03.145Z">
+<meta property="og:image" content="https://i.imgur.com/Lx96Aoh.png">
+<meta property="og:image" content="https://i.imgur.com/RAQyoOX.png">
+<meta property="og:updated_time" content="2020-04-07T09:19:31.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="單純用 CSS 做出 hover 效果">
-<meta name="twitter:description" content="要如何「單純用 CSS 做出 hover 效果」呢？">
-<meta name="twitter:image" content="https://i.imgur.com/FZGhCBB.jpg">
+<meta name="twitter:title" content="CSS3_Media-Query 觀念">
+<meta name="twitter:description" content="這一篇是關於「CSS3 Media-Query」的重要觀念">
+<meta name="twitter:image" content="https://i.imgur.com/Lx96Aoh.png">
 
 
 
@@ -124,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://yuwensaf.github.io/CSS/單純用css做出hover效果/">
+  <link rel="canonical" href="https://yuwensaf.github.io/RWD/ck8sir75f000o5h09iyd3mrus/">
 
 
 
 
 
-  <title>單純用 CSS 做出 hover 效果 | Saffran's Blog</title>
+  <title>CSS3_Media-Query 觀念 | Saffran's Blog</title>
   
 
 
@@ -304,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/CSS/單純用css做出hover效果/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/RWD/ck8sir75f000o5h09iyd3mrus/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -321,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">單純用 CSS 做出 hover 效果</h1>
+          <h1 class="post-title" itemprop="name headline">CSS3_Media-Query 觀念</h1>
         
 
         <div class="post-meta">
@@ -333,7 +334,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T22:09:39+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T21:46:31+08:00">
                 2019-09-19
               </time>
             
@@ -356,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/RWD/" itemprop="url" rel="index">
+                    <span itemprop="name">RWD</span>
                   </a>
                 </span>
 
@@ -393,16 +394,47 @@
       
 
       
-        <p>要如何「單純用 CSS 做出 hover 效果」呢？</p>
+        <p>這一篇是關於「CSS3 Media-Query」的重要觀念</p>
 <a id="more"></a>
-<h3 id="按鈕加上-hover-樣式"><a class="header-anchor" href="#按鈕加上-hover-樣式"></a>按鈕加上 hover 樣式</h3>
-<p>「加入購物車按鈕」要增加 hover 樣式，以提升使用體驗。（左：hover 效果）<br>
-<img src="https://i.imgur.com/FZGhCBB.jpg" alt></p>
-<p>單純用 css 就可以做出來了</p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot; class=&quot;add_cart&quot;&gt;</span><br><span class="line">                        &lt;p&gt;&lt;i class=&quot;fas fa-shopping-cart&quot;&gt;&lt;/i&gt;加入購物車&lt;/p&gt;</span><br><span class="line">                    &lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*「加入購物車」按鈕的 hover 效果*/</span></span><br><span class="line"><span class="selector-class">.add_cart</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#FF5E45</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.add_cart</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">p</span>, <span class="selector-class">.add_cart</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">i</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css順序：由小到大"><a class="header-anchor" href="#css順序：由小到大"></a>css順序：由小到大</h2>
+<p>會先寫手機的樣式，再寫平板，再寫pc–&gt;解析度慢慢越來越寬</p>
+<p>這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式</p>
+<h3 id="class-名稱-前後要一模一樣"><a class="header-anchor" href="#class-名稱-前後要一模一樣"></a>class 名稱，前後要一模一樣</h3>
+<div class="danger">
+<p>注意！<br>
+<code>@media</code> 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式</p>
+</div>
+<p>例如</p>
+<p>css（正確寫法）:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// @media裡面的 class 名稱，要跟前面的一模一樣</span><br><span class="line">	<span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>css（錯誤寫法）:</p>
+<ul>
+<li><code>@media</code>裡面的 class 名稱沒有跟前面一樣，<code>@media</code>的權重較低，無法覆蓋前面的樣式</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// 少寫了.header，導致@media的權重較低</span><br><span class="line">	<span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="橫向裝置設定可以使用如下"><a class="header-anchor" href="#橫向裝置設定可以使用如下"></a>橫向裝置設定可以使用如下</h2>
+<p><img src="https://i.imgur.com/Lx96Aoh.png" alt width="300"></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation</a></p>
+<h2 id="q-a"><a class="header-anchor" href="#q-a"></a>Q&amp;A</h2>
+<h3 id="q-關於尺寸設定順序"><a class="header-anchor" href="#q-關於尺寸設定順序"></a>Q: 關於尺寸設定順序</h3>
+<p>老師最後有提到相反的順序設定，請問是怎麼做的呢~?因為如果照老師所講的，應該是：<br>
+<img src="https://i.imgur.com/RAQyoOX.png" alt></p>
+<p>是由大到小逐步覆蓋的。相反要怎麼做呢？下面的不是會優先覆蓋前面的嗎?</p>
+<p>A:<br>
+用min-width可以解決</p>
+<h3 id="q-請教一下-media範圍設定"><a class="header-anchor" href="#q-請教一下-media範圍設定"></a>Q: 請教一下@media範圍設定</h3>
+<p>有些人只設定一個範圍，像是pc就設定768以上，平版 768 ，手機320。但有些是設定介於XX~XX之間的範圍，想請教老師哪種設定上會比較好？</p>
+<p>A:<br>
+我的教法是逐步覆蓋，而你提的這個是範圍內容就吃該設定，其實都可以，只要你確保你都有兼顧到各種載具就 ok，如果一開始不熟，建議先依照我課程裡提供的斷點建議先寫出一個感覺，後面你就可以自己多方嘗試哩</p>
+<h3 id="q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><a class="header-anchor" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"></a>Q: 可不可以使用BS4的框架以及部份自己寫的CSS，然後使用max-width  的邏輯去做RWD呢？</h3>
+<p>那我有疑慮的點是，因為我看BS4的官方文件的斷點是min-width ，所以我不確定我自己寫的CSS如果是用max-width去做RWD會不會有衝突，所以才向老師確認說如果要BS4混搭自己寫的CSS，那media query的設置是不是最好也跟著BS4?</p>
+<p>A:<br>
+課程的安排是使用 max-width<br>
+是比較符合大多人的思考邏輯，學習上會比較順利但其實使用 min-width 開發是更好的主要是行動優先是主流的趨勢所以如果你學會了 min-width<br>
+就大可多利用 min-width 的方式去開發</p>
+<p>混搭上就需要多了解 Bootstrap 的原始碼我是比較推薦都是配合 Bootstsrap 的邏輯去思考 (官方文件也有說明 max-width 是沒有問題的)<br>
+另外官方其實有提供 media query sass mixin 方法可以利用就是用來管理這些中斷點使用的相關運用可以參考以下連結：<br>
+<a href="https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints" target="_blank" rel="noopener">https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints</a></p>
 
       
     </div>
@@ -420,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+            <a href="/tags/RWD/" rel="tag"><i class="fa fa-tag"></i> RWD</a>
           
         </div>
       
@@ -433,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CSS/使用偽元素做出橫線/" rel="next" title="使用偽元素做出橫線">
-                <i class="fa fa-chevron-left"></i> 使用偽元素做出橫線
+              <a href="/CSS/ck8sir75000085h09j4t5cboy/" rel="next" title="CSS_background-size用法">
+                <i class="fa fa-chevron-left"></i> CSS_background-size用法
               </a>
             
           </div>
@@ -443,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/CSS/CSS背景圖樣漸層/" rel="prev" title="CSS 背景圖樣漸層">
-                CSS 背景圖樣漸層 <i class="fa fa-chevron-right"></i>
+              <a href="/CSS/ck8sir74o00005h090vy2jmmz/" rel="prev" title="CSS_animation用法">
+                CSS_animation用法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -588,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#按鈕加上-hover-樣式"><span class="nav-number">1.</span> <span class="nav-text">按鈕加上-hover-樣式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css順序：由小到大"><span class="nav-number">1.</span> <span class="nav-text">css順序：由小到大</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-名稱-前後要一模一樣"><span class="nav-number">1.1.</span> <span class="nav-text">class-名稱-前後要一模一樣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#橫向裝置設定可以使用如下"><span class="nav-number">2.</span> <span class="nav-text">橫向裝置設定可以使用如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-a"><span class="nav-number">3.</span> <span class="nav-text">q-a</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#q-關於尺寸設定順序"><span class="nav-number">3.1.</span> <span class="nav-text">q-關於尺寸設定順序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-請教一下-media範圍設定"><span class="nav-number">3.2.</span> <span class="nav-text">q-請教一下-media範圍設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><span class="nav-number">3.3.</span> <span class="nav-text">q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -779,7 +811,7 @@
         var gitalk = new Gitalk({
           clientID: 'a4f07f7af90fc9605f45',
           clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
-          repo: 'gitalk',
+          repo: 'yuwensaf.github.io',
           owner: 'yuwensaf',
           admin: ['yuwensaf'],
           id: location.pathname,
@@ -787,7 +819,7 @@
           perPage: 15,
           pagerDirection: 'last',
           createIssueManually: true,
-          distractionFreeMode: false
+          distractionFreeMode: true
         })
         gitalk.render('gitalk-container')           
        </script>

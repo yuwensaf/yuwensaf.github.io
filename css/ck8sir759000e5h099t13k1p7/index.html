@@ -81,20 +81,23 @@
 
 
 
-<meta name="description" content="想要用 CSS 做出橫線，使用「偽元素」是一種很好的方式">
+<meta name="description" content="這一篇要介紹「overflow」的各種用法">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用偽元素做出橫線">
-<meta property="og:url" content="https://yuwensaf.github.io/CSS/使用偽元素做出橫線/index.html">
+<meta property="og:title" content="CSS_overflow用法">
+<meta property="og:url" content="https://yuwensaf.github.io/CSS/ck8sir759000e5h099t13k1p7/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
-<meta property="og:description" content="想要用 CSS 做出橫線，使用「偽元素」是一種很好的方式">
+<meta property="og:description" content="這一篇要介紹「overflow」的各種用法">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/TYoWOGq.jpg">
-<meta property="og:updated_time" content="2020-04-07T09:11:28.492Z">
+<meta property="og:image" content="https://i.imgur.com/DwPJS3Y.jpg">
+<meta property="og:image" content="https://i.imgur.com/z97lVzB.jpg">
+<meta property="og:image" content="https://i.imgur.com/NK1V7I9.jpg">
+<meta property="og:image" content="https://i.imgur.com/w5PKABL.jpg">
+<meta property="og:updated_time" content="2020-04-07T09:13:10.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用偽元素做出橫線">
-<meta name="twitter:description" content="想要用 CSS 做出橫線，使用「偽元素」是一種很好的方式">
-<meta name="twitter:image" content="https://i.imgur.com/TYoWOGq.jpg">
+<meta name="twitter:title" content="CSS_overflow用法">
+<meta name="twitter:description" content="這一篇要介紹「overflow」的各種用法">
+<meta name="twitter:image" content="https://i.imgur.com/DwPJS3Y.jpg">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://yuwensaf.github.io/CSS/使用偽元素做出橫線/">
+  <link rel="canonical" href="https://yuwensaf.github.io/CSS/ck8sir759000e5h099t13k1p7/">
 
 
 
 
 
-  <title>使用偽元素做出橫線 | Saffran's Blog</title>
+  <title>CSS_overflow用法 | Saffran's Blog</title>
   
 
 
@@ -304,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/CSS/使用偽元素做出橫線/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/CSS/ck8sir759000e5h099t13k1p7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -321,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用偽元素做出橫線</h1>
+          <h1 class="post-title" itemprop="name headline">CSS_overflow用法</h1>
         
 
         <div class="post-meta">
@@ -333,7 +336,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T22:07:05+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T22:03:00+08:00">
                 2019-09-19
               </time>
             
@@ -393,16 +396,57 @@
       
 
       
-        <p>想要用 CSS 做出橫線，使用「偽元素」是一種很好的方式</p>
+        <p>這一篇要介紹「overflow」的各種用法</p>
 <a id="more"></a>
-<h3 id="q-使用span標籤-和-使用偽元素-這兩種做出橫線的方式-老師會比較建議哪種呢？"><a class="header-anchor" href="#q-使用span標籤-和-使用偽元素-這兩種做出橫線的方式-老師會比較建議哪種呢？"></a>Q: 「使用<code>span</code>標籤」和「使用偽元素」這兩種做出橫線的方式，老師會比較建議哪種呢？</h3>
-<p><img src="https://i.imgur.com/TYoWOGq.jpg" alt></p>
-<p>A:</p>
-<div class="danger">
-<p>建議使用偽元素，並直接設置在 h3 上，就不需要再另外加入<code>span</code>標籤。</p>
-<p>附上範例：<br>
-<a href="https://codepen.io/saffranwang/pen/VOPyaL" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/VOPyaL</a></p>
+<h2 id="教學網站"><a class="header-anchor" href="#教學網站"></a>教學網站</h2>
+<p><a href="https://www.w3schools.com/cssref/pr_pos_overflow.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/pr_pos_overflow.asp</a></p>
+<h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
+<p><a href="https://codepen.io/saffranwang/pen/KLMyRx" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/KLMyRx</a></p>
+<h2 id="definition-and-usage"><a class="header-anchor" href="#definition-and-usage"></a>Definition and Usage</h2>
+<ul>
+<li>
+<p><code>overflow</code>是用來設定「當 content 超出元素的範圍時，content 會如何呈現」</p>
+</li>
+<li>
+<p>當元素裡面的 content 因為太多而無法塞進元素時，<code>overflow</code>有兩種呈現方式可以設定：</p>
+<ul>
+<li>裁切 content</li>
+<li>加上 scrollbar</li>
+</ul>
+</li>
+</ul>
+<div class="info">
+<p>Note:<br>
+<code>overflow</code>只能<mark>用在「區塊元素」，並且要「寫死元素的高度」</mark></p>
 </div>
+<h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow: visible|<span class="type">hidden</span>|<span class="type">scroll</span>|<span class="type">auto</span></span><br></pre></td></tr></table></figure>
+<p>[語法說明]</p>
+<h3 id="visible"><a class="header-anchor" href="#visible"></a>visible</h3>
+<ul>
+<li>此為預設值</li>
+<li>超出的內容不會被裁切，會完整的呈現（超出元素的範圍也沒關係）</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: visible;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/DwPJS3Y.jpg" alt width="300"></p>
+<h3 id="hidden"><a class="header-anchor" href="#hidden"></a>hidden</h3>
+<ul>
+<li>超出的內容會被裁切掉，且是看不到的</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: hidden;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/z97lVzB.jpg" alt width="300"></p>
+<h3 id="scroll"><a class="header-anchor" href="#scroll"></a>scroll</h3>
+<ul>
+<li>超出的內容會被裁切掉，但因為有加上了「scrollbar」，滾動就可以看到超出的內容</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>: scroll;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/NK1V7I9.jpg" alt width="300"></p>
+<h3 id="auto"><a class="header-anchor" href="#auto"></a>auto</h3>
+<ul>
+<li>如果超出的內容有被裁切，就會自動加上「scrollbar」來看到超出的內容</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">overflow</span>: <span class="keyword">auto</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/w5PKABL.jpg" alt width="300"></p>
 
       
     </div>
@@ -433,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CSS/用box-shadow取代border/" rel="next" title="用box-shadow取代border">
-                <i class="fa fa-chevron-left"></i> 用box-shadow取代border
+              <a href="/CSS/ck8sir75b000g5h09b4jlm94k/" rel="next" title="CSS_@keyframes用法">
+                <i class="fa fa-chevron-left"></i> CSS_@keyframes用法
               </a>
             
           </div>
@@ -443,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/CSS/單純用css做出hover效果/" rel="prev" title="單純用 CSS 做出 hover 效果">
-                單純用 CSS 做出 hover 效果 <i class="fa fa-chevron-right"></i>
+              <a href="/CSS/ck8sir75l00125h090o8qcvr4/" rel="prev" title="用box-shadow取代border">
+                用box-shadow取代border <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -588,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#q-使用span標籤-和-使用偽元素-這兩種做出橫線的方式-老師會比較建議哪種呢？"><span class="nav-number">1.</span> <span class="nav-text">q-使用span標籤-和-使用偽元素-這兩種做出橫線的方式-老師會比較建議哪種呢？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教學網站"><span class="nav-number">1.</span> <span class="nav-text">教學網站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的codepen練習"><span class="nav-number">2.</span> <span class="nav-text">我的codepen練習</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#definition-and-usage"><span class="nav-number">3.</span> <span class="nav-text">definition-and-usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-syntax"><span class="nav-number">4.</span> <span class="nav-text">css-syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#visible"><span class="nav-number">4.1.</span> <span class="nav-text">visible</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hidden"><span class="nav-number">4.2.</span> <span class="nav-text">hidden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scroll"><span class="nav-number">4.3.</span> <span class="nav-text">scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto"><span class="nav-number">4.4.</span> <span class="nav-text">auto</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -779,7 +823,7 @@
         var gitalk = new Gitalk({
           clientID: 'a4f07f7af90fc9605f45',
           clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
-          repo: 'gitalk',
+          repo: 'yuwensaf.github.io',
           owner: 'yuwensaf',
           admin: ['yuwensaf'],
           id: location.pathname,
@@ -787,7 +831,7 @@
           perPage: 15,
           pagerDirection: 'last',
           createIssueManually: true,
-          distractionFreeMode: false
+          distractionFreeMode: true
         })
         gitalk.render('gitalk-container')           
        </script>
