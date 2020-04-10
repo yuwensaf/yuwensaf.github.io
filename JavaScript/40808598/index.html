@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="CSS,Bootstrap 4,">
+  <meta name="keywords" content="JavaScript">
 
 
 
@@ -81,23 +81,22 @@
 
 
 
-<meta name="description" content="這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式">
-<meta name="keywords" content="CSS,Bootstrap 4">
+<meta name="description" content="JavaScript 執行的錯誤情境">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="背景圖加上半透明遮罩">
-<meta property="og:url" content="https://yuwensaf.github.io/CSS/dbc171b6/index.html">
+<meta property="og:title" content="執行的錯誤情境 LHS, RHS">
+<meta property="og:url" content="https://yuwensaf.github.io/JavaScript/40808598/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
-<meta property="og:description" content="這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式">
+<meta property="og:description" content="JavaScript 執行的錯誤情境">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/qZQWkVF.jpg">
-<meta property="og:image" content="https://i.imgur.com/Vq8kLQM.jpg">
-<meta property="og:image" content="https://i.imgur.com/5BiRHYB.jpg">
-<meta property="og:image" content="https://i.imgur.com/nw0BVVV.jpg">
-<meta property="og:updated_time" content="2020-04-09T10:12:25.138Z">
+<meta property="og:image" content="https://i.imgur.com/2i3WpER.jpg">
+<meta property="og:image" content="https://i.imgur.com/I58vKEq.jpg">
+<meta property="og:image" content="https://i.imgur.com/XKVqlsv.jpg">
+<meta property="og:updated_time" content="2020-04-10T03:48:33.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="背景圖加上半透明遮罩">
-<meta name="twitter:description" content="這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式">
-<meta name="twitter:image" content="https://i.imgur.com/qZQWkVF.jpg">
+<meta name="twitter:title" content="執行的錯誤情境 LHS, RHS">
+<meta name="twitter:description" content="JavaScript 執行的錯誤情境">
+<meta name="twitter:image" content="https://i.imgur.com/2i3WpER.jpg">
 
 
 
@@ -127,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://yuwensaf.github.io/CSS/dbc171b6/">
+  <link rel="canonical" href="https://yuwensaf.github.io/JavaScript/40808598/">
 
 
 
 
 
-  <title>背景圖加上半透明遮罩 | Saffran's Blog</title>
+  <title>執行的錯誤情境 LHS, RHS | Saffran's Blog</title>
   
 
 
@@ -307,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/CSS/dbc171b6/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/JavaScript/40808598/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -324,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">背景圖加上半透明遮罩</h1>
+          <h1 class="post-title" itemprop="name headline">執行的錯誤情境 LHS, RHS</h1>
         
 
         <div class="post-meta">
@@ -336,8 +335,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T22:14:14+08:00">
-                2019-09-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-10T11:40:28+08:00">
+                2020-04-10
               </time>
             
 
@@ -359,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -382,6 +381,10 @@
           
 
           
+              <div class="post-description">
+                  JavaScript 執行的錯誤情境
+              </div>
+          
 
         </div>
       </header>
@@ -396,86 +399,54 @@
       
 
       
-        <p>這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式</p>
+        <p>了解「LHS、RHS」會有助於在查看 JS 的錯誤時，更知道該如何去除錯</p>
 <a id="more"></a>
-<h2 id="不管裝置有多寬-背景圖就是加上-半透明遮罩"><a class="header-anchor" href="#不管裝置有多寬-背景圖就是加上-半透明遮罩"></a>不管裝置有多寬，背景圖就是加上「半透明遮罩」</h2>
-<p>作法：</p>
-<p>範例可看此 codepen<br>
-<a href="https://codepen.io/saffranwang/full/VwZPJyJ" target="_blank" rel="noopener">https://codepen.io/saffranwang/full/VwZPJyJ</a></p>
-<div class="danger">
-<h3 id="🎃-使用多層background-image來製作"><a class="header-anchor" href="#🎃-使用多層background-image來製作"></a>🎃 使用多層<code>background-image</code>來製作</h3>
-<p>在<code>background-image</code>疊兩層</p>
+<div class="warning">
+<h3 id="rhs-right-hand-side"><a class="header-anchor" href="#rhs-right-hand-side"></a>RHS（right-hand side）</h3>
 <ul>
-<li>
-<p>第一層：<code>linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))</code></p>
-</li>
-<li>
-<p>第二層：<code>url(https://i.ibb.co/zRd6Kbz/maria-teneva-PFVTZSq-Iqn0-unsplash.jpg)</code></p>
-</li>
+<li>RHS 取值來自於右側的變數上</li>
 </ul>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 左側圖片區塊 --&gt;</span><br><span class="line"> &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;col-md-5 bg-cover&quot; style=&quot;</span><br><span class="line">         position: absolute; top: 0; bottom: 0;</span><br><span class="line">         background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i.ibb.co/zRd6Kbz/maria-teneva-PFVTZSq-Iqn0-unsplash.jpg)&quot;&gt;    </span><br><span class="line">     &lt;/div&gt;        </span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="lhs-left-hand-side"><a class="header-anchor" href="#lhs-left-hand-side"></a>LHS（left-hand side）</h3>
+<ul>
+<li>LHS 用來賦予值到左側的變數上</li>
+</ul>
 </div>
-<p><img src="https://i.imgur.com/qZQWkVF.jpg" alt></p>
-<p><img src="https://i.imgur.com/Vq8kLQM.jpg" alt width="300"></p>
-<h2 id="在-行動版-時-圖片才加上半透明遮罩"><a class="header-anchor" href="#在-行動版-時-圖片才加上半透明遮罩"></a>在「行動版」時，圖片才加上半透明遮罩</h2>
-<ul>
-<li>當裝置寬度 &gt;= 768px 時，圖片「沒有半透明遮罩」</li>
-<li>當裝置寬度 &lt; 768px 時（行動版），圖片「才加上半透明遮罩」<mark>（加上遮罩是為了要提高文字的可讀性）</mark></li>
-</ul>
-<p>作法：可參考此 codepen<br>
-<a href="https://codepen.io/saffranwang/full/GRKrbwo" target="_blank" rel="noopener">https://codepen.io/saffranwang/full/GRKrbwo</a></p>
-<h3 id="html-的部分"><a class="header-anchor" href="#html-的部分"></a>html 的部分</h3>
-<div class="danger">
-<h4 id="🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"><a class="header-anchor" href="#🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"></a>🎃 在「圖片區塊的<code>.row</code>」中，再新增一個<code>&lt;div class=&quot;col-md-5 bg-mask&quot;&gt;&lt;/div&gt;</code></h4>
-<ul>
-<li><code>.col-md-5</code> 的作用是：遮罩跟背景圖一樣要佔 5 欄寬</li>
-<li><code>.bg-mask</code> 的作用是：當裝置寬度 &lt; 768px 時（行動版），此 class 會被打開（圖片「才加上半透明遮罩」）</li>
-</ul>
-<h4 id="注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0"><a class="header-anchor" href="#注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0"></a>‼️ 注意！這個新增的<code>div</code>，一樣要加上「<code>position: absolute; top: 0; bottom: 0;</code>」</h4>
-<ul>
-<li><mark>如果沒加的話，這個<code>div</code>會沒有高度，遮罩也就看不到了</mark></li>
-</ul>
-<h4 id="這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？"><a class="header-anchor" href="#這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？"></a>‼️ 這裡的「背景圖」和「半透明遮罩」（也就是兩個<code>.col-md-5</code>）為什麼可以“重疊在一起”？</h4>
-<p>原因是：</p>
-<ul>
-<li>
-<p>兩個<code>.col-md-5</code>都有設定「絕對定位」</p>
-</li>
-<li>
-<p><code>.col-md-5</code> 設定為絕對定位後，會往外層找到「被設定為“相對定位”的<code>.container-fluid</code>」為基準來決定<code>.col-md-5</code>的位置</p>
-</li>
-<li>
-<p><mark><code>.col-md-5</code> 就會脫離原本預設的版面配置，也就不會佔有空間</mark></p>
-</li>
-</ul>
-<p>因此，兩個<code>.col-md-5</code>就可以重疊在一起了</p>
-<hr>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 左側圖片區塊 --&gt;</span><br><span class="line">&lt;div class=&quot;row&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;col-md-5 bg-cover&quot; style=&quot;</span><br><span class="line">        position: absolute; top: 0; bottom: 0;</span><br><span class="line">        background-image: url(https://i.ibb.co/zRd6Kbz/maria-teneva-PFVTZSq-Iqn0-unsplash.jpg)&quot;&gt;    </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- 背景圖加上半透明遮罩（行動版時才加上） --&gt;</span><br><span class="line">    &lt;div class=&quot;col-md-5 bg-mask&quot; style=&quot;position: absolute; top: 0; bottom: 0;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="lhs-正確執行"><a class="header-anchor" href="#lhs-正確執行"></a>LHS 正確執行</h1>
+<div class="success">
+<p>🎃 LHS 用來賦予值到左側的變數上</p>
+<p>例如，下方是正確的執行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br></pre></td></tr></table></figure>
 </div>
-<h3 id="css-的部分"><a class="header-anchor" href="#css-的部分"></a>css 的部分</h3>
+<h1 id="lhs-的錯誤"><a class="header-anchor" href="#lhs-的錯誤"></a>LHS 的錯誤</h1>
 <div class="danger">
-<h4 id="🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式"><a class="header-anchor" href="#🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式"></a>🎃 用<code>@media</code>來寫，當裝置寬度 &lt; 768px 時，會套用<code>.bg-mask</code>的樣式</h4>
-<p>css:</p>
-<ul>
-<li>遮罩作法一：使用<code>background-image: linear-gradient()</code></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 背景圖加上半透明遮罩（行動版時才加上） */</span></span><br><span class="line">@media(max-width: 768px)&#123;</span><br><span class="line">  <span class="selector-class">.bg-mask</span>&#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(rgba(0,0,0,0.5), <span class="built_in">rgba</span>(0,0,0,0.5));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>遮罩做法二：使用<code>background-color</code></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 背景圖加上半透明遮罩（行動版時才加上） */</span></span><br><span class="line">@media(max-width: 768px)&#123;</span><br><span class="line">  <span class="selector-class">.bg-mask</span>&#123;</span><br><span class="line"><span class="comment">/*     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */</span></span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(0,0,0,0.5);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>🎃 當左側「不是一個變數」時，就沒有辦法被賦予值</p>
+<p>例如：</p>
+<p>當左側是一個「字串」，在 Console 就會顯示錯誤：「左側是無法被賦予值的」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'小明'</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/2i3WpER.jpg" alt width="430"></p>
+<p>‼️ 這段錯誤，是屬於「編譯過程」中發生的錯誤因此，根本不會出現編譯的結果：（下方也會顯示出同樣的錯誤訊息）<br>
+<img src="https://i.imgur.com/I58vKEq.jpg" alt width="550"></p>
 </div>
-<p>這樣就完成了！</p>
-<ul>
-<li>當裝置寬度 &gt;= 768px 時，圖片「沒有半透明遮罩」</li>
-</ul>
-<p><img src="https://i.imgur.com/5BiRHYB.jpg" alt></p>
-<ul>
-<li>當裝置寬度 &lt; 768px 時（行動版），圖片「才加上半透明遮罩」</li>
-</ul>
-<p><img src="https://i.imgur.com/nw0BVVV.jpg" alt width="300"></p>
+<h1 id="rhs-正確執行"><a class="header-anchor" href="#rhs-正確執行"></a>RHS 正確執行</h1>
+<div class="success">
+<p>🎃 RHS 取值來自於右側的變數上</p>
+<p>⭐️ 正確執行 範例一：宣告一個變數後，用 console.log 取出「右側變數」的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ming); <span class="comment">// RHS：利用 console.log 取出「右側變數」的值</span></span><br></pre></td></tr></table></figure>
+<p>⭐️ 正確執行 範例二：宣告一個變數<code>ming</code>後，用「RHS」取出「右側變數<code>ming</code>的值」之後，再用「LHS」把「<code>ming</code>的值」賦予到「左側變數<code>man</code>」上–&gt; <code>var man = ming;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> man = ming;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ming); <span class="comment">// RHS</span></span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="rhs-的錯誤"><a class="header-anchor" href="#rhs-的錯誤"></a>RHS 的錯誤</h1>
+<div class="danger">
+<p>延續上面的範例，我把<code>console.log</code>的變數<code>ming</code>故意寫錯成「<code>min</code>」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> man = ming;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(min); <span class="comment">// RHS</span></span><br></pre></td></tr></table></figure>
+<p>‼️ RHS 不會在「編譯過程」中直接出現錯誤，而是在「執行階段」才會發現錯誤：「找不到此變數」</p>
+<p><img src="https://i.imgur.com/XKVqlsv.jpg" alt width="430"></p>
+</div>
+<h1 id="有錯誤-要立刻修正"><a class="header-anchor" href="#有錯誤-要立刻修正"></a>有錯誤，要立刻修正</h1>
+<div class="warning">
+<p>注意！如果在 Console 有顯示錯誤，一定要立刻修正</p>
+<p>因為，在 JavaScript 的執行過程中，如果有發生錯誤而沒有去修正，那麼後面的程式碼都不會被執行</p>
+</div>
 
       
     </div>
@@ -493,9 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
-          
-            <a href="/tags/Bootstrap-4/" rel="tag"><i class="fa fa-tag"></i> Bootstrap 4</a>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
           
         </div>
       
@@ -508,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CSS/1976b998/" rel="next" title="CSS 背景圖樣漸層">
-                <i class="fa fa-chevron-left"></i> CSS 背景圖樣漸層
+              <a href="/JavaScript/e714ffff/" rel="next" title="JavaScript 是如何運行的">
+                <i class="fa fa-chevron-left"></i> JavaScript 是如何運行的
               </a>
             
           </div>
@@ -517,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/JavaScript/e714ffff/" rel="prev" title="JavaScript 是如何運行的">
-                JavaScript 是如何運行的 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -663,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不管裝置有多寬-背景圖就是加上-半透明遮罩"><span class="nav-number">1.</span> <span class="nav-text">不管裝置有多寬-背景圖就是加上-半透明遮罩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-使用多層background-image來製作"><span class="nav-number">1.1.</span> <span class="nav-text">🎃-使用多層background-image來製作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-行動版-時-圖片才加上半透明遮罩"><span class="nav-number">2.</span> <span class="nav-text">在-行動版-時-圖片才加上半透明遮罩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-的部分"><span class="nav-number">2.1.</span> <span class="nav-text">html-的部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"><span class="nav-number">2.1.1.</span> <span class="nav-text">🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0"><span class="nav-number">2.1.2.</span> <span class="nav-text">注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？"><span class="nav-number">2.1.3.</span> <span class="nav-text">這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-的部分"><span class="nav-number">2.2.</span> <span class="nav-text">css-的部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式"><span class="nav-number">2.2.1.</span> <span class="nav-text">🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rhs-right-hand-side"><span class="nav-number">1.</span> <span class="nav-text">rhs-right-hand-side</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lhs-left-hand-side"><span class="nav-number">2.</span> <span class="nav-text">lhs-left-hand-side</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#lhs-正確執行"><span class="nav-number"></span> <span class="nav-text">lhs-正確執行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lhs-的錯誤"><span class="nav-number"></span> <span class="nav-text">lhs-的錯誤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rhs-正確執行"><span class="nav-number"></span> <span class="nav-text">rhs-正確執行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rhs-的錯誤"><span class="nav-number"></span> <span class="nav-text">rhs-的錯誤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有錯誤-要立刻修正"><span class="nav-number"></span> <span class="nav-text">有錯誤-要立刻修正</span></a></li></div>
             
 
           </div>
