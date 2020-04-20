@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en, zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="這一篇是關於「CSS3 Media-Query」的重要觀念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3_Media-Query 觀念">
+<meta property="og:url" content="https://yuwensaf.github.io/3a66ccd7/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="這一篇是關於「CSS3 Media-Query」的重要觀念">
+<meta property="og:image" content="https://i.imgur.com/Lx96Aoh.png">
+<meta property="og:image" content="https://i.imgur.com/RAQyoOX.png">
+<meta property="article:published_time" content="2019-09-19T13:46:31.000Z">
+<meta property="article:modified_time" content="2020-04-09T10:12:25.134Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="RWD">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Lx96Aoh.png">
+
+<link rel="canonical" href="https://yuwensaf.github.io/3a66ccd7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-CN'
+  };
+</script>
+
+  <title>CSS3_Media-Query 觀念 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/3a66ccd7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS3_Media-Query 觀念
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-19 21:46:31" itemprop="dateCreated datePublished" datetime="2019-09-19T21:46:31+08:00">2019-09-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-09 18:12:25" itemprop="dateModified" datetime="2020-04-09T18:12:25+08:00">2020-04-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RWD/" itemprop="url" rel="index"><span itemprop="name">RWD</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>這一篇是關於「CSS3 Media-Query」的重要觀念</p>
+<a id="more"></a>
+<h2 id="css順序：由小到大"><a class="header-anchor" href="#css順序：由小到大"></a>css順序：由小到大</h2>
+<p>會先寫手機的樣式，再寫平板，再寫pc–&gt;解析度慢慢越來越寬</p>
+<p>這樣讓大的解析度時，後面的樣式可以蓋掉前面的樣式</p>
+<h3 id="class-名稱-前後要一模一樣"><a class="header-anchor" href="#class-名稱-前後要一模一樣"></a>class 名稱，前後要一模一樣</h3>
+<div class="danger">
+<p>注意！<br>
+<code>@media</code> 裡面的 class 名稱，要跟前面的 class 名稱「一模一樣」，否則會因為權重較低而無法覆蓋掉前面的樣式</p>
+</div>
+<p>例如</p>
+<p>css（正確寫法）:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// @media裡面的 class 名稱，要跟前面的一模一樣</span><br><span class="line">	<span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>css（錯誤寫法）:</p>
+<ul>
+<li><code>@media</code>裡面的 class 名稱沒有跟前面一樣，<code>@media</code>的權重較低，無法覆蓋前面的樣式</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// 少寫了.header，導致@media的權重較低</span><br><span class="line">	<span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="橫向裝置設定可以使用如下"><a class="header-anchor" href="#橫向裝置設定可以使用如下"></a>橫向裝置設定可以使用如下</h2>
+<p><img src="https://i.imgur.com/Lx96Aoh.png" alt="" width="300"></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation</a></p>
+<h2 id="q-a"><a class="header-anchor" href="#q-a"></a>Q&amp;A</h2>
+<h3 id="q-關於尺寸設定順序"><a class="header-anchor" href="#q-關於尺寸設定順序"></a>Q: 關於尺寸設定順序</h3>
+<p>老師最後有提到相反的順序設定，請問是怎麼做的呢~?因為如果照老師所講的，應該是：<br>
+<img src="https://i.imgur.com/RAQyoOX.png" alt=""></p>
+<p>是由大到小逐步覆蓋的。相反要怎麼做呢？下面的不是會優先覆蓋前面的嗎?</p>
+<p>A:<br>
+用min-width可以解決</p>
+<h3 id="q-請教一下-media範圍設定"><a class="header-anchor" href="#q-請教一下-media範圍設定"></a>Q: 請教一下@media範圍設定</h3>
+<p>有些人只設定一個範圍，像是pc就設定768以上，平版 768 ，手機320。但有些是設定介於XX~XX之間的範圍，想請教老師哪種設定上會比較好？</p>
+<p>A:<br>
+我的教法是逐步覆蓋，而你提的這個是範圍內容就吃該設定，其實都可以，只要你確保你都有兼顧到各種載具就 ok，如果一開始不熟，建議先依照我課程裡提供的斷點建議先寫出一個感覺，後面你就可以自己多方嘗試哩</p>
+<h3 id="q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><a class="header-anchor" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"></a>Q: 可不可以使用BS4的框架以及部份自己寫的CSS，然後使用max-width  的邏輯去做RWD呢？</h3>
+<p>那我有疑慮的點是，因為我看BS4的官方文件的斷點是min-width ，所以我不確定我自己寫的CSS如果是用max-width去做RWD會不會有衝突，所以才向老師確認說如果要BS4混搭自己寫的CSS，那media query的設置是不是最好也跟著BS4?</p>
+<p>A:<br>
+課程的安排是使用 max-width<br>
+是比較符合大多人的思考邏輯，學習上會比較順利但其實使用 min-width 開發是更好的主要是行動優先是主流的趨勢所以如果你學會了 min-width<br>
+就大可多利用 min-width 的方式去開發</p>
+<p>混搭上就需要多了解 Bootstrap 的原始碼我是比較推薦都是配合 Bootstsrap 的邏輯去思考 (官方文件也有說明 max-width 是沒有問題的)<br>
+另外官方其實有提供 media query sass mixin 方法可以利用就是用來管理這些中斷點使用的相關運用可以參考以下連結：<br>
+<a href="https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints" target="_blank" rel="noopener">https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/RWD/" rel="tag"># RWD</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/1948325a/" rel="prev" title="CSS_background-size用法">
+      <i class="fa fa-chevron-left"></i> CSS_background-size用法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/9f58d0bd/" rel="next" title="CSS_animation用法">
+      CSS_animation用法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css順序：由小到大"><span class="nav-number">1.</span> <span class="nav-text">css順序：由小到大</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-名稱-前後要一模一樣"><span class="nav-number">1.1.</span> <span class="nav-text">class 名稱，前後要一模一樣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#橫向裝置設定可以使用如下"><span class="nav-number">2.</span> <span class="nav-text">橫向裝置設定可以使用如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-a"><span class="nav-number">3.</span> <span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#q-關於尺寸設定順序"><span class="nav-number">3.1.</span> <span class="nav-text">Q: 關於尺寸設定順序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-請教一下-media範圍設定"><span class="nav-number">3.2.</span> <span class="nav-text">Q: 請教一下@media範圍設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-可不可以使用bs4的框架以及部份自己寫的css-然後使用max-width-的邏輯去做rwd呢？"><span class="nav-number">3.3.</span> <span class="nav-text">Q: 可不可以使用BS4的框架以及部份自己寫的CSS，然後使用max-width  的邏輯去做RWD呢？</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
