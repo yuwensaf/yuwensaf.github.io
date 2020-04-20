@@ -1,16 +1,933 @@
-{% extends '_layout.njk' %}
-{% import '_macro/sidebar.njk' as sidebar_template with context %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block class %}post posts-expand{% endblock %}
 
-{% block content %}
+  
 
-  {{ partial('_macro/post.njk', {post: page}) }}
 
-{% endblock %}
+<html class="theme-next mist use-motion" lang="en, zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,Bootstrap 4," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="背景圖加上半透明遮罩">
+<meta property="og:url" content="https://yuwensaf.github.io/dbc171b6/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式">
+<meta property="og:image" content="https://i.imgur.com/qZQWkVF.jpg">
+<meta property="og:image" content="https://i.imgur.com/Vq8kLQM.jpg">
+<meta property="og:image" content="https://i.imgur.com/5BiRHYB.jpg">
+<meta property="og:image" content="https://i.imgur.com/nw0BVVV.jpg">
+<meta property="article:published_time" content="2019-09-19T14:14:14.000Z">
+<meta property="article:modified_time" content="2020-04-09T10:12:25.138Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="Bootstrap 4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/qZQWkVF.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'F8M9TC7VKK',
+      apiKey: '15131e8e4d32a73445f42f4f0b44e34b',
+      indexName: 'dev_saffran',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yuwensaf.github.io/dbc171b6/"/>
+
+
+
+
+
+  <title>背景圖加上半透明遮罩 | Saffran's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-142087950-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en, zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Saffran's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">記錄前端路上的點點滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/dbc171b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.ibb.co/t2w33GG/yuwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">背景圖加上半透明遮罩</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T22:14:14+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>這一篇要介紹的是「背景圖加上半透明遮罩」的幾種方式</p>
+<a id="more"></a>
+<h2 id="不管裝置有多寬-背景圖就是加上-半透明遮罩"><a class="header-anchor" href="#不管裝置有多寬-背景圖就是加上-半透明遮罩"></a>不管裝置有多寬，背景圖就是加上「半透明遮罩」</h2>
+<p>作法：</p>
+<p>範例可看此 codepen<br>
+<a href="https://codepen.io/saffranwang/full/VwZPJyJ" target="_blank" rel="noopener">https://codepen.io/saffranwang/full/VwZPJyJ</a></p>
+<div class="danger">
+<h3 id="🎃-使用多層background-image來製作"><a class="header-anchor" href="#🎃-使用多層background-image來製作"></a>🎃 使用多層<code>background-image</code>來製作</h3>
+<p>在<code>background-image</code>疊兩層</p>
+<ul>
+<li>
+<p>第一層：<code>linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))</code></p>
+</li>
+<li>
+<p>第二層：<code>url(https://i.ibb.co/zRd6Kbz/maria-teneva-PFVTZSq-Iqn0-unsplash.jpg)</code></p>
+</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 左側圖片區塊 --&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">     &lt;div class&#x3D;&quot;col-md-5 bg-cover&quot; style&#x3D;&quot;</span><br><span class="line">         position: absolute; top: 0; bottom: 0;</span><br><span class="line">         background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https:&#x2F;&#x2F;i.ibb.co&#x2F;zRd6Kbz&#x2F;maria-teneva-PFVTZSq-Iqn0-unsplash.jpg)&quot;&gt;    </span><br><span class="line">     &lt;&#x2F;div&gt;        </span><br><span class="line"> &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</div>
+<p><img src="https://i.imgur.com/qZQWkVF.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/Vq8kLQM.jpg" alt="" width="300"></p>
+<h2 id="在-行動版-時-圖片才加上半透明遮罩"><a class="header-anchor" href="#在-行動版-時-圖片才加上半透明遮罩"></a>在「行動版」時，圖片才加上半透明遮罩</h2>
+<ul>
+<li>當裝置寬度 &gt;= 768px 時，圖片「沒有半透明遮罩」</li>
+<li>當裝置寬度 &lt; 768px 時（行動版），圖片「才加上半透明遮罩」<mark>（加上遮罩是為了要提高文字的可讀性）</mark></li>
+</ul>
+<p>作法：可參考此 codepen<br>
+<a href="https://codepen.io/saffranwang/full/GRKrbwo" target="_blank" rel="noopener">https://codepen.io/saffranwang/full/GRKrbwo</a></p>
+<h3 id="html-的部分"><a class="header-anchor" href="#html-的部分"></a>html 的部分</h3>
+<div class="danger">
+<h4 id="🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"><a class="header-anchor" href="#🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"></a>🎃 在「圖片區塊的<code>.row</code>」中，再新增一個<code>&lt;div class=&quot;col-md-5 bg-mask&quot;&gt;&lt;/div&gt;</code></h4>
+<ul>
+<li><code>.col-md-5</code> 的作用是：遮罩跟背景圖一樣要佔 5 欄寬</li>
+<li><code>.bg-mask</code> 的作用是：當裝置寬度 &lt; 768px 時（行動版），此 class 會被打開（圖片「才加上半透明遮罩」）</li>
+</ul>
+<h4 id="注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0"><a class="header-anchor" href="#注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0"></a>‼️ 注意！這個新增的<code>div</code>，一樣要加上「<code>position: absolute; top: 0; bottom: 0;</code>」</h4>
+<ul>
+<li><mark>如果沒加的話，這個<code>div</code>會沒有高度，遮罩也就看不到了</mark></li>
+</ul>
+<h4 id="這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？"><a class="header-anchor" href="#這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？"></a>‼️ 這裡的「背景圖」和「半透明遮罩」（也就是兩個<code>.col-md-5</code>）為什麼可以“重疊在一起”？</h4>
+<p>原因是：</p>
+<ul>
+<li>
+<p>兩個<code>.col-md-5</code>都有設定「絕對定位」</p>
+</li>
+<li>
+<p><code>.col-md-5</code> 設定為絕對定位後，會往外層找到「被設定為“相對定位”的<code>.container-fluid</code>」為基準來決定<code>.col-md-5</code>的位置</p>
+</li>
+<li>
+<p><mark><code>.col-md-5</code> 就會脫離原本預設的版面配置，也就不會佔有空間</mark></p>
+</li>
+</ul>
+<p>因此，兩個<code>.col-md-5</code>就可以重疊在一起了</p>
+<hr>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 左側圖片區塊 --&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;row&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;col-md-5 bg-cover&quot; style&#x3D;&quot;</span><br><span class="line">        position: absolute; top: 0; bottom: 0;</span><br><span class="line">        background-image: url(https:&#x2F;&#x2F;i.ibb.co&#x2F;zRd6Kbz&#x2F;maria-teneva-PFVTZSq-Iqn0-unsplash.jpg)&quot;&gt;    </span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 背景圖加上半透明遮罩（行動版時才加上） --&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;col-md-5 bg-mask&quot; style&#x3D;&quot;position: absolute; top: 0; bottom: 0;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</div>
+<h3 id="css-的部分"><a class="header-anchor" href="#css-的部分"></a>css 的部分</h3>
+<div class="danger">
+<h4 id="🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式"><a class="header-anchor" href="#🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式"></a>🎃 用<code>@media</code>來寫，當裝置寬度 &lt; 768px 時，會套用<code>.bg-mask</code>的樣式</h4>
+<p>css:</p>
+<ul>
+<li>遮罩作法一：使用<code>background-image: linear-gradient()</code></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 背景圖加上半透明遮罩（行動版時才加上） */</span></span><br><span class="line">@media(max-width: 768px)&#123;</span><br><span class="line">  <span class="selector-class">.bg-mask</span>&#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(rgba(0,0,0,0.5), <span class="built_in">rgba</span>(0,0,0,0.5));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>遮罩做法二：使用<code>background-color</code></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 背景圖加上半透明遮罩（行動版時才加上） */</span></span><br><span class="line">@media(max-width: 768px)&#123;</span><br><span class="line">  <span class="selector-class">.bg-mask</span>&#123;</span><br><span class="line"><span class="comment">/*     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */</span></span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(0,0,0,0.5);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+<p>這樣就完成了！</p>
+<ul>
+<li>當裝置寬度 &gt;= 768px 時，圖片「沒有半透明遮罩」</li>
+</ul>
+<p><img src="https://i.imgur.com/5BiRHYB.jpg" alt=""></p>
+<ul>
+<li>當裝置寬度 &lt; 768px 時（行動版），圖片「才加上半透明遮罩」</li>
+</ul>
+<p><img src="https://i.imgur.com/nw0BVVV.jpg" alt="" width="300"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+            <a href="/tags/Bootstrap-4/" rel="tag"><i class="fa fa-tag"></i> Bootstrap 4</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1976b998/" rel="next" title="CSS 背景圖樣漸層">
+                <i class="fa fa-chevron-left"></i> CSS 背景圖樣漸層
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/e714ffff/" rel="prev" title="JavaScript 是如何運行的">
+                JavaScript 是如何運行的 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d02565793bcab93" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://i.ibb.co/t2w33GG/yuwen.jpg"
+                alt="Saffran" />
+            
+              <p class="site-author-name" itemprop="name">Saffran</p>
+              <p class="site-description motion-element" itemprop="description">記錄前端路上的點點滴滴</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不管裝置有多寬-背景圖就是加上-半透明遮罩"><span class="nav-number">1.</span> <span class="nav-text">不管裝置有多寬，背景圖就是加上「半透明遮罩」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-使用多層background-image來製作"><span class="nav-number">1.1.</span> <span class="nav-text">🎃 使用多層background-image來製作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-行動版-時-圖片才加上半透明遮罩"><span class="nav-number">2.</span> <span class="nav-text">在「行動版」時，圖片才加上半透明遮罩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-的部分"><span class="nav-number">2.1.</span> <span class="nav-text">html 的部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"><span class="nav-number">2.1.1.</span> <span class="nav-text">🎃 在「圖片區塊的.row」中，再新增一個&lt;div class&#x3D;&quot;col-md-5 bg-mask&quot;&gt;&lt;&#x2F;div&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意-這個新增的div-一樣要加上-position-absolute-top-0-bottom-0"><span class="nav-number">2.1.2.</span> <span class="nav-text">‼️ 注意！這個新增的div，一樣要加上「position: absolute; top: 0; bottom: 0;」</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#這裡的-背景圖-和-半透明遮罩-也就是兩個-col-md-5-為什麼可以-重疊在一起-？"><span class="nav-number">2.1.3.</span> <span class="nav-text">‼️ 這裡的「背景圖」和「半透明遮罩」（也就是兩個.col-md-5）為什麼可以“重疊在一起”？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-的部分"><span class="nav-number">2.2.</span> <span class="nav-text">css 的部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-用-media來寫-當裝置寬度-768px-時-會套用-bg-mask的樣式"><span class="nav-number">2.2.1.</span> <span class="nav-text">🎃 用@media來寫，當裝置寬度 &lt; 768px 時，會套用.bg-mask的樣式</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran</span>
+
+  
+</div>
+
+<!--
+
+
+
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'a4f07f7af90fc9605f45',
+          clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+          repo: 'yuwensaf.github.io',
+          owner: 'yuwensaf',
+          admin: ['yuwensaf'],
+          id: location.pathname,
+          labels: ['Gitalk'],
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: true
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

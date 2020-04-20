@@ -1,16 +1,1024 @@
-{% extends '_layout.njk' %}
-{% import '_macro/sidebar.njk' as sidebar_template with context %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block class %}post posts-expand{% endblock %}
 
-{% block content %}
+  
 
-  {{ partial('_macro/post.njk', {post: page}) }}
 
-{% endblock %}
+<html class="theme-next mist use-motion" lang="en, zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="這一篇要介紹的是：CSS 的漸層（gradient）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 背景圖樣漸層">
+<meta property="og:url" content="https://yuwensaf.github.io/1976b998/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="這一篇要介紹的是：CSS 的漸層（gradient）">
+<meta property="og:image" content="https://i.imgur.com/ljDaGQg.jpg">
+<meta property="og:image" content="https://i.imgur.com/gNZFajS.jpg">
+<meta property="og:image" content="https://i.imgur.com/pAuNTIa.jpg">
+<meta property="og:image" content="https://i.imgur.com/79m8ZWU.jpg">
+<meta property="og:image" content="https://i.imgur.com/L9xMeZc.jpg">
+<meta property="og:image" content="https://i.imgur.com/woZZeND.jpg">
+<meta property="og:image" content="https://i.imgur.com/DjAjNu2.jpg">
+<meta property="og:image" content="https://i.imgur.com/UIu98qP.jpg">
+<meta property="og:image" content="https://i.imgur.com/BKwgjvR.jpg">
+<meta property="og:image" content="https://i.imgur.com/WGcYV9t.jpg">
+<meta property="og:image" content="https://i.imgur.com/Y0d4J0M.jpg">
+<meta property="og:image" content="https://i.imgur.com/y0ghC1J.jpg">
+<meta property="og:image" content="https://i.imgur.com/fHtzeMv.jpg">
+<meta property="article:published_time" content="2019-09-19T14:12:02.000Z">
+<meta property="article:modified_time" content="2020-04-09T10:12:25.135Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/ljDaGQg.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'F8M9TC7VKK',
+      apiKey: '15131e8e4d32a73445f42f4f0b44e34b',
+      indexName: 'dev_saffran',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yuwensaf.github.io/1976b998/"/>
+
+
+
+
+
+  <title>CSS 背景圖樣漸層 | Saffran's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-142087950-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en, zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Saffran's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">記錄前端路上的點點滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/1976b998/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.ibb.co/t2w33GG/yuwen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS 背景圖樣漸層</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T22:12:02+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>這一篇要介紹的是：CSS 的漸層（gradient）</p>
+<a id="more"></a>
+<h2 id="以下都以此-codepen-做範例"><a class="header-anchor" href="#以下都以此-codepen-做範例"></a>以下都以此 codepen 做範例</h2>
+<p><a href="https://codepen.io/saffranwang/pen/byRxwd" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/byRxwd</a></p>
+<hr>
+<ul>
+<li>css 漸層是屬於「圖片<code>background-image</code>」，而不是「色彩<code>background-color</code>」</li>
+</ul>
+<div class="danger">
+<p>因此，漸層「無法使用 <code>transition</code> 效果」</p>
+<ul>
+<li>「圖片<code>background-image</code>」不會產生漸變</li>
+<li>「色彩」才會產生漸變</li>
+</ul>
+</div>
+<h1 id="漸層分為兩大類"><a class="header-anchor" href="#漸層分為兩大類"></a>漸層分為兩大類</h1>
+<h2 id="第一類漸層：線性漸層-linear-gradient"><a class="header-anchor" href="#第一類漸層：線性漸層-linear-gradient"></a>第一類漸層：線性漸層（<code>linear-gradient</code>）</h2>
+<h3 id="漸層預設是-從上到下"><a class="header-anchor" href="#漸層預設是-從上到下"></a>漸層預設是「從上到下」</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-1</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(lightblue, purple);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/ljDaGQg.jpg" alt="" width="300"></p>
+<h3 id="旋轉角度"><a class="header-anchor" href="#旋轉角度"></a>旋轉角度</h3>
+<p>有兩種方式：</p>
+<ul>
+<li>加入「角度<code>90deg</code>」</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-1</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(90deg, lightblue, purple);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>加入「方向性的指引<code>to right</code>」</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-1</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, lightblue, purple);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/gNZFajS.jpg" alt="" width="300"></p>
+<h2 id="第二類漸層：放射狀漸層-radial-gradient"><a class="header-anchor" href="#第二類漸層：放射狀漸層-radial-gradient"></a>第二類漸層：放射狀漸層（<code>radial-gradient</code>）</h2>
+<h1 id="多層重疊-的-background"><a class="header-anchor" href="#多層重疊-的-background"></a>「多層重疊」的 background</h1>
+<p><code>background</code>是可以做「多層重疊的」，放兩個以上的背景圖</p>
+<h2 id="範例"><a class="header-anchor" href="#範例"></a>範例</h2>
+<ul>
+<li>兩層<code>linear-gradient</code>重疊，用「線性漸層」製作出「放射狀漸層」的效果</li>
+<li>兩個<code>linear-gradient</code>用「逗號」隔開
+<ul>
+<li>第一段：由上到下</li>
+<li>第二段：由左到右</li>
+</ul>
+</li>
+</ul>
+<h2 id="設定-距離"><a class="header-anchor" href="#設定-距離"></a>設定「距離」</h2>
+<div class="danger">
+<p>除了「顏色」，還可以設定另一個屬性：「距離」</p>
+<ul>
+<li><code>rgba(232, 12, 122, 0.5)</code> 這個顏色沒有設定「距離」，就會從「距離 = 0」的地方開始</li>
+<li><code>transparent 70%</code> 這裡設定了「<code>70%</code>」，就會從「距離 = 70%」開始變透明</li>
+</ul>
+</div>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-2</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to bottom, rgba(232, 12, 122, 0.5), transparent <span class="number">70%</span>), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(to right, rgba(232, 12, 122, 0.5), transparent <span class="number">70%</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/pAuNTIa.jpg" alt="" width="300"></p>
+<ul>
+<li>如果將第一個顏色設定為<code>green 40%</code></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-2</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to bottom, green 40%, transparent 70%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(to right, rgba(232, 12, 122, 0.5), transparent <span class="number">70%</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/79m8ZWU.jpg" alt=""></p>
+<h1 id="多個圖樣-的效果"><a class="header-anchor" href="#多個圖樣-的效果"></a>「多個圖樣」的效果</h1>
+<ul>
+<li>因為「漸層」是「圖片」，所以可以給它設定「尺寸<code>background-size</code>」</li>
+<li>兩個漸層，分別給它設定尺寸，中間用「逗號」隔開</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-3</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to bottom, rgba(232, 12, 122, 0.5), transparent <span class="number">70%</span>), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(to right, rgba(232, 12, 122, 0.5), transparent <span class="number">70%</span>);</span><br><span class="line">	<span class="attribute">background-size</span>: <span class="number">30px</span> <span class="number">30px</span>, <span class="number">50px</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/L9xMeZc.jpg" alt="" width="300"></p>
+<h1 id="用-漸層-畫出-銳利的邊線"><a class="header-anchor" href="#用-漸層-畫出-銳利的邊線"></a>用「漸層」畫出「銳利的邊線」</h1>
+<div class="success">
+<p>「下一個顏色」直接跟「上一個顏色」做「距離的重疊」，就可以做出銳利的邊線效果</p>
+</div>
+<h2 id="範例一-使用linear-gradient"><a class="header-anchor" href="#範例一-使用linear-gradient"></a>範例一（使用<code>linear-gradient</code>）</h2>
+<p>做出「銳利邊線」的原理，請看下圖說明</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-7</span>&#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">4px</span> solid <span class="number">#000</span>;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(lightblue 30%, transparent 30%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/woZZeND.jpg" alt=""></p>
+<hr>
+<h2 id="範例二-使用radial-gradient"><a class="header-anchor" href="#範例二-使用radial-gradient"></a>範例二（使用<code>radial-gradient</code>）</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-4</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">radial-gradient</span>(#fff 30%, transparent 30%, transparent 60%, #fff 60%);</span><br><span class="line">	<span class="attribute">background-color</span>: teal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>❗️<br>
+[第一段說明]</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">radial</span>-gradient(#fff <span class="number">30</span>%, transparent <span class="number">30</span>%,</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>#fff 30%</code> --&gt; 前「30%」都是「很均勻的白色，沒有漸層」</li>
+<li>「白色」從「30% 的位置」要「開始漸層」時，立刻轉為「透明」（<code>transparent 30%</code> --&gt; <code>transparent</code>從 30% 的位置開始）</li>
+<li>利用以上的原理，就會把「漸層效果」給完全遮蓋住，製造出「銳利的邊線」</li>
+</ul>
+<p>❗️<br>
+[第二段說明]</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transparent <span class="number">60</span>%, #fff <span class="number">60</span>%);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>transparent 60%</code> --&gt; 從 30%~60% 一直維持著「均勻的透明」（才能露出<code>background-color: teal;</code>），<code>transparent</code>從 60% 要「開始漸層」時，立刻轉「白色」（<code>#fff 60%</code> --&gt; <code>#fff</code> 從 60% 的位置開始）</li>
+</ul>
+<p><img src="https://i.imgur.com/DjAjNu2.jpg" alt=""></p>
+<h1 id="重複圖樣效果"><a class="header-anchor" href="#重複圖樣效果"></a>重複圖樣效果</h1>
+<p>利用上面「銳利邊線」的概念：用一段一段的顏色，畫出「接近銳利」的邊線，一圈一圈的畫出來，製作出下面的圖樣效果</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-5</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">radial-gradient</span>(#ffffff 3px, transparent 5px, #ffffff 7px, transparent 9px, #ffffff 11px, transparent 13px, #ffffff 15px, transparent 17px, #ffffff 19px, transparent 21px, #ffffff 23px, transparent 25px, #ffffff 27px, transparent 29px, #ffffff 31px, transparent 33px);</span><br><span class="line">	<span class="attribute">background-color</span>: teal;</span><br><span class="line">	<span class="attribute">background-size</span>: <span class="number">30px</span> <span class="number">30px</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/UIu98qP.jpg" alt="" width="300"></p>
+<h1 id="旋轉效果-轉盤"><a class="header-anchor" href="#旋轉效果-轉盤"></a>旋轉效果（轉盤）</h1>
+<ul>
+<li>「漸層」雖然不能做到「淡入淡出」的效果，但是可以做出類似「旋轉」的效果</li>
+</ul>
+<div class="danger">
+<p>只需要用到一個<code>div</code>，就可以做出轉盤了</p>
+</div>
+<ul>
+<li>利用「很多塊色彩，畫出銳利的邊線」來組出來的，有設定了「角度、顏色、size 等等」</li>
+</ul>
+<ul>
+<li>一個圓 = 360度，切成 8 塊 --&gt; 360/8 = 一塊45度</li>
+</ul>
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-6</span>&#123;</span><br><span class="line">	<span class="attribute">background-image</span>: </span><br><span class="line">		<span class="built_in">linear-gradient</span>(45deg, tomato 50%, transparent 50%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(90deg, orange 100%, transparent 100%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(135deg, yellow 50%, transparent 50%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(180deg, green 100%, transparent 100%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(225deg, lightblue 50%, transparent 50%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(270deg, teal 100%, transparent 100%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(315deg, purple 50%, transparent 50%), </span><br><span class="line">		<span class="built_in">linear-gradient</span>(360deg, pink 100%, transparent 100%);</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">	<span class="attribute">background-position</span>: <span class="number">0%</span> <span class="number">0%</span>, <span class="number">0%</span> <span class="number">0%</span>, <span class="number">100%</span> <span class="number">0%</span>, <span class="number">100%</span> <span class="number">0%</span>, <span class="number">100%</span> <span class="number">100%</span>, <span class="number">100%</span> <span class="number">100%</span>, <span class="number">0%</span> <span class="number">100%</span>, <span class="number">0%</span> <span class="number">100%</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#000</span>;</span><br><span class="line">	<span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">	</span><br><span class="line">// 	切割成扇形</span><br><span class="line">	<span class="selector-tag">background-size</span>: 50% 50%;</span><br><span class="line">// 	外框變成圓形的</span><br><span class="line">	<span class="selector-tag">border-radius</span>: 50%;</span><br><span class="line">	</span><br><span class="line">// 	旋轉的漸變效果</span><br><span class="line">	<span class="selector-tag">transition</span>: <span class="selector-tag">all</span>, 3<span class="selector-tag">s</span>;</span><br><span class="line">// 	hover 時的旋轉效果</span><br><span class="line">	&amp;<span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">		<span class="attribute">transform</span>: <span class="built_in">rotate</span>(3600deg)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/BKwgjvR.jpg" alt="" width="300"></p>
+<h2 id="設定-角度"><a class="header-anchor" href="#設定-角度"></a>設定「角度」</h2>
+<p>如果想要更細膩的調整「漸層的方向」，就可以使用「角度」來取代「方向關鍵字」（方向關鍵字 例如：to bottom, to top, to right, to left, to bottom right 等等）</p>
+<h3 id="syntax"><a class="header-anchor" href="#syntax"></a>Syntax</h3>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">background</span>-<span class="built_in">image</span>: <span class="built_in">linear</span>-gradient(angle, <span class="built_in">color</span>-stop1, <span class="built_in">color</span>-stop2);</span><br></pre></td></tr></table></figure>
+<div class="danger">
+<p>這裡的「角度」是指：「水平線」與「漸層方向」之間的角度</p>
+</div>
+<h3 id="範例一-沒有設定角度"><a class="header-anchor" href="#範例一-沒有設定角度"></a>範例一（沒有設定角度）</h3>
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-7</span>&#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">4px</span> solid <span class="number">#000</span>;</span><br><span class="line">// 	沒有設定「角度」</span><br><span class="line">	<span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">lightblue</span> 50%, <span class="selector-tag">orange</span> 50%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="success">
+<p>沒有設定角度，漸層就會按照「預設的方向」由上到下<br>
+<img src="https://i.imgur.com/WGcYV9t.jpg" alt=""></p>
+</div>
+<hr>
+<h3 id="範例二-設定-45-度"><a class="header-anchor" href="#範例二-設定-45-度"></a>範例二（設定 45 度）</h3>
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-7</span>&#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">4px</span> solid <span class="number">#000</span>;</span><br><span class="line">// 	設定「45deg」</span><br><span class="line">	<span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(45<span class="selector-tag">deg</span>, <span class="selector-tag">lightblue</span> 50%, <span class="selector-tag">orange</span> 50%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="success">
+<p>設定 45deg，「水平線」與「漸層方向」之間的角度 = 45 deg</p>
+<p><img src="https://i.imgur.com/Y0d4J0M.jpg" alt=""></p>
+</div>
+<hr>
+<h3 id="範例三"><a class="header-anchor" href="#範例三"></a>範例三</h3>
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#grad</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(-90deg, red, yellow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>範例網址：<br>
+<a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_gradient-linear_angles" target="_blank" rel="noopener">https://www.w3schools.com/css/tryit.asp?filename=trycss3_gradient-linear_angles</a></p>
+<h2 id="書中範例一"><a class="header-anchor" href="#書中範例一"></a>書中範例一</h2>
+<p><a href="http://dabblet.com/gist/4b4ad05f4c1b5259066f" target="_blank" rel="noopener">http://dabblet.com/gist/4b4ad05f4c1b5259066f</a></p>
+<ul>
+<li>只有使用「線性漸層」，每個線性漸層都只有小小一塊</li>
+</ul>
+<div class="info">
+<p>以往在做這種條紋背景，都要用到圖片。但如果用此範例的方式，用漸層來做的話，就不需要另外匯入圖片了。</p>
+</div>
+<h2 id="書中範例二"><a class="header-anchor" href="#書中範例二"></a>書中範例二</h2>
+<p><a href="http://dabblet.com/gist/e3cfcb094e65d85df847" target="_blank" rel="noopener">http://dabblet.com/gist/e3cfcb094e65d85df847</a></p>
+<ul>
+<li>也是使用「線性漸層」</li>
+<li></li>
+</ul>
+<h2 id="範例：可縮放的背景圖"><a class="header-anchor" href="#範例：可縮放的背景圖"></a>範例：可縮放的背景圖</h2>
+<p><a href="https://codepen.io/Wcc723/pen/BEbejQ" target="_blank" rel="noopener">https://codepen.io/Wcc723/pen/BEbejQ</a></p>
+<ul>
+<li>一個背景圖片，中間被裁掉一塊</li>
+</ul>
+<div class="danger">
+<p>只需要用到一個<code>div</code>，就可以做出來</p>
+</div>
+<p><img src="https://i.imgur.com/y0ghC1J.jpg" alt=""></p>
+<p>here!!</p>
+<p><img src="https://i.imgur.com/fHtzeMv.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/b1555289/" rel="next" title="單純用 CSS 做出 hover 效果">
+                <i class="fa fa-chevron-left"></i> 單純用 CSS 做出 hover 效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/dbc171b6/" rel="prev" title="背景圖加上半透明遮罩">
+                背景圖加上半透明遮罩 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d02565793bcab93" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://i.ibb.co/t2w33GG/yuwen.jpg"
+                alt="Saffran" />
+            
+              <p class="site-author-name" itemprop="name">Saffran</p>
+              <p class="site-description motion-element" itemprop="description">記錄前端路上的點點滴滴</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#以下都以此-codepen-做範例"><span class="nav-number">1.</span> <span class="nav-text">以下都以此 codepen 做範例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#漸層分為兩大類"><span class="nav-number"></span> <span class="nav-text">漸層分為兩大類</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一類漸層：線性漸層-linear-gradient"><span class="nav-number">1.</span> <span class="nav-text">第一類漸層：線性漸層（linear-gradient）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#漸層預設是-從上到下"><span class="nav-number">1.1.</span> <span class="nav-text">漸層預設是「從上到下」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋轉角度"><span class="nav-number">1.2.</span> <span class="nav-text">旋轉角度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二類漸層：放射狀漸層-radial-gradient"><span class="nav-number">2.</span> <span class="nav-text">第二類漸層：放射狀漸層（radial-gradient）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多層重疊-的-background"><span class="nav-number"></span> <span class="nav-text">「多層重疊」的 background</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#範例"><span class="nav-number">1.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定-距離"><span class="nav-number">2.</span> <span class="nav-text">設定「距離」</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多個圖樣-的效果"><span class="nav-number"></span> <span class="nav-text">「多個圖樣」的效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用-漸層-畫出-銳利的邊線"><span class="nav-number"></span> <span class="nav-text">用「漸層」畫出「銳利的邊線」</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#範例一-使用linear-gradient"><span class="nav-number">1.</span> <span class="nav-text">範例一（使用linear-gradient）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例二-使用radial-gradient"><span class="nav-number">2.</span> <span class="nav-text">範例二（使用radial-gradient）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重複圖樣效果"><span class="nav-number"></span> <span class="nav-text">重複圖樣效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#旋轉效果-轉盤"><span class="nav-number"></span> <span class="nav-text">旋轉效果（轉盤）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#設定-角度"><span class="nav-number">1.</span> <span class="nav-text">設定「角度」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#syntax"><span class="nav-number">1.1.</span> <span class="nav-text">Syntax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例一-沒有設定角度"><span class="nav-number">1.2.</span> <span class="nav-text">範例一（沒有設定角度）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例二-設定-45-度"><span class="nav-number">1.3.</span> <span class="nav-text">範例二（設定 45 度）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例三"><span class="nav-number">1.4.</span> <span class="nav-text">範例三</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#書中範例一"><span class="nav-number">2.</span> <span class="nav-text">書中範例一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#書中範例二"><span class="nav-number">3.</span> <span class="nav-text">書中範例二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例：可縮放的背景圖"><span class="nav-number">4.</span> <span class="nav-text">範例：可縮放的背景圖</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran</span>
+
+  
+</div>
+
+<!--
+
+
+
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'a4f07f7af90fc9605f45',
+          clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+          repo: 'yuwensaf.github.io',
+          owner: 'yuwensaf',
+          admin: ['yuwensaf'],
+          id: location.pathname,
+          labels: ['Gitalk'],
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: true
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
