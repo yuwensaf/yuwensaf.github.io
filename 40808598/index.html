@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JavaScript">
 
 
 
@@ -81,17 +81,22 @@
 
 
 
-<meta name="description" content="前端路上的點點滴滴">
-<meta name="keywords" content="前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Saffran&#39;s Blog">
-<meta property="og:url" content="https://yuwensaf.github.io/page/4/index.html">
+<meta name="description" content="了解「LHS、RHS」會有助於在查看 JS 的錯誤時，更知道該如何去除錯">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="執行的錯誤情境 LHS, RHS">
+<meta property="og:url" content="https://yuwensaf.github.io/40808598/index.html">
 <meta property="og:site_name" content="Saffran&#39;s Blog">
-<meta property="og:description" content="前端路上的點點滴滴">
+<meta property="og:description" content="了解「LHS、RHS」會有助於在查看 JS 的錯誤時，更知道該如何去除錯">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/2i3WpER.jpg">
+<meta property="og:image" content="https://i.imgur.com/I58vKEq.jpg">
+<meta property="og:image" content="https://i.imgur.com/XKVqlsv.jpg">
+<meta property="og:updated_time" content="2020-04-10T07:34:39.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Saffran&#39;s Blog">
-<meta name="twitter:description" content="前端路上的點點滴滴">
+<meta name="twitter:title" content="執行的錯誤情境 LHS, RHS">
+<meta name="twitter:description" content="了解「LHS、RHS」會有助於在查看 JS 的錯誤時，更知道該如何去除錯">
+<meta name="twitter:image" content="https://i.imgur.com/2i3WpER.jpg">
 
 
 
@@ -121,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://yuwensaf.github.io/page/4/">
+  <link rel="canonical" href="https://yuwensaf.github.io/40808598/">
 
 
 
 
 
-  <title> Hexo, NexT - Saffran's Blog前端路上的點點滴滴 </title>
+  <title>執行的錯誤情境 LHS, RHS | Saffran's Blog</title>
   
 
 
@@ -155,8 +160,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,9 +291,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -302,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/f31aa73c/">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/40808598/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Saffran">
@@ -319,9 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/f31aa73c/" itemprop="url">CSS_background-position用法</a></h1>
+          <h1 class="post-title" itemprop="name headline">執行的錯誤情境 LHS, RHS</h1>
         
 
         <div class="post-meta">
@@ -333,8 +335,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T21:31:07+08:00">
-                2019-09-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-10T11:40:28+08:00">
+                2020-04-10
               </time>
             
 
@@ -356,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -393,16 +395,55 @@
       
 
       
-        
-          <p>這一篇要介紹：background-position 的多種設定方式</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/f31aa73c/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>了解「LHS、RHS」會有助於在查看 JS 的錯誤時，更知道該如何去除錯</p>
+<a id="more"></a>
+<div class="warning">
+<h3 id="rhs-right-hand-side"><a class="header-anchor" href="#rhs-right-hand-side"></a>RHS（right-hand side）</h3>
+<ul>
+<li>RHS 取值來自於右側的變數上</li>
+</ul>
+<h3 id="lhs-left-hand-side"><a class="header-anchor" href="#lhs-left-hand-side"></a>LHS（left-hand side）</h3>
+<ul>
+<li>LHS 用來賦予值到左側的變數上</li>
+</ul>
+</div>
+<h1 id="lhs-正確執行"><a class="header-anchor" href="#lhs-正確執行"></a>LHS 正確執行</h1>
+<div class="success">
+<p>🎃 LHS 用來賦予值到左側的變數上</p>
+<p>例如，下方是正確的執行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="lhs-的錯誤"><a class="header-anchor" href="#lhs-的錯誤"></a>LHS 的錯誤</h1>
+<div class="danger">
+<p>🎃 當左側「不是一個變數」時，就沒有辦法被賦予值</p>
+<p>例如：</p>
+<p>當左側是一個「字串」，在 Console 就會顯示錯誤：「左側是無法被賦予值的」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'小明'</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/2i3WpER.jpg" alt width="430"></p>
+<p>‼️ 這段錯誤，是屬於「編譯過程」中發生的錯誤因此，根本不會出現編譯的結果：（下方也會顯示出同樣的錯誤訊息）<br>
+<img src="https://i.imgur.com/I58vKEq.jpg" alt width="550"></p>
+</div>
+<h1 id="rhs-正確執行"><a class="header-anchor" href="#rhs-正確執行"></a>RHS 正確執行</h1>
+<div class="success">
+<p>🎃 RHS 取值來自於右側的變數上</p>
+<p>⭐️ 正確執行 範例一：宣告一個變數後，用 console.log 取出「右側變數」的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ming); <span class="comment">// RHS：利用 console.log 取出「右側變數」的值</span></span><br></pre></td></tr></table></figure>
+<p>⭐️ 正確執行 範例二：宣告一個變數<code>ming</code>後，用「RHS」取出「右側變數<code>ming</code>的值」之後，再用「LHS」把「<code>ming</code>的值」賦予到「左側變數<code>man</code>」上–&gt; <code>var man = ming;</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> man = ming;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ming); <span class="comment">// RHS</span></span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="rhs-的錯誤"><a class="header-anchor" href="#rhs-的錯誤"></a>RHS 的錯誤</h1>
+<div class="danger">
+<p>延續上面的範例，我把<code>console.log</code>的變數<code>ming</code>故意寫錯成「<code>min</code>」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ming = <span class="string">'小明'</span>; <span class="comment">// LHS：把'小明'賦予到「左側的變數 ming」上</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> man = ming;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(min); <span class="comment">// RHS</span></span><br></pre></td></tr></table></figure>
+<p>‼️ RHS 不會在「編譯過程」中直接出現錯誤，而是在「執行階段」才會發現錯誤：「找不到此變數」</p>
+<p><img src="https://i.imgur.com/XKVqlsv.jpg" alt width="430"></p>
+</div>
+<h1 id="有錯誤-要立刻修正"><a class="header-anchor" href="#有錯誤-要立刻修正"></a>有錯誤，要立刻修正</h1>
+<div class="warning">
+<p>注意！如果在 Console 有顯示錯誤，一定要立刻修正</p>
+<p>因為，在 JavaScript 的執行過程中，如果有發生錯誤而沒有去修正，那麼後面的程式碼都不會被執行</p>
+</div>
+
       
     </div>
     
@@ -417,160 +458,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/3666e3fc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Saffran">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.ibb.co/t2w33GG/yuwen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Saffran's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/3666e3fc/" itemprop="url">CSS_position用法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T21:13:07+08:00">
-                2019-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>在 CSS 中，總共有四種 position</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/3666e3fc/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/e714ffff/" rel="next" title="JavaScript 是如何運行的">
+                <i class="fa fa-chevron-left"></i> JavaScript 是如何運行的
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/570d2a7f/" rel="prev" title="語法作用域 Lexical scope">
+                語法作用域 Lexical scope <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -580,14 +501,17 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d02565793bcab93" async="async"></script>
+</div>
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -595,6 +519,13 @@
 
 
           
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
 
         </div>
         
@@ -615,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -678,6 +618,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rhs-right-hand-side"><span class="nav-number">1.</span> <span class="nav-text">rhs-right-hand-side</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lhs-left-hand-side"><span class="nav-number">2.</span> <span class="nav-text">lhs-left-hand-side</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#lhs-正確執行"><span class="nav-number"></span> <span class="nav-text">lhs-正確執行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lhs-的錯誤"><span class="nav-number"></span> <span class="nav-text">lhs-的錯誤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rhs-正確執行"><span class="nav-number"></span> <span class="nav-text">rhs-正確執行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rhs-的錯誤"><span class="nav-number"></span> <span class="nav-text">rhs-的錯誤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有錯誤-要立刻修正"><span class="nav-number"></span> <span class="nav-text">有錯誤-要立刻修正</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -809,6 +765,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -849,6 +809,28 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'a4f07f7af90fc9605f45',
+          clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+          repo: 'yuwensaf.github.io',
+          owner: 'yuwensaf',
+          admin: ['yuwensaf'],
+          id: location.pathname,
+          labels: ['Gitalk'],
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: true
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
 
