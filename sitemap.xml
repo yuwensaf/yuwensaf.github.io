@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuwensaf.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-04-23T14:20:27.075Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuwensaf.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-04-23T14:20:12.326Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuwensaf.github.io/archives/index.html</loc>
+    
+    <lastmod>2020-04-23T14:19:39.589Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuwensaf.github.io/570d2a7f/</loc>
     
     <lastmod>2020-04-16T08:37:16.970Z</lastmod>
@@ -124,20 +145,6 @@
     <loc>https://yuwensaf.github.io/about/index.html</loc>
     
     <lastmod>2020-04-08T08:29:38.684Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuwensaf.github.io/categories/index.html</loc>
-    
-    <lastmod>2020-04-08T08:29:14.007Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuwensaf.github.io/tags/index.html</loc>
-    
-    <lastmod>2020-04-08T08:28:58.425Z</lastmod>
     
   </url>
   

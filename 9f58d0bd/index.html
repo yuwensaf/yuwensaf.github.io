@@ -120,9 +120,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -153,7 +163,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/9f58d0bd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -206,7 +216,7 @@
         <p>在 CSS 使用「animation」寫出自己想要的動畫效果</p>
 <a id="more"></a>
 <h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
-<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
+<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
 <hr>
 <p>html:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
@@ -342,7 +352,7 @@ Specifies that the animation should be played infinite times (forever)</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-iteration-count</span>: <span class="selector-tag">infinite</span>;</span><br></pre></td></tr></table></figure>
 </div>
 <h3 id="animation-direction"><a class="header-anchor" href="#animation-direction"></a>animation-direction</h3>
-<p>我的codepen練習：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
+<p>我的codepen練習：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-direction</span>: <span class="selector-tag">reverse</span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Definition and Usage:</li>
@@ -400,7 +410,7 @@ Animation will not apply any styles to the element before or after it is executi
 <ul>
 <li>元素會保有「動畫結束前的樣式」<br>
 The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)</li>
-<li>在此範例中，<code>.box</code>的動畫是「往右位移300px，且背景顏色由橘色變為綠色」。因為加上<code>animation-fill-mode: forwards;</code>，動畫跑完後，<code>.box</code>會維持在這個狀態。範例：<a href="https://codepen.io/saffranwang/pen/axrOqX" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/axrOqX</a></li>
+<li>在此範例中，<code>.box</code>的動畫是「往右位移300px，且背景顏色由橘色變為綠色」。因為加上<code>animation-fill-mode: forwards;</code>，動畫跑完後，<code>.box</code>會維持在這個狀態。範例：<a href="https://codepen.io/saffranwang/pen/axrOqX" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/axrOqX</a></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +420,7 @@ The element will retain the style values that is set by the last keyframe (depen
 <ul>
 <li>在動畫開始前（在<code>animation-delay</code>這段期間），元素就可以先拿到「動畫開始時的樣式」<br>
 The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period</li>
-<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」。原本，要在動畫開始跑才會變紫色，但因為加上<code>animation-fill-mode: backwards;</code>，因此在<code>animation-delay</code>那兩秒鐘，<code>.box</code>也會是紫色的。範例：<a href="https://codepen.io/saffranwang/pen/LvoVvY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/LvoVvY</a></li>
+<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」。原本，要在動畫開始跑才會變紫色，但因為加上<code>animation-fill-mode: backwards;</code>，因此在<code>animation-delay</code>那兩秒鐘，<code>.box</code>也會是紫色的。範例：<a href="https://codepen.io/saffranwang/pen/LvoVvY" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/LvoVvY</a></li>
 </ul>
 </li>
 <li>
@@ -418,7 +428,7 @@ The element will get the style values that is set by the first keyframe (depends
 <ul>
 <li>元素會「先拿到動畫開始時的樣式」以及「保有動畫結束時的樣式」<br>
 The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions</li>
-<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」，動畫結束時「背景會是綠色」。因為加上<code>animation-fill-mode: both;</code>，所以「動畫開始前，<code>.box</code>也會先拿到紫色」，「動畫結束後，<code>.box</code>會一直維持紫色」。範例：<a href="https://codepen.io/saffranwang/pen/dLEYMM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/dLEYMM</a></li>
+<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」，動畫結束時「背景會是綠色」。因為加上<code>animation-fill-mode: both;</code>，所以「動畫開始前，<code>.box</code>也會先拿到紫色」，「動畫結束後，<code>.box</code>會一直維持紫色」。範例：<a href="https://codepen.io/saffranwang/pen/dLEYMM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/dLEYMM</a></li>
 </ul>
 </li>
 </ul>
@@ -440,7 +450,7 @@ The animation will follow the rules for both forwards and backwards, extending t
 <p>paused</p>
 <ul>
 <li>Specifies that the animation is paused</li>
-<li>在此範例中，設定當<code>.box</code>被hover時，動畫會暫停。範例：<a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/bJJPwM</a></li>
+<li>在此範例中，設定當<code>.box</code>被hover時，動畫會暫停。範例：<a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/bJJPwM</a></li>
 </ul>
 </li>
 <li>
@@ -508,6 +518,7 @@ The animation will follow the rules for both forwards and backwards, extending t
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -561,7 +572,7 @@ The animation will follow the rules for both forwards and backwards, extending t
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -576,11 +587,13 @@ The animation will follow the rules for both forwards and backwards, extending t
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -618,8 +631,6 @@ The animation will follow the rules for both forwards and backwards, extending t
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -673,6 +684,26 @@ The animation will follow the rules for both forwards and backwards, extending t
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : 'b8af64126004e155697e6f0a324f4078',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

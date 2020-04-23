@@ -121,9 +121,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -154,7 +164,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/ef5779ff/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -207,9 +217,9 @@
         <p>要怎麼用「@keyframes」在 CSS 寫動畫效果呢？</p>
 <a id="more"></a>
 <h2 id="教學網址"><a class="header-anchor" href="#教學網址"></a>教學網址</h2>
-<p><a href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp</a></p>
+<p><a href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp" target="_blank" rel="noopener external nofollow noreferrer">https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp</a></p>
 <h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
-<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
+<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
 <h2 id="definition-and-usage"><a class="header-anchor" href="#definition-and-usage"></a>Definition and Usage</h2>
 <ul>
 <li>用<code>@keyframes</code>來跟「選擇器」產生連結<br>
@@ -282,7 +292,7 @@
 <p>css:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: orange;</span><br><span class="line"><span class="comment">/*  設定動畫  */</span></span><br><span class="line"><span class="comment">/*  一定要寫「position: relative;」！！  */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">animation-name</span>: funny;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: infinite;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 設定多個css樣式的變化 */</span></span><br><span class="line">@<span class="keyword">keyframes</span> funny&#123;</span><br><span class="line">  0%&#123;<span class="attribute">top</span>: <span class="number">0px</span>; <span class="attribute">width</span>: <span class="number">100px</span>;&#125;</span><br><span class="line">  100%&#123;<span class="attribute">top</span>: <span class="number">100px</span>; <span class="attribute">width</span>: <span class="number">300px</span>; <span class="attribute">background</span>: purple;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="多個時間標示-多個css樣式變化"><a class="header-anchor" href="#多個時間標示-多個css樣式變化"></a>多個時間標示 + 多個css樣式變化</h3>
-<p>我的codepen：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
+<p>我的codepen：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
 
     </div>
 
@@ -320,6 +330,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -373,7 +384,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -388,11 +399,13 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -430,8 +443,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -485,6 +496,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '27156c3572227d3674ae9d83a7696d2b',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

@@ -121,9 +121,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -154,7 +164,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/33b7f354/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -207,7 +217,7 @@
         <p>要製作出按鈕的「下底線」，除了用<code>border-bottom</code>之外，這裡要提供另一種方式：使用<code>box-shadow</code></p>
 <a id="more"></a>
 <h2 id="使用box-shadow做出下底線"><a class="header-anchor" href="#使用box-shadow做出下底線"></a>使用<code>box-shadow</code>做出下底線</h2>
-<p>可看此<a href="https://codepen.io/saffranwang/pen/YbpYjQ" target="_blank" rel="noopener">範例</a>中，兩種方式都可以做出下底線</p>
+<p>可看此<a href="https://codepen.io/saffranwang/pen/YbpYjQ" target="_blank" rel="noopener external nofollow noreferrer">範例</a>中，兩種方式都可以做出下底線</p>
 <ul>
 <li>使用<code>box-shadow</code></li>
 </ul>
@@ -225,7 +235,7 @@
 <p><code>box-shadow</code> 跟 <code>border</code> 最大的不同就是：<mark><code>box-shadow</code>不佔實體空間</mark></p>
 <p>如果是用在按鈕、表單上，<code>box-shadow</code> 可以避免影響到其他物件的位置</p>
 </div>
-<p>以下提供一個<a href="https://codepen.io/saffranwang/pen/YbpYjQ" target="_blank" rel="noopener">範例</a>：</p>
+<p>以下提供一個<a href="https://codepen.io/saffranwang/pen/YbpYjQ" target="_blank" rel="noopener external nofollow noreferrer">範例</a>：</p>
 <p>css:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box-shadow-2</span>&#123;</span><br><span class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">15px</span> <span class="built_in">rgb</span>(0,214,214);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-2</span>&#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">15px</span> solid <span class="built_in">rgb</span>(0,214,214);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>對照圖片：<br>
@@ -269,6 +279,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -322,7 +333,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -337,11 +348,13 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -379,8 +392,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -434,6 +445,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : 'c407f90f9a72bf93f3a2309807447267',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

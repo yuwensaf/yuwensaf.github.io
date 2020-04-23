@@ -124,9 +124,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -157,7 +167,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/dbc171b6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -212,7 +222,7 @@
 <h2 id="不管裝置有多寬-背景圖就是加上-半透明遮罩"><a class="header-anchor" href="#不管裝置有多寬-背景圖就是加上-半透明遮罩"></a>不管裝置有多寬，背景圖就是加上「半透明遮罩」</h2>
 <p>作法：</p>
 <p>範例可看此 codepen<br>
-<a href="https://codepen.io/saffranwang/full/VwZPJyJ" target="_blank" rel="noopener">https://codepen.io/saffranwang/full/VwZPJyJ</a></p>
+<a href="https://codepen.io/saffranwang/full/VwZPJyJ" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/full/VwZPJyJ</a></p>
 <div class="danger">
 <h3 id="🎃-使用多層background-image來製作"><a class="header-anchor" href="#🎃-使用多層background-image來製作"></a>🎃 使用多層<code>background-image</code>來製作</h3>
 <p>在<code>background-image</code>疊兩層</p>
@@ -235,7 +245,7 @@
 <li>當裝置寬度 &lt; 768px 時（行動版），圖片「才加上半透明遮罩」<mark>（加上遮罩是為了要提高文字的可讀性）</mark></li>
 </ul>
 <p>作法：可參考此 codepen<br>
-<a href="https://codepen.io/saffranwang/full/GRKrbwo" target="_blank" rel="noopener">https://codepen.io/saffranwang/full/GRKrbwo</a></p>
+<a href="https://codepen.io/saffranwang/full/GRKrbwo" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/full/GRKrbwo</a></p>
 <h3 id="html-的部分"><a class="header-anchor" href="#html-的部分"></a>html 的部分</h3>
 <div class="danger">
 <h4 id="🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"><a class="header-anchor" href="#🎃-在-圖片區塊的-row-中-再新增一個-div-class-col-md-5-bg-mask-div"></a>🎃 在「圖片區塊的<code>.row</code>」中，再新增一個<code>&lt;div class=&quot;col-md-5 bg-mask&quot;&gt;&lt;/div&gt;</code></h4>
@@ -325,6 +335,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -378,7 +389,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -393,11 +404,13 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -435,8 +448,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -490,6 +501,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '3eeb7ba7d631f7548ec93ff93d6d9984',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

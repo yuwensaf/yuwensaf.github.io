@@ -124,9 +124,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -157,7 +167,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/e714ffff/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -249,7 +259,7 @@
 <p>當我輸入這行程式碼，電腦不會直接了解到「我現在要宣告一個變數，叫做’小明’」，而是直接先將「各個字詞的意思」一一解析出來</p>
 <h2 id="那麼-電腦到底是如何解析這行程式碼呢？"><a class="header-anchor" href="#那麼-電腦到底是如何解析這行程式碼呢？"></a>那麼，電腦到底是如何解析這行程式碼呢？</h2>
 <p>就好像小時候學寫作文，只是先把結構取出來</p>
-<h3 id="📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"><a class="header-anchor" href="#📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"></a>📖 <a href="https://esprima.org/demo/parse.html" target="_blank" rel="noopener">Esprima</a> 這個工具可以呈現出原始碼在「基本單元化」之後的結構</h3>
+<h3 id="📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"><a class="header-anchor" href="#📖-esprima-這個工具可以呈現出原始碼在-基本單元化-之後的結構"></a>📖 <a href="https://esprima.org/demo/parse.html" target="_blank" rel="noopener external nofollow noreferrer">Esprima</a> 這個工具可以呈現出原始碼在「基本單元化」之後的結構</h3>
 <p>把這行<code>var ming = '小明';</code>貼到左側框框內後，在右側選擇「Tokens」頁籤，就可以看到，它把詞彙一一解析出來的結果：</p>
 <p>1️⃣ 辨識出<code>var</code>是一個「關鍵字」</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"Keyword"</span>,</span><br><span class="line">    <span class="string">"value"</span>: <span class="string">"var"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
@@ -339,6 +349,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -392,7 +403,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -407,11 +418,13 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -449,8 +462,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -504,6 +515,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '197af87e7009c6a6ada2943bc61f4673',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

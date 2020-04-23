@@ -121,9 +121,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -154,7 +164,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/3a66ccd7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -224,7 +234,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media(min-width: 768px)&#123;</span><br><span class="line"></span><br><span class="line">	// 少寫了.header，導致@media的權重較低</span><br><span class="line">	<span class="selector-class">.box</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="橫向裝置設定可以使用如下"><a class="header-anchor" href="#橫向裝置設定可以使用如下"></a>橫向裝置設定可以使用如下</h2>
 <p><img src="https://i.imgur.com/Lx96Aoh.png" alt="" width="300"></p>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation</a></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation" target="_blank" rel="noopener external nofollow noreferrer">https://developer.mozilla.org/zh-TW/docs/Web/API/CSS_Object_Model/Managing_screen_orientation</a></p>
 <h2 id="q-a"><a class="header-anchor" href="#q-a"></a>Q&amp;A</h2>
 <h3 id="q-關於尺寸設定順序"><a class="header-anchor" href="#q-關於尺寸設定順序"></a>Q: 關於尺寸設定順序</h3>
 <p>老師最後有提到相反的順序設定，請問是怎麼做的呢~?因為如果照老師所講的，應該是：<br>
@@ -244,7 +254,7 @@
 就大可多利用 min-width 的方式去開發</p>
 <p>混搭上就需要多了解 Bootstrap 的原始碼我是比較推薦都是配合 Bootstsrap 的邏輯去思考 (官方文件也有說明 max-width 是沒有問題的)<br>
 另外官方其實有提供 media query sass mixin 方法可以利用就是用來管理這些中斷點使用的相關運用可以參考以下連結：<br>
-<a href="https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints" target="_blank" rel="noopener">https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints</a></p>
+<a href="https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints" target="_blank" rel="noopener external nofollow noreferrer">https://bootstrap.hexschool.com/docs/4.1/layout/overview/#responsive-breakpoints</a></p>
 
     </div>
 
@@ -282,6 +292,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -335,7 +346,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -350,11 +361,13 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -392,8 +405,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -447,6 +458,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '3ae3ff80ecd4441ee257c6c1c84e1799',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

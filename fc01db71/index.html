@@ -127,9 +127,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
 
   </li>
   </ul>
@@ -160,7 +170,7 @@
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/fc01db71/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/sources/images/yuwen.jpg">
+      <meta itemprop="image" content="/images/yuwen.jpg">
       <meta itemprop="name" content="Saffran">
       <meta itemprop="description" content="記錄前端路上的點點滴滴">
     </span>
@@ -213,9 +223,9 @@
         <p>利用「box-shadow」可以做出各種陰影效果</p>
 <a id="more"></a>
 <p>教學網址：<br>
-<a href="https://www.w3schools.com/cssref/css3_pr_box-shadow.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/css3_pr_box-shadow.asp</a></p>
+<a href="https://www.w3schools.com/cssref/css3_pr_box-shadow.asp" target="_blank" rel="noopener external nofollow noreferrer">https://www.w3schools.com/cssref/css3_pr_box-shadow.asp</a></p>
 <p>我的codepen練習：<br>
-<a href="https://codepen.io/saffranwang/pen/JVNYNY" target="_blank" rel="noopener">https://codepen.io/saffranwang/pen/JVNYNY</a></p>
+<a href="https://codepen.io/saffranwang/pen/JVNYNY" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/JVNYNY</a></p>
 <h2 id="css-syntax"><a class="header-anchor" href="#css-syntax"></a>CSS Syntax</h2>
 <p>box-shadow: <code>none</code> --&gt; No shadow is displayed</p>
 <p>(畫<mark>黃色底</mark>為必填)<br>
@@ -336,6 +346,7 @@ box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -389,7 +400,7 @@ box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Saffran"
-      src="/sources/images/yuwen.jpg">
+      src="/images/yuwen.jpg">
   <p class="site-author-name" itemprop="name">Saffran</p>
   <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
 </div>
@@ -404,11 +415,13 @@ box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
@@ -446,8 +459,6 @@ box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></
   </span>
   <span class="author" itemprop="copyrightHolder">Saffran</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
         
 
@@ -501,6 +512,26 @@ box-shadow: <mark><code>x軸位移</code></mark> <mark><code>y軸位移</code></
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '9c5359da6fd34bf03ce8449adbd4afa3',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
