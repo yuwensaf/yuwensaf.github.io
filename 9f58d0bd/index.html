@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en, zh-CN">
+<html lang="en, zh-TW">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -17,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="在 CSS 使用「animation」寫出自己想要的動畫效果">
@@ -43,7 +44,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en, zh-CN'
+    lang   : 'en, zh-TW'
   };
 </script>
 
@@ -94,7 +95,7 @@
     </div>
   </div>
 
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
@@ -102,6 +103,9 @@
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
   </div>
 
   <div class="site-nav-right">
@@ -145,7 +149,10 @@
     </header>
 
     
+  <div class="reading-progress-bar"></div>
   <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
 
 
     <main class="main">
@@ -159,7 +166,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/9f58d0bd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -216,7 +223,7 @@
         <p>在 CSS 使用「animation」寫出自己想要的動畫效果</p>
 <a id="more"></a>
 <h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
-<p><a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/bJJPwM</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9iSkpQd00=">https://codepen.io/saffranwang/pen/bJJPwM<i class="fa fa-external-link-alt"></i></span></p>
 <hr>
 <p>html:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
@@ -352,7 +359,7 @@ Specifies that the animation should be played infinite times (forever)</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-iteration-count</span>: <span class="selector-tag">infinite</span>;</span><br></pre></td></tr></table></figure>
 </div>
 <h3 id="animation-direction"><a class="header-anchor" href="#animation-direction"></a>animation-direction</h3>
-<p>我的codepen練習：<a href="https://codepen.io/saffranwang/pen/BEeaQY" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/BEeaQY</a></p>
+<p>我的codepen練習：<span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9CRWVhUVk=">https://codepen.io/saffranwang/pen/BEeaQY<i class="fa fa-external-link-alt"></i></span></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation-direction</span>: <span class="selector-tag">reverse</span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Definition and Usage:</li>
@@ -410,7 +417,7 @@ Animation will not apply any styles to the element before or after it is executi
 <ul>
 <li>元素會保有「動畫結束前的樣式」<br>
 The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)</li>
-<li>在此範例中，<code>.box</code>的動畫是「往右位移300px，且背景顏色由橘色變為綠色」。因為加上<code>animation-fill-mode: forwards;</code>，動畫跑完後，<code>.box</code>會維持在這個狀態。範例：<a href="https://codepen.io/saffranwang/pen/axrOqX" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/axrOqX</a></li>
+<li>在此範例中，<code>.box</code>的動畫是「往右位移300px，且背景顏色由橘色變為綠色」。因為加上<code>animation-fill-mode: forwards;</code>，動畫跑完後，<code>.box</code>會維持在這個狀態。範例：<span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9heHJPcVg=">https://codepen.io/saffranwang/pen/axrOqX<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 </li>
 </ul>
@@ -420,7 +427,7 @@ The element will retain the style values that is set by the last keyframe (depen
 <ul>
 <li>在動畫開始前（在<code>animation-delay</code>這段期間），元素就可以先拿到「動畫開始時的樣式」<br>
 The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period</li>
-<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」。原本，要在動畫開始跑才會變紫色，但因為加上<code>animation-fill-mode: backwards;</code>，因此在<code>animation-delay</code>那兩秒鐘，<code>.box</code>也會是紫色的。範例：<a href="https://codepen.io/saffranwang/pen/LvoVvY" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/LvoVvY</a></li>
+<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」。原本，要在動畫開始跑才會變紫色，但因為加上<code>animation-fill-mode: backwards;</code>，因此在<code>animation-delay</code>那兩秒鐘，<code>.box</code>也會是紫色的。範例：<span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9Mdm9Wdlk=">https://codepen.io/saffranwang/pen/LvoVvY<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 </li>
 <li>
@@ -428,7 +435,7 @@ The element will get the style values that is set by the first keyframe (depends
 <ul>
 <li>元素會「先拿到動畫開始時的樣式」以及「保有動畫結束時的樣式」<br>
 The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions</li>
-<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」，動畫結束時「背景會是綠色」。因為加上<code>animation-fill-mode: both;</code>，所以「動畫開始前，<code>.box</code>也會先拿到紫色」，「動畫結束後，<code>.box</code>會一直維持紫色」。範例：<a href="https://codepen.io/saffranwang/pen/dLEYMM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/dLEYMM</a></li>
+<li>在此範例中，<code>.box</code>原本是橘色，動畫開始時「背景會是紫色」，動畫結束時「背景會是綠色」。因為加上<code>animation-fill-mode: both;</code>，所以「動畫開始前，<code>.box</code>也會先拿到紫色」，「動畫結束後，<code>.box</code>會一直維持紫色」。範例：<span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9kTEVZTU0=">https://codepen.io/saffranwang/pen/dLEYMM<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 </li>
 </ul>
@@ -450,7 +457,7 @@ The animation will follow the rules for both forwards and backwards, extending t
 <p>paused</p>
 <ul>
 <li>Specifies that the animation is paused</li>
-<li>在此範例中，設定當<code>.box</code>被hover時，動畫會暫停。範例：<a href="https://codepen.io/saffranwang/pen/bJJPwM" target="_blank" rel="noopener external nofollow noreferrer">https://codepen.io/saffranwang/pen/bJJPwM</a></li>
+<li>在此範例中，設定當<code>.box</code>被hover時，動畫會暫停。範例：<span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9iSkpQd00=">https://codepen.io/saffranwang/pen/bJJPwM<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 </li>
 <li>
@@ -629,7 +636,7 @@ The animation will follow the rules for both forwards and backwards, extending t
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Saffran</span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
 </div>
 
         
