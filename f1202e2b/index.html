@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="🎃 id 不只可以用在 css，在 JS 也有很強大的功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ID 寫法、textcontent">
+<meta property="og:url" content="https://yuwensaf.github.io/f1202e2b/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="🎃 id 不只可以用在 css，在 JS 也有很強大的功能">
+<meta property="og:image" content="https://i.imgur.com/UkT2RyH.jpg">
+<meta property="og:image" content="https://i.imgur.com/I8el1iQ.jpg">
+<meta property="og:image" content="https://i.imgur.com/3fiMfek.jpg">
+<meta property="og:image" content="https://i.imgur.com/nmcwrKZ.jpg">
+<meta property="og:image" content="https://i.imgur.com/194kWMJ.jpg">
+<meta property="og:image" content="https://i.imgur.com/hgXqmSl.jpg">
+<meta property="og:image" content="https://i.imgur.com/bPiFIG0.jpg">
+<meta property="og:image" content="https://i.imgur.com/8H6pp0g.jpg">
+<meta property="og:image" content="https://i.imgur.com/gxk8unN.jpg">
+<meta property="og:image" content="https://i.imgur.com/UW9GXk0.jpg">
+<meta property="og:image" content="https://i.imgur.com/8Wvx4Ry.jpg">
+<meta property="article:published_time" content="2020-05-02T13:47:49.000Z">
+<meta property="article:modified_time" content="2020-05-02T13:49:10.360Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/UkT2RyH.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/f1202e2b/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>ID 寫法、textcontent | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/f1202e2b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ID 寫法、textcontent
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 21:47:49 / Modified: 21:49:10" itemprop="dateCreated datePublished" datetime="2020-05-02T21:47:49+08:00">2020-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>🎃 id 不只可以用在 css，在 JS 也有很強大的功能</p>
+<a id="more"></a>
+<p>例如：</p>
+<h2 id="網頁的錨點定位功能"><a class="header-anchor" href="#網頁的錨點定位功能"></a>網頁的錨點定位功能</h2>
+<div class="danger">
+<p>一個網頁上，一個 id 只能被使用一次</p>
+</div>
+<p>🍋 點擊右側選單，就會滑動到指定區塊，網址就會帶上「該區塊的 id」如下圖</p>
+<p><img src="https://i.imgur.com/UkT2RyH.jpg" alt=""></p>
+<p>用開發者工具可以看到:</p>
+<p>🍋 在「Audience」這個<code>h2</code>上，有加上了<code>id=&quot;Audience&quot;</code></p>
+<p><img src="https://i.imgur.com/I8el1iQ.jpg" alt="" width="500"></p>
+<p>🍋 在右側的選單，<code>a</code>連結也加上了對應的<code>href=&quot;#Audience&quot;</code></p>
+<p><img src="https://i.imgur.com/3fiMfek.jpg" alt=""></p>
+<h2 id="自己練習寫一次：錨點定位-用-id-指定到特定區塊"><a class="header-anchor" href="#自己練習寫一次：錨點定位-用-id-指定到特定區塊"></a>自己練習寫一次：錨點定位（用 id 指定到特定區塊）</h2>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 選單 --&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;#title1&quot;&gt;標題1&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;#title2&quot;&gt;標題2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;#title3&quot;&gt;標題3&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 內容 --&gt;</span><br><span class="line">&lt;h1 id&#x3D;&quot;title1&quot;&gt;標題1&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas obcaecati nulla beatae debitis alias pariatur nemo dolores est id? Vel aliquid est totam animi dolores vero, repudiandae qui? Explicabo, iste ex. Omnis et nam corrupti perspiciatis enim suscipit quod nisi nostrum esse atque, iusto natus, repellendus quam delectus eum minima accusantium voluptatibus ratione eveniet inventore eos? Deserunt cum, vero eius qui, voluptas debitis iste nam quaerat minima officiis neque nesciunt, sapiente quis atque exercitationem temporibus nobis reprehenderit? Asperiores minima autem corrupti. Unde quod vel exercitationem recusandae, in asperiores! Id quae vel saepe ipsam explicabo esse, tempore nemo suscipit repellat dolorum distinctio accusamus consequatur repudiandae? At culpa officiis debitis magni harum dignissimos porro consequatur, atque quibusdam expedita voluptas voluptatem aut molestias ex ut autem. Obcaecati incidunt sunt aspernatur vitae a expedita non. Soluta sint porro maiores, quos suscipit rem nisi officia officiis amet voluptate consectetur velit accusamus delectus quidem incidunt exercitationem fugiat odio magnam dolorem magni natus consequatur temporibus! Dicta officiis quia cum, necessitatibus doloribus dolorum explicabo illum corrupti sequi laborum magnam doloremque earum, debitis saepe. Fugit sunt sint sit reprehenderit odio! Non cupiditate porro enim odit. Quas eligendi laboriosam tempore eius autem nulla omnis ducimus quod illum, unde qui eum suscipit ab reprehenderit expedita accusamus, voluptatibus, iure quisquam asperiores architecto nisi. Eius error facere quibusdam temporibus nihil nostrum? Modi animi quae hic tempore ipsa vero amet molestiae et, maiores nesciunt fugiat alias vel nemo quos soluta quam sit provident dignissimos consequatur, fugit facere. Ab nihil obcaecati vel! Labore facere libero non sapiente nam. Repellendus, pariatur assumenda animi a obcaecati nobis odit, eaque voluptas recusandae fugiat harum molestias possimus dolorum. Optio tempora ea libero eum vero, aspernatur ullam! Numquam officia obcaecati eum totam ipsam molestiae tempora cumque reprehenderit tenetur dicta illo eveniet, sapiente repudiandae veniam iste quae odio! Ipsum, quam quibusdam?</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 id&#x3D;&quot;title2&quot;&gt;標題2&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ratione sequi quod facere vitae, asperiores impedit perspiciatis temporibus, esse delectus aspernatur minima dicta dolores quisquam maiores commodi nobis nam deserunt ut harum ea in ullam officia neque! Est debitis maiores in animi incidunt quaerat illum suscipit. Consequatur repellendus dolorum repellat ipsa libero consequuntur, quod dolorem deleniti voluptas, inventore repudiandae, in at. Laborum officia suscipit autem ea nihil non illum, cumque, iste nobis animi laboriosam repellendus qui voluptatem quam nemo, est exercitationem. Et earum dolorem at sunt nisi ducimus iste eos officiis modi, aut consectetur quia quam dolores corporis vero perspiciatis. Accusamus, fugiat rem. Eum minima nostrum ullam voluptatibus velit vitae soluta totam asperiores vero laudantium praesentium, distinctio cupiditate pariatur consequatur eos eveniet facilis similique ut corporis. Non eius qui nisi voluptate tenetur sunt ad iure, quod saepe optio hic, sequi facere, aliquam veritatis quam. Quibusdam pariatur minus nobis beatae maxime et alias ad repellat, mollitia reiciendis tempora dolorem. Iste autem nobis dolorem blanditiis aspernatur aliquam natus dignissimos, magni quaerat illum provident quam odio doloremque sed tempora laborum ad ipsum sequi non fuga temporibus cupiditate eveniet quasi reiciendis. Porro, ipsum necessitatibus recusandae iure eligendi provident aperiam ratione temporibus itaque nostrum doloremque vero fuga hic nulla cumque aliquam, officia distinctio praesentium perspiciatis facilis sapiente. In hic eligendi laborum molestiae mollitia numquam debitis blanditiis, delectus eveniet nisi reiciendis, nesciunt dicta libero, minus harum cum beatae magni facere vero! Voluptatibus, et? Sapiente, maiores aperiam excepturi odit ut mollitia consequuntur placeat provident cum quo ea dolorum, optio fugit veritatis vero quod necessitatibus! Minima harum quod soluta beatae officia illo nemo autem odio quis. Quas sunt neque suscipit repudiandae itaque quasi cupiditate, nihil non ipsam earum exercitationem ratione corporis expedita voluptas aut odit. Quod, odio aliquam neque impedit ipsam illo nisi aspernatur, quae, hic iste vel?</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 id&#x3D;&quot;title3&quot;&gt;標題3&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis eveniet, culpa ullam ab nam? Eius corrupti ducimus vitae maxime esse deserunt iusto nihil quod maiores tempora voluptate veritatis obcaecati accusamus iste, sed labore ullam explicabo, molestias delectus expedita quasi perferendis? Ipsam, ipsum, recusandae aperiam facere delectus eligendi, nihil iste maxime voluptate architecto velit! Consequuntur magnam praesentium nulla accusantium ratione pariatur iure mollitia distinctio itaque molestiae animi eius temporibus error asperiores necessitatibus, exercitationem enim. Voluptates facilis suscipit tempora illum et repudiandae aut provident non accusantium minima iste iure perspiciatis magnam sapiente quam voluptas, voluptatem dolorum, odit cupiditate nesciunt vitae fuga nemo? Numquam et optio distinctio, neque aspernatur fugit! Porro eligendi officiis provident ad optio minima voluptatum praesentium reiciendis soluta ab. Iure, quis necessitatibus. Officia id vitae, distinctio, a nulla et autem laudantium voluptate doloribus sed illum nihil maxime voluptatibus iste sit aspernatur voluptatem harum in soluta tempore ex ipsam expedita necessitatibus nostrum. Alias tempora esse in, illum maiores exercitationem quam sit nam ipsa dolores distinctio excepturi? Praesentium aliquid cupiditate, eos quae mollitia laudantium nobis aspernatur voluptatem, laboriosam dolores dignissimos fugiat ad eum, labore nulla non vero quam necessitatibus error asperiores dolorem facere? Asperiores eveniet voluptates modi blanditiis deleniti temporibus mollitia exercitationem nisi cupiditate vero consequatur quod totam quisquam, quia amet voluptatem sequi, odio praesentium culpa, impedit molestiae minima! Corporis natus quidem, maxime inventore voluptate aliquid neque commodi beatae ab aliquam, voluptatum hic molestiae nihil aut laudantium asperiores consectetur minus! Autem magnam iste hic velit voluptas tempore nobis temporibus accusantium error nostrum consequatur veritatis similique perspiciatis odit, deserunt repellat quia ipsum dicta eveniet! Placeat pariatur eius cumque porro ab, magni aliquam. Quae dolores minus perspiciatis vero quisquam ut laudantium, rem rerum ullam quod, sunt porro qui a! Ex, excepturi deserunt harum qui hic consectetur recusandae animi fugit repellat possimus non dignissimos?</span><br><span class="line">&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+<p>網頁長這樣：</p>
+<p><img src="https://i.imgur.com/nmcwrKZ.jpg" alt=""></p>
+<p>🍋 當我點擊選單上的「標題2」，就會跳到「標題2 的區塊」，並且網址最後會帶上「#title2」</p>
+<p><img src="https://i.imgur.com/194kWMJ.jpg" alt="" width="500"></p>
+<h2 id="自己練習寫一次：-用-id-指定到-特定頁面的特定區塊"><a class="header-anchor" href="#自己練習寫一次：-用-id-指定到-特定頁面的特定區塊"></a>自己練習寫一次： 用 id 指定到「特定頁面的特定區塊」</h2>
+<p>在 index.html 新增第四個<code>a</code>連結，是要跳到 <mark>「about.html 的 #title3 區塊」</mark></p>
+<p>index.html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 選單 --&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;#title1&quot;&gt;標題1&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;#title2&quot;&gt;標題2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;#title3&quot;&gt;標題3&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href&#x3D;&quot;about.html#title3&quot;&gt;標題4&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<p>點擊選單上的「標題4」，就會跳到 <mark>「about.html 的 #title3 區塊」</mark></p>
+<p><img src="https://i.imgur.com/hgXqmSl.jpg" alt=""></p>
+<h1 id="用-js-修改文字內容"><a class="header-anchor" href="#用-js-修改文字內容"></a>用 JS 修改文字內容</h1>
+<p>現在，我要做的是：修改「<code>h1</code> 標題1」的文字</p>
+<p><img src="https://i.imgur.com/bPiFIG0.jpg" alt="" width="400"></p>
+<p>作法如下：在 all.js 寫這段語法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'title1'</span>).textContent = <span class="string">'修改後的標題'</span>;</span><br></pre></td></tr></table></figure>
+<div class="danger">
+<p>程式碼解說</p>
+<p>🍋 <code>document</code> 代表：目前網頁上的主體</p>
+<p>🍋 透過<code>getElementById</code>這個方法，來指定 id</p>
+<p>🍋 選擇「標題1」的 id：<code>title1</code></p>
+<h3 id="🍋-要-修改文字-就使用-textcontent-這個-js-語法"><a class="header-anchor" href="#🍋-要-修改文字-就使用-textcontent-這個-js-語法"></a>🍋 要「修改文字」，就使用「<code>textContent</code>」這個 JS 語法</h3>
+</div>
+<div class="warning">
+<p>但是，回到 index.html 會發現，「標題1」的文字並沒有被修改</p>
+<p>使用開發者工具的 Console 來看，會發現有出現錯誤訊息：「‘textContent’ 是空值，因此找不到資料」</p>
+<p><img src="https://i.imgur.com/8H6pp0g.jpg" alt=""></p>
+<p>但是，我在 index.html 明明就有寫「<code>&lt;h1 id=&quot;title1&quot;&gt;標題1&lt;/h1&gt;</code>」</p>
+<p>為什麼會找不到資料呢？</p>
+<p>原因為：</p>
+<h4 id="🎃-瀏覽器在渲染網頁時-會把-index-html-從上到下-來做讀取"><a class="header-anchor" href="#🎃-瀏覽器在渲染網頁時-會把-index-html-從上到下-來做讀取"></a>🎃 瀏覽器在渲染網頁時，會把 index.html 「從上到下」來做讀取</h4>
+<p>因此，我在前面這個地方載入 JS（下圖中紅色箭頭處），在 JS 執行的時候，根本就還沒讀取到任何的 html（因為 html 都寫在後面），當然就找不到資料了</p>
+<p><img src="https://i.imgur.com/gxk8unN.jpg" alt=""></p>
+<h3 id="✅-因此-正確的做法是：等-body-body-的內容-和-css-都跑完之後-再執行-js"><a class="header-anchor" href="#✅-因此-正確的做法是：等-body-body-的內容-和-css-都跑完之後-再執行-js"></a>✅ 因此，正確的做法是：等「<code>&lt;body&gt;&lt;/body&gt;</code>的內容」和「css」都跑完之後，再執行 JS</h3>
+<p>作法如下：</p>
+<p><mark>把 JS 載入的位置移到<code>&lt;/body&gt;</code>前面</mark>，這樣就能確保「JS 可以找到 html 裡面所有的資料」</p>
+<p><img src="https://i.imgur.com/UW9GXk0.jpg" alt="" width="400"></p>
+<p>如此一來，JS 就能夠正常執行了！</p>
+<p><img src="https://i.imgur.com/8Wvx4Ry.jpg" alt="" width="400"></p>
+</div>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ab8ecca2/" rel="prev" title="HTML、CSS、JavaScript 的關聯性">
+      <i class="fa fa-chevron-left"></i> HTML、CSS、JavaScript 的關聯性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/c50ba087/" rel="next" title="直譯器流程介紹">
+      直譯器流程介紹 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#網頁的錨點定位功能"><span class="nav-number">1.</span> <span class="nav-text">網頁的錨點定位功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己練習寫一次：錨點定位-用-id-指定到特定區塊"><span class="nav-number">2.</span> <span class="nav-text">自己練習寫一次：錨點定位（用 id 指定到特定區塊）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己練習寫一次：-用-id-指定到-特定頁面的特定區塊"><span class="nav-number">3.</span> <span class="nav-text">自己練習寫一次： 用 id 指定到「特定頁面的特定區塊」</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用-js-修改文字內容"><span class="nav-number"></span> <span class="nav-text">用 JS 修改文字內容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🍋-要-修改文字-就使用-textcontent-這個-js-語法"><span class="nav-number">0.1.</span> <span class="nav-text">🍋 要「修改文字」，就使用「textContent」這個 JS 語法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-瀏覽器在渲染網頁時-會把-index-html-從上到下-來做讀取"><span class="nav-number">0.1.1.</span> <span class="nav-text">🎃 瀏覽器在渲染網頁時，會把 index.html 「從上到下」來做讀取</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#✅-因此-正確的做法是：等-body-body-的內容-和-css-都跑完之後-再執行-js"><span class="nav-number">0.2.</span> <span class="nav-text">✅ 因此，正確的做法是：等「&lt;body&gt;&lt;&#x2F;body&gt;的內容」和「css」都跑完之後，再執行 JS</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '203ef0eb460a259837c90da5b85c2915',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

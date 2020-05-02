@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="看到一個網站使用的效果很炫，想知道他是使用哪個Plugin來做到的，該怎麼去查詢呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何去查詢別人使用的 jQuery 插件">
+<meta property="og:url" content="https://yuwensaf.github.io/8c91fd1/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="看到一個網站使用的效果很炫，想知道他是使用哪個Plugin來做到的，該怎麼去查詢呢？">
+<meta property="og:image" content="https://i.imgur.com/FwfVm43.jpg">
+<meta property="og:image" content="https://i.imgur.com/VDRCRSk.jpg">
+<meta property="og:image" content="https://i.imgur.com/QxlINc1.jpg">
+<meta property="og:image" content="https://i.imgur.com/0uf0Aqr.jpg">
+<meta property="og:image" content="https://i.imgur.com/H1pujHe.jpg">
+<meta property="og:image" content="https://i.imgur.com/N1VFPZ3.jpg">
+<meta property="og:image" content="https://i.imgur.com/1P5EwXK.jpg">
+<meta property="og:image" content="https://i.imgur.com/b8IES0h.jpg">
+<meta property="og:image" content="https://i.imgur.com/E48QyXY.jpg">
+<meta property="og:image" content="https://i.imgur.com/rxVxn0B.jpg">
+<meta property="article:published_time" content="2020-05-02T13:23:10.000Z">
+<meta property="article:modified_time" content="2020-05-02T13:30:46.106Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/FwfVm43.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/8c91fd1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>如何去查詢別人使用的 jQuery 插件 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/8c91fd1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何去查詢別人使用的 jQuery 插件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 21:23:10 / Modified: 21:30:46" itemprop="dateCreated datePublished" datetime="2020-05-02T21:23:10+08:00">2020-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index"><span itemprop="name">jQuery</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>看到一個網站使用的效果很炫，想知道他是使用哪個Plugin來做到的，該怎麼去查詢呢？</p>
+<a id="more"></a>
+<h2 id="範例一-https-pixelcog-github-io-parallax-js"><a class="header-anchor" href="#範例一-https-pixelcog-github-io-parallax-js"></a>範例一 <span class="exturl" data-url="aHR0cHM6Ly9waXhlbGNvZy5naXRodWIuaW8vcGFyYWxsYXguanMv">https://pixelcog.github.io/parallax.js/<i class="fa fa-external-link-alt"></i></span></h2>
+<p>我想知道這個「滾動視差」的效果是怎麼做出來的，步驟如下：</p>
+<ol>
+<li>
+<p><mark>使用chrome開啟網頁，按右鍵「檢視網頁原始碼」</mark><br>
+<img src="https://i.imgur.com/FwfVm43.jpg" alt="" width="200"></p>
+</li>
+<li>
+<p><mark>按 cmd+F 來做關鍵字搜尋</mark></p>
+</li>
+</ol>
+<ul>
+<li>先搜尋「.js&quot;&gt;</script>」，我就可以知道他用了哪幾支js檔案</li>
+</ul>
+<p><img src="https://i.imgur.com/VDRCRSk.jpg" alt=""></p>
+<p>這時，我會看到很多支js，但我不確定是哪一支，該怎麼辦？</p>
+<ol start="3">
+<li>因此我必須做更細部的搜尋，<mark>回到網頁，按右鍵「檢查」</mark></li>
+</ol>
+<p><img src="https://i.imgur.com/QxlINc1.jpg" alt="" width="200"></p>
+<p><mark>去觀察 div 的 class 名稱或是 id 名稱，要特別注意一些特殊的專有名詞，像這個「parallax」，跟剛剛在原始碼看到的js檔案名稱一樣</mark><br>
+<img src="https://i.imgur.com/0uf0Aqr.jpg" alt=""></p>
+<ol start="4">
+<li>因此，我<mark>再回去「檢視網頁原始碼」去搜尋關鍵字「parallax」</mark></li>
+</ol>
+<p>就可以找到 parallax 的 js 檔案了！<br>
+<img src="https://i.imgur.com/H1pujHe.jpg" alt=""></p>
+<ol start="5">
+<li>找到 Plugin 名稱後，我該怎麼使用它？</li>
+</ol>
+<p>很簡單，去google搜尋，就可以找到它的官網了，接下來就依照裡面的API說明去載入<br>
+<img src="https://i.imgur.com/N1VFPZ3.jpg" alt=""></p>
+<h2 id="範例二-http-benpickles-github-io-peity"><a class="header-anchor" href="#範例二-http-benpickles-github-io-peity"></a>範例二 <span class="exturl" data-url="aHR0cDovL2JlbnBpY2tsZXMuZ2l0aHViLmlvL3BlaXR5Lw==">http://benpickles.github.io/peity/<i class="fa fa-external-link-alt"></i></span></h2>
+<p>我想知道這個圖表是怎麼做出來的？</p>
+<p><img src="https://i.imgur.com/1P5EwXK.jpg" alt=""></p>
+<ol>
+<li>在chrome按右鍵「檢查」，找到專有名詞「peity」</li>
+</ol>
+<p><img src="https://i.imgur.com/b8IES0h.jpg" alt=""></p>
+<ol start="2">
+<li>接著回到網頁，按右鍵「檢視網頁原始碼」，用cmd+F關鍵字搜尋「.js&quot;&gt;</script>」，</li>
+</ol>
+<p>就找到 peity 的 js 檔案了！<br>
+<img src="https://i.imgur.com/E48QyXY.jpg" alt=""></p>
+<ol start="3">
+<li>再去google搜尋「jquery.peity.js」，進入官網去看使用說明</li>
+</ol>
+<p><img src="https://i.imgur.com/rxVxn0B.jpg" alt=""></p>
+<h2 id="q-a"><a class="header-anchor" href="#q-a"></a>Q&amp;A</h2>
+<p>Q:<br>
+如果載入多個三方插件，可是每個插件使用的jQuery版本都不同，版本沒有互相支援，該怎麼去做統整?</p>
+<p>A:<br>
+會建議流程如下：</p>
+<ol>
+<li>先確認網站要幾個插件，並尋找插件</li>
+<li>確保某 jQuery 版本可以兼容所有插件</li>
+<li>如果 第二點沒辦法全部兼容，請找一個版本可以兼容 80%以上的插件，其它 20% 都是無用的插件，再去找這 20% 可以兼容的 jQ 核心</li>
+</ol>
+<p>雖不常見，但有時會碰到「核心只能有一個，又不能完全兼容所有的第三方插件」，碰到時多少還是要取捨下，只能說找插件前必須先瀏覽說明書查詢 jQ 支援度</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/df7781a4/" rel="prev" title="整合 Lightbox 和 Swiper 的效果">
+      <i class="fa fa-chevron-left"></i> 整合 Lightbox 和 Swiper 的效果
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/685e8a50/" rel="next" title="將 jQuery 與 CSS 樣式抽離心法">
+      將 jQuery 與 CSS 樣式抽離心法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#範例一-https-pixelcog-github-io-parallax-js"><span class="nav-number">1.</span> <span class="nav-text">範例一 https:&#x2F;&#x2F;pixelcog.github.io&#x2F;parallax.js&#x2F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例二-http-benpickles-github-io-peity"><span class="nav-number">2.</span> <span class="nav-text">範例二 http:&#x2F;&#x2F;benpickles.github.io&#x2F;peity&#x2F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-a"><span class="nav-number">3.</span> <span class="nav-text">Q&amp;A</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : 'ce784ce21f4a9219a712edc29fd22efc',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="這一篇是記錄在寫 jQuery 課程的最終作業時，所遇到的問題">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery 最終作業-重點整理">
+<meta property="og:url" content="https://yuwensaf.github.io/1f163545/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="這一篇是記錄在寫 jQuery 課程的最終作業時，所遇到的問題">
+<meta property="og:image" content="https://i.imgur.com/RjkRrle.jpg">
+<meta property="og:image" content="https://i.imgur.com/S7vRfHP.jpg">
+<meta property="og:image" content="https://i.imgur.com/g3oCMcp.jpg">
+<meta property="og:image" content="https://i.imgur.com/2660jm3.jpg">
+<meta property="og:image" content="https://i.imgur.com/Cutr6Vi.jpg">
+<meta property="og:image" content="https://i.imgur.com/l5jtKrW.jpg">
+<meta property="og:image" content="https://i.imgur.com/CtAIRu8.jpg">
+<meta property="og:image" content="https://i.imgur.com/FMX2JuJ.jpg">
+<meta property="og:image" content="https://i.imgur.com/SK44WDA.jpg">
+<meta property="og:image" content="https://i.imgur.com/ta6RNKW.jpg">
+<meta property="og:image" content="https://i.imgur.com/9cZ5uKd.jpg">
+<meta property="og:image" content="https://i.imgur.com/O2TcKe1.jpg">
+<meta property="og:image" content="https://i.imgur.com/tw857tq.png">
+<meta property="og:image" content="https://i.imgur.com/sOt34lH.jpg">
+<meta property="article:published_time" content="2020-05-02T13:28:16.000Z">
+<meta property="article:modified_time" content="2020-05-02T13:30:46.100Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/RjkRrle.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/1f163545/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>jQuery 最終作業-重點整理 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/1f163545/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jQuery 最終作業-重點整理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 21:28:16 / Modified: 21:30:46" itemprop="dateCreated datePublished" datetime="2020-05-02T21:28:16+08:00">2020-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index"><span itemprop="name">jQuery</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>這一篇是記錄在寫 jQuery 課程的最終作業時，所遇到的問題</p>
+<a id="more"></a>
+<h2 id="我的codepen練習"><a class="header-anchor" href="#我的codepen練習"></a>我的codepen練習</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL3Blbi9KVlhlVlY=">https://codepen.io/saffranwang/pen/JVXeVV<i class="fa fa-external-link-alt"></i></span></p>
+<ol>
+<li>
+<p>下拉式選單功能在「產品介紹」和「聯絡我們」加入下拉式選單</p>
+</li>
+<li>
+<p>swiper Banner輪播利用swiper來讓banner做各種輪播效果</p>
+</li>
+<li>
+<p>lightbox 燈箱在三個產品圖片做燈箱效果，點擊就跳出燈箱</p>
+</li>
+<li>
+<p>top效果在網頁右下角做go-to-top按鈕，點擊回到最上方</p>
+</li>
+</ol>
+<h2 id="重點整理"><a class="header-anchor" href="#重點整理"></a>重點整理</h2>
+<p>❗️</p>
+<h3 id="css-reset"><a class="header-anchor" href="#css-reset"></a>css reset</h3>
+<p>每次在寫網頁時，css reset要再自己多寫兩個設定：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*, *<span class="selector-pseudo">:before</span>, *<span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">	<span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">	<span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>❗️</p>
+<h3 id="header"><a class="header-anchor" href="#header"></a>Header</h3>
+<p><img src="https://i.imgur.com/RjkRrle.jpg" alt=""></p>
+<p>在寫 Header 時</p>
+<ul>
+<li>把 Header 劃分為三個部分（上圖中三個紅色框框）</li>
+<li>三個部分，分別都有自己的最外層（上圖中的紅色文字）</li>
+<li>三個部分，也分別都有自己的 .container 層，如下：</li>
+</ul>
+<div class="warning">
+<p>想要設計出「內容固定寬度，只有背景延伸」的網頁，就<strong>多加一個 .container 把要固定寬度的內容給包住</strong>，在此處，設定內容寬度最大為1000px</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">	<span class="attribute">max-width</span>: <span class="number">1000px</span>;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+<p>⭐️ 第一個部分 <code>&lt;div class=&quot;header_top&quot;&gt;</code><br>
+<img src="https://i.imgur.com/S7vRfHP.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;header_top&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;container clearfix&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>⭐️ 第二個部分 <code>&lt;div class=&quot;header&quot;&gt;</code><br>
+<img src="https://i.imgur.com/g3oCMcp.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;header&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;header_content container&quot;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>設定相對定位的定位點不是以最外層（.header），<mark>而是以「有.container」的 div （.header_content）為相對定位的定位點</mark>（設定 <code>position: relative;</code>）<br>
+<img src="https://i.imgur.com/2660jm3.jpg" alt="" width="500"></li>
+</ul>
+<p>⭐️ 第三個部分 <code>&lt;div class=&quot;header_banner&quot;&gt;</code><br>
+<img src="https://i.imgur.com/Cutr6Vi.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;header_banner&quot;&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;banner container&quot;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>設定相對定位的定位點不是以最外層（.header_banner），<mark>而是以「有.container」的 div（.banner）為相對定位的定位點</mark>（設定 <code>position: relative;</code>）<br>
+<img src="https://i.imgur.com/l5jtKrW.jpg" alt="" width="500"></li>
+</ul>
+<h3 id="下拉選單"><a class="header-anchor" href="#下拉選單"></a>下拉選單</h3>
+<ul>
+<li>為下拉選單設一個獨立的 <code>&lt;div class=&quot;dropdown&quot;&gt;</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;</span><br><span class="line"> &lt;a href&#x3D;&quot;#&quot;&gt;產品介紹&lt;&#x2F;a&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;dropdown jq_submenu&quot;&gt;</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	 &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Html 5基礎教學&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">	 &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;響應式網站設計&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">	 &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;jQuery 實戰教學&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;li&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>.dropdown</code> 以 <code>.header_content</code> 為定位點，來設定絕對定位</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header_content</span>&#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdown</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="danger">
+<p>注意！為了能夠讓 <code>.dropdown</code> 在最上層，不被 banner 蓋住，要記得在 <code>.dropdown</code> 的父層 <code>.header_menu</code> 設定 <code>z-index</code></p>
+<p><img src="https://i.imgur.com/CtAIRu8.jpg" alt=""></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header_menu</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">	<span class="comment">/*z-index要寫在這裡！！！*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/FMX2JuJ.jpg" alt=""></p>
+</div>
+<h3 id="swiper-banner輪播效果"><a class="header-anchor" href="#swiper-banner輪播效果"></a>Swiper banner輪播效果</h3>
+<ul>
+<li>當banner上面有其他元素時，例如此處有：
+<ul>
+<li>半透明黑底 <code>&lt;div class=&quot;banner_rect&quot;&gt;</code></li>
+<li>白色文字 <code>&lt;p&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>❗️ 其他元素都要跟banner圖片一起放在同一個 <code>&quot;swiper-slide&quot;</code> 裡面，才可以跟圖片一起輪播<br>
+<img src="https://i.imgur.com/SK44WDA.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;swiper-slide&quot;&gt;</span><br><span class="line">    &lt;img src&#x3D;&quot;images&#x2F;banner.png&quot; alt&#x3D;&quot;banner&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class&#x3D;&quot;banner_rect&quot;&gt;</span><br><span class="line">	 &lt;p&gt;六角學院&lt;br&gt;讓您奠定良好的前端基礎&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="最上方選單fixed"><a class="header-anchor" href="#最上方選單fixed"></a>最上方選單fixed</h3>
+<p>我想讓這兩塊：<br>
+<img src="https://i.imgur.com/ta6RNKW.jpg" alt=""></p>
+<p><code>&lt;div class=&quot;header_top&quot;&gt;</code> 和<code>&lt;div class=&quot;header&quot;&gt;</code>可以永遠固定在網頁的最上方。</p>
+<p>但是，加上 <code>position: fixed;</code> 之後，版面都會跑掉，該怎麼辦呢？</p>
+<p><strong>解決方法：</strong></p>
+<p><mark>fixed 你必須自己設計出寬高來，否則就不會有實際寬高</mark>，所以必須再寫下方語法來搭配：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header_top</span>&#123;</span><br><span class="line">	<span class="comment">/*fixed在網頁最上方*/</span></span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="comment">/*必須自己設計出寬高來，否則就不會有實際寬高*/</span></span><br><span class="line">	<span class="attribute">height</span>: <span class="number">28px</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="comment">/*要加上背景色*/</span></span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#f6f6f6</span>;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span>&#123;</span><br><span class="line">	<span class="comment">/*fixed在網頁最上方*/</span></span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="comment">/*.header_top的高度=28px*/</span></span><br><span class="line">	<span class="attribute">top</span>: <span class="number">28px</span>;</span><br><span class="line">	<span class="comment">/*必須自己設計出寬高來，否則就不會有實際寬高*/</span></span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="comment">/*要加上背景色*/</span></span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>❗️ <mark>為了避免banner被上方fixed的部分給遮住</mark>，先在<code>&lt;div class=&quot;header_banner&quot;&gt;</code>外面多包一層<code>&lt;div class=&quot;banner_frame&quot;&gt;</code></p>
+<p>html語法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;banner_frame&quot;&gt;</span><br><span class="line">		&lt;div class&#x3D;&quot;header_banner&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>接著在<code>.banner_frame</code>加上<code>padding-top: 78px;</code> （<code>.header_top</code>和<code>.header</code>的高度加起來是78px）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.banner_frame</span>&#123;</span><br><span class="line">	<span class="comment">/*避免banner被上方fixed的部分給遮住*/</span></span><br><span class="line">	<span class="attribute">padding-top</span>: <span class="number">78px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這樣就ok了！</p>
+<h2 id="我的問題"><a class="header-anchor" href="#我的問題"></a>我的問題</h2>
+<h3 id="q"><a class="header-anchor" href="#q"></a>Q:</h3>
+<p><img src="https://i.imgur.com/9cZ5uKd.jpg" alt="" width="300"></p>
+<p>我想讓下拉選單的中線可以對齊它所屬的主選單（如上圖，現在看起來往左邊歪），我試著把下拉選單的定位點設定在每個選單上</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header_menu</span>&gt;<span class="selector-tag">li</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然後把下拉選單（.dropdown）設定left: 50%，結果下拉選單的寬度變得很小（如下圖紅色箭頭處）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdown</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateX</span>(-50%);</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/O2TcKe1.jpg" alt="" width="300"></p>
+<p>請問老師這該怎麼調整呢？</p>
+<p>A:<br>
+為了讓下拉選單的中線可以對齊它所屬的主選單，所以把下拉選單的定位點設定在每個選單上，語法如下：</p>
+<p><code>.header_menu&gt;li</code> 要下相對定位語法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header_menu</span>&gt;<span class="selector-tag">li</span>&#123;</span><br><span class="line">	<span class="attribute">float</span>: left;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然後把下拉選單（.dropdown）設定如下：</p>
+<ul>
+<li><code>.dropdown</code> 寬度下 100% （撐滿父元素的寬度）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dropdown</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateX</span>(-50%);</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>.header_menu&gt;li&gt;a</code> 不要用 <code>margin-left</code>，會因此影響 % 的推擠</li>
+</ul>
+<p>藉此流程就可設計出你要的細節。</p>
+<h3 id="q-承上題"><a class="header-anchor" href="#q-承上題"></a>Q: 承上題</h3>
+<p>想要讓下拉選單的寬度會隨著內容的文字多寡去自適應，讓文字不會折成兩行。</p>
+<p>但是設定<code>width: 100%;</code> 之後，下拉選單的寬度就不會隨著內容自適應了（如下圖，因為<code>.dropdown</code>的寬度只會撐滿父元素的寬度，所以字折成兩行）</p>
+<p>要怎麼調整呢？<br>
+<img src="https://i.imgur.com/tw857tq.png" alt="" width="300"></p>
+<p>A:<br>
+RWD 的部分會建議使用漢堡選單的形式並且移除絕對定位（這可以減少許多不可預期的問題）相關實作方式可以參考 Bootstrap：<span class="exturl" data-url="aHR0cHM6Ly9nZXRib290c3RyYXAuY29tL2RvY3MvNC4zL2NvbXBvbmVudHMvbmF2YmFyLw==">https://getbootstrap.com/docs/4.3/components/navbar/<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="q-在-swiper-的課程中-老師是教我們用-cdn-來載入-想請問在實務上-也都是這樣直接用-cdn-載入嗎？"><a class="header-anchor" href="#q-在-swiper-的課程中-老師是教我們用-cdn-來載入-想請問在實務上-也都是這樣直接用-cdn-載入嗎？"></a>Q: 在 Swiper 的課程中，老師是教我們用 CDN 來載入，想請問在實務上，也都是這樣直接用 CDN 載入嗎？</h3>
+<p>因為在 Q&amp;A 中有看到助教説「使用 CDN 時，記得要另外寫載入本地端的語法，以免 CDN 服務資源無法載入的情況」</p>
+<p>既然是這樣，那為什麼不要直接用本地端載入就好了呢？</p>
+<p>我在這次的作業中，改為嘗試用本地端載入，想確認我這樣的做法對不對：因為從 GitHub 上（<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25vbGltaXRzNHdlYi9Td2lwZXIvdHJlZS9tYXN0ZXIvZGlzdA==">https://github.com/nolimits4web/Swiper/tree/master/dist<i class="fa fa-external-link-alt"></i></span> ）<br>
+swiper.min.css 和 swiper.min.js 無法直接下載檔案（如下圖中箭頭處，只能打開看 Raw 檔），因此我在自己的 css 和 js 資料夾中先自行新增兩個命名為 swiper.min.css 和 swiper.min.js 的檔，再把各自 Raw 中的內容全部複製貼過去</p>
+<p><img src="https://i.imgur.com/sOt34lH.jpg" alt=""></p>
+<p>請問這樣的步驟是正確的嗎？</p>
+<p>A:<br>
+你貼的方法流程 ok，至於 cdn 與本地的差異在於「責任歸屬」，因為當系統壞掉時，你不能說因為 CDN 掛掉導致系統錯誤，所以如果會擔心的話也是都可以使用本地下載載入也 ok。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/685e8a50/" rel="prev" title="將 jQuery 與 CSS 樣式抽離心法">
+      <i class="fa fa-chevron-left"></i> 將 jQuery 與 CSS 樣式抽離心法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/76efa71/" rel="next" title="JavaScript 環境設定 (編輯器、jsbin、console)">
+      JavaScript 環境設定 (編輯器、jsbin、console) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我的codepen練習"><span class="nav-number">1.</span> <span class="nav-text">我的codepen練習</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重點整理"><span class="nav-number">2.</span> <span class="nav-text">重點整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css-reset"><span class="nav-number">2.1.</span> <span class="nav-text">css reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#header"><span class="nav-number">2.2.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下拉選單"><span class="nav-number">2.3.</span> <span class="nav-text">下拉選單</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swiper-banner輪播效果"><span class="nav-number">2.4.</span> <span class="nav-text">Swiper banner輪播效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最上方選單fixed"><span class="nav-number">2.5.</span> <span class="nav-text">最上方選單fixed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的問題"><span class="nav-number">3.</span> <span class="nav-text">我的問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#q"><span class="nav-number">3.1.</span> <span class="nav-text">Q:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-承上題"><span class="nav-number">3.2.</span> <span class="nav-text">Q: 承上題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-在-swiper-的課程中-老師是教我們用-cdn-來載入-想請問在實務上-也都是這樣直接用-cdn-載入嗎？"><span class="nav-number">3.3.</span> <span class="nav-text">Q: 在 Swiper 的課程中，老師是教我們用 CDN 來載入，想請問在實務上，也都是這樣直接用 CDN 載入嗎？</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '0473b21dde2842eba70c92bb2ad7164c',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

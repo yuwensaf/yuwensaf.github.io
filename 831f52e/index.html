@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="這篇要介紹的是「變數的 string 型別」">
+<meta property="og:type" content="article">
+<meta property="og:title" content="變數 string 介紹">
+<meta property="og:url" content="https://yuwensaf.github.io/831f52e/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="這篇要介紹的是「變數的 string 型別」">
+<meta property="og:image" content="https://i.imgur.com/LDEjykS.jpg">
+<meta property="og:image" content="https://i.imgur.com/JOfrq23.jpg">
+<meta property="og:image" content="https://i.imgur.com/wOGJFSV.jpg">
+<meta property="og:image" content="https://i.imgur.com/Pz7j363.jpg">
+<meta property="og:image" content="https://i.imgur.com/2iX6dyf.jpg">
+<meta property="og:image" content="https://i.imgur.com/AnrmPvK.jpg">
+<meta property="article:published_time" content="2020-05-02T13:53:31.000Z">
+<meta property="article:modified_time" content="2020-05-02T13:54:44.731Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/LDEjykS.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/831f52e/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>變數 string 介紹 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/831f52e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          變數 string 介紹
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 21:53:31 / Modified: 21:54:44" itemprop="dateCreated datePublished" datetime="2020-05-02T21:53:31+08:00">2020-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>這篇要介紹的是「變數的 string 型別」</p>
+<a id="more"></a>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;gift&quot;&gt;</span><br><span class="line">    &lt;img src&#x3D;&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;xJW0Kt1&#x2F;1-chocolate.jpg&quot; width&#x3D;&quot;150&quot; alt&#x3D;&quot;cake&quot;&gt;</span><br><span class="line">    &lt;p&gt;Hello &lt;em id&#x3D;&quot;myName&quot;&gt;&lt;&#x2F;em&gt;:&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;h2&gt;祝妳生日快樂&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;sendName&quot;&gt;juju&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>現在，我要做的是：在下圖中紅色箭頭處的地方（也就是<code>&lt;em id=&quot;myName&quot;&gt;&lt;/em&gt;</code>），用 JS 插入我的名字</p>
+<p><img src="https://i.imgur.com/LDEjykS.jpg" alt="" width="300"></p>
+<p>作法如下：</p>
+<h1 id="將-字串-設為變數"><a class="header-anchor" href="#將-字串-設為變數"></a>將「字串」設為變數</h1>
+<div class="danger">
+<h3 id="🎃-數字-與-字串-的差別在於："><a class="header-anchor" href="#🎃-數字-與-字串-的差別在於："></a>🎃 「數字」與「字串」的差別在於：</h3>
+<h4 id="🍋-數字-number-不需要用-單引號-把值包起來"><a class="header-anchor" href="#🍋-數字-number-不需要用-單引號-把值包起來"></a>🍋 數字 number <mark>不需要</mark>用「單引號」把值包起來</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> price = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="🍋-字串-string-需要用-單引號-把值包起來"><a class="header-anchor" href="#🍋-字串-string-需要用-單引號-把值包起來"></a>🍋 字串 string <mark>需要</mark>用「單引號」把值包起來</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> indexName = <span class="string">'親愛的'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>這是 JS 的格式規定</li>
+</ul>
+</div>
+<ul>
+<li>因為，要插入的內容是屬於「文字」，所以我設定的變數是<code>var indexName = '親愛的';</code></li>
+</ul>
+<div class="danger">
+<h3 id="🎃-getelementbyid-myname-這裡要使用-單引號-也是因為-myname-是一個-id-是屬於-字串-它並不是-變數"><a class="header-anchor" href="#🎃-getelementbyid-myname-這裡要使用-單引號-也是因為-myname-是一個-id-是屬於-字串-它並不是-變數"></a>🎃 <code>getElementById('myName')</code> 這裡要使用「單引號」，也是因為「myName」是一個「id」，是屬於「字串」（它並不是“變數”）</h3>
+</div>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> indexName = <span class="string">'親愛的'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'myName'</span>).textContent = indexName;</span><br></pre></td></tr></table></figure>
+<p>可以看到，文字內容就插入了</p>
+<p><img src="https://i.imgur.com/JOfrq23.jpg" alt="" width="300"></p>
+<h1 id="接連插入變數"><a class="header-anchor" href="#接連插入變數"></a>接連插入變數</h1>
+<p>要如何將兩個變數「接連插入」呢？</p>
+<h2 id="方式一：用-連接兩個變數"><a class="header-anchor" href="#方式一：用-連接兩個變數"></a>方式一：用「<code>+</code>」連接兩個變數</h2>
+<div class="danger">
+<h4 id="🎃-因為我想要讓-hola-跟-親愛的-中間空一格-因此-在設定變數時-就在-hola-後面空一格"><a class="header-anchor" href="#🎃-因為我想要讓-hola-跟-親愛的-中間空一格-因此-在設定變數時-就在-hola-後面空一格"></a>🎃 因為我想要讓「Hola」跟「親愛的」中間空一格，因此，在設定變數時，就在「Hola」後面空一格</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> polite = <span class="string">'Hola '</span>;</span><br></pre></td></tr></table></figure>
+</div>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> polite = <span class="string">'Hola '</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> indexName = <span class="string">'親愛的'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'myName'</span>).textContent = polite + indexName;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/wOGJFSV.jpg" alt="" width="300"></p>
+<h2 id="方式二：設定第三個變數-把前兩個變數加在一起"><a class="header-anchor" href="#方式二：設定第三個變數-把前兩個變數加在一起"></a>方式二：設定第三個變數，把前兩個變數加在一起</h2>
+<p>🎃 用「<code>+</code>」連接兩個變數</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> polite = <span class="string">'Hola '</span>;</span><br><span class="line"><span class="keyword">var</span> indexName = <span class="string">'親愛的'</span>;</span><br><span class="line"><span class="keyword">var</span> total = polite + indexName;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'myName'</span>).textContent = total;</span><br></pre></td></tr></table></figure>
+<p>也會得到相同的結果<br>
+<img src="https://i.imgur.com/Pz7j363.jpg" alt="" width="300"></p>
+<h1 id="變數-字串"><a class="header-anchor" href="#變數-字串"></a>變數 + 字串</h1>
+<p>🎃 使用「<code>+</code>」連接「變數、字串（我愛妳）」</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> polite = <span class="string">'Hola '</span>;</span><br><span class="line"><span class="keyword">var</span> indexName = <span class="string">'親愛的'</span>;</span><br><span class="line"><span class="keyword">var</span> total = polite + indexName + <span class="string">' 我愛妳'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'myName'</span>).textContent = total;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/2iX6dyf.jpg" alt="" width="300"></p>
+<h1 id="用-console-除錯"><a class="header-anchor" href="#用-console-除錯"></a>用 Console 除錯</h1>
+<div class="danger">
+<h4 id="🎃-如果-js-程式碼有寫錯-都可以在開發者工具的-console-看到-是-js-的哪一行出錯了"><a class="header-anchor" href="#🎃-如果-js-程式碼有寫錯-都可以在開發者工具的-console-看到-是-js-的哪一行出錯了"></a>🎃 如果 JS 程式碼有寫錯，都可以在開發者工具的 Console 看到，是 JS 的哪一行出錯了</h4>
+<p>如下圖的箭頭處<br>
+–&gt; all.js 的第四行出錯了</p>
+<p><img src="https://i.imgur.com/AnrmPvK.jpg" alt=""></p>
+</div>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/135f158d/" rel="prev" title="變數 number 介紹">
+      <i class="fa fa-chevron-left"></i> 變數 number 介紹
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/34d93794/" rel="next" title="如何輸出內容？">
+      如何輸出內容？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#將-字串-設為變數"><span class="nav-number">1.</span> <span class="nav-text">將「字串」設為變數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-數字-與-字串-的差別在於："><span class="nav-number">1.0.1.</span> <span class="nav-text">🎃 「數字」與「字串」的差別在於：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🍋-數字-number-不需要用-單引號-把值包起來"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">🍋 數字 number 不需要用「單引號」把值包起來</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#🍋-字串-string-需要用-單引號-把值包起來"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">🍋 字串 string 需要用「單引號」把值包起來</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-getelementbyid-myname-這裡要使用-單引號-也是因為-myname-是一個-id-是屬於-字串-它並不是-變數"><span class="nav-number">1.0.2.</span> <span class="nav-text">🎃 getElementById(&#39;myName&#39;) 這裡要使用「單引號」，也是因為「myName」是一個「id」，是屬於「字串」（它並不是“變數”）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接連插入變數"><span class="nav-number">2.</span> <span class="nav-text">接連插入變數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式一：用-連接兩個變數"><span class="nav-number">2.1.</span> <span class="nav-text">方式一：用「+」連接兩個變數</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-因為我想要讓-hola-跟-親愛的-中間空一格-因此-在設定變數時-就在-hola-後面空一格"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">🎃 因為我想要讓「Hola」跟「親愛的」中間空一格，因此，在設定變數時，就在「Hola」後面空一格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式二：設定第三個變數-把前兩個變數加在一起"><span class="nav-number">2.2.</span> <span class="nav-text">方式二：設定第三個變數，把前兩個變數加在一起</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#變數-字串"><span class="nav-number">3.</span> <span class="nav-text">變數 + 字串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用-console-除錯"><span class="nav-number">4.</span> <span class="nav-text">用 Console 除錯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-如果-js-程式碼有寫錯-都可以在開發者工具的-console-看到-是-js-的哪一行出錯了"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">🎃 如果 JS 程式碼有寫錯，都可以在開發者工具的 Console 看到，是 JS 的哪一行出錯了</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : 'a104b5f55db5ad602dda4fb99c642ed9',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
