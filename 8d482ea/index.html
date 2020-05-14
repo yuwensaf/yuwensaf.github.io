@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="要編譯資料，就必須學會使用 JSON.parse 和 JSON.stringify">
+<meta property="og:type" content="article">
+<meta property="og:title" content="透過 JSON.parse、JSON.stringify 來編譯資料">
+<meta property="og:url" content="https://yuwensaf.github.io/8d482ea/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="要編譯資料，就必須學會使用 JSON.parse 和 JSON.stringify">
+<meta property="og:image" content="https://i.imgur.com/2gNNiqA.jpg">
+<meta property="og:image" content="https://i.imgur.com/m13IIcw.jpg">
+<meta property="og:image" content="https://i.imgur.com/sY5yQLH.jpg">
+<meta property="og:image" content="https://i.imgur.com/TjbVNqS.jpg">
+<meta property="og:image" content="https://i.imgur.com/JWJn3Qt.jpg">
+<meta property="og:image" content="https://i.imgur.com/cvpret2.jpg">
+<meta property="og:image" content="https://i.imgur.com/MITRSkB.jpg">
+<meta property="og:image" content="https://i.imgur.com/04AwzaB.jpg">
+<meta property="article:published_time" content="2020-05-14T13:57:02.000Z">
+<meta property="article:modified_time" content="2020-05-14T13:59:41.805Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/2gNNiqA.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/8d482ea/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>透過 JSON.parse、JSON.stringify 來編譯資料 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">107</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/8d482ea/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          透過 JSON.parse、JSON.stringify 來編譯資料
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-14 21:57:02 / Modified: 21:59:41" itemprop="dateCreated datePublished" datetime="2020-05-14T21:57:02+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>要編譯資料，就必須學會使用 JSON.parse 和 JSON.stringify</p>
+<a id="more"></a>
+<div class="danger">
+<p>要學會如何：</p>
+<h2 id="🎃-json-stringify-將-array-轉為-string"><a class="header-anchor" href="#🎃-json-stringify-將-array-轉為-string"></a>🎃 <code>JSON.stringify</code> 將 array 轉為 string</h2>
+<h4 id="🍋-當我要儲存資料到-localstorage-裡面時-如果我的資料是-json-或-object-的格式-都要先把資料格式轉為-string-因為：localstorage-只會儲存-string-的資料"><a class="header-anchor" href="#🍋-當我要儲存資料到-localstorage-裡面時-如果我的資料是-json-或-object-的格式-都要先把資料格式轉為-string-因為：localstorage-只會儲存-string-的資料"></a>🍋 當我要儲存資料到 localStorage 裡面時，如果我的資料是「JSON 或 object」的格式，都要先把資料格式轉為「string」，因為：localStorage 只會儲存「string」的資料</h4>
+<h2 id="🎃-json-parse-將-string-轉為-array"><a class="header-anchor" href="#🎃-json-parse-將-string-轉為-array"></a>🎃 <code>JSON.parse</code> 將 string 轉為 array</h2>
+<h4 id="🍋-從-localstorage-取出的資料-都會是-string-的格式-但是我的資料原本是一個-array-我希望把資料變回-array-的格式-json-的格式-才可以去取出-陣列裡面的值"><a class="header-anchor" href="#🍋-從-localstorage-取出的資料-都會是-string-的格式-但是我的資料原本是一個-array-我希望把資料變回-array-的格式-json-的格式-才可以去取出-陣列裡面的值"></a>🍋 從 localStorage 取出的資料，都會是「string」的格式，但是我的資料原本是一個「array」，我希望把資料變回「array」的格式（JSON 的格式），才可以去取出「陣列裡面的值」</h4>
+</div>
+<h1 id="none"><a class="header-anchor" href="#none"></a></h1>
+<p>🍅 現在有一個 array，我要把它儲存到 localStorage 裡面</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,county);</span><br></pre></td></tr></table></figure>
+<div class="warning">
+<p>我用<code>localStorage.setItem</code>，想要把這個 array 儲存到 localStorage 裡面</p>
+<p>😢 但是，在開發者工具中，countyItem 的 Value 竟然是<code>[object Object]</code>–&gt; 這不是我要的結果</p>
+<p><img src="https://i.imgur.com/2gNNiqA.jpg" alt=""></p>
+</div>
+<p>🍅 我想從 localStorage 取出這個 array 的資料</p>
+<p>JS:</p>
+<p>🎃 建立變數<code>getData</code>，用<code>localStorage.getItem</code>取出 array</p>
+<p>🎃 再用<code>console.log</code>印出「農夫的名字」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儲存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,county);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從 localStorage 取出值</span></span><br><span class="line"><span class="keyword">var</span> getData = localStorage.getItem(<span class="string">'countyItem'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getData[<span class="number">0</span>].farmer);</span><br></pre></td></tr></table></figure>
+<div class="warning">
+<p>😢 在開發者工具中，Console 竟然是顯示「undefined」</p>
+<p><img src="https://i.imgur.com/m13IIcw.jpg" alt="" width="300"></p>
+<p>為什麼會這樣呢？</p>
+</div>
+<p>原因為：</p>
+<h2 id="localstorage-會自動把儲存的資料都轉成-string"><a class="header-anchor" href="#localstorage-會自動把儲存的資料都轉成-string"></a>localStorage 會自動把儲存的資料都轉成「string」</h2>
+<p>我用<code>typeof(getData)</code>來查詢，從 localStorage 裡面撈出的值，到底是什麼「型別」</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儲存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,county);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從 localStorage 取出值</span></span><br><span class="line"><span class="keyword">var</span> getData = localStorage.getItem(<span class="string">'countyItem'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(getData));</span><br></pre></td></tr></table></figure>
+<div class="danger">
+<p>因為我是把一個「array」存到 localStorage 裡面，照理來說，從 localStorage 裡面撈出的值，也應該要是「array」才對</p>
+<h3 id="結果-typeof-getdata-回傳的是-string-並不是-array"><a class="header-anchor" href="#結果-typeof-getdata-回傳的是-string-並不是-array"></a>‼️ 結果，<code>typeof(getData)</code>回傳的是「string」，並不是「array」</h3>
+<p><img src="https://i.imgur.com/sY5yQLH.jpg" alt="" width="370"></p>
+<p>原因為：</p>
+<h2 id="🎃-使用-localstorage-會自動把儲存的資料都轉成-string"><a class="header-anchor" href="#🎃-使用-localstorage-會自動把儲存的資料都轉成-string"></a>🎃 使用 localStorage，會自動把儲存的資料都轉成「string」</h2>
+<p>🍋 所以，在 localStorage 的陣列就會用<code>[object Object]</code>的形式來呈現</p>
+<hr>
+<p>但是，我要儲存的是一個「陣列的結構」</p>
+<p>❓ 因為 localStorage 只能儲存「string」，我該如何把「array 轉為 string」呢？</p>
+</div>
+<h1 id="1-先把-array-轉為-string"><a class="header-anchor" href="#1-先把-array-轉為-string"></a>1️⃣ 先把 array 轉為 string</h1>
+<p>JS 作法如下：</p>
+<div class="success">
+<p>🎃 在 array 下方，先建立一個變數<code>countyString</code></p>
+<h2 id="🎃-用json-stringify把-array-的資料-字串化"><a class="header-anchor" href="#🎃-用json-stringify把-array-的資料-字串化"></a>🎃 用<code>JSON.stringify</code>把「array 的資料“字串化”」</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把 array 轉為 string</span></span><br><span class="line"><span class="keyword">var</span> countyString = <span class="built_in">JSON</span>.stringify(county);</span><br></pre></td></tr></table></figure>
+<p>用<code>console.log(countyString);</code>來看看：</p>
+<h3 id="🎃-原本的-array-就被轉為-字串-了"><a class="header-anchor" href="#🎃-原本的-array-就被轉為-字串-了"></a>🎃 原本的 array 就被轉為「字串」了</h3>
+<p><img src="https://i.imgur.com/TjbVNqS.jpg" alt="" width="400"></p>
+</div>
+<h1 id="2-再儲存到-localstorage-裡面"><a class="header-anchor" href="#2-再儲存到-localstorage-裡面"></a>2️⃣ 再儲存到 localStorage 裡面</h1>
+<div class="success">
+<p>🎃 把 array 轉為「字串」後，就可以放心的把它儲存到 localStorage 裡面了</p>
+<h3 id="🎃-用localstorage-setitem把countystring儲存到-localstorage-裡面"><a class="header-anchor" href="#🎃-用localstorage-setitem把countystring儲存到-localstorage-裡面"></a>🎃 用<code>localStorage.setItem</code>把<code>countyString</code>儲存到 localStorage 裡面</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把 array 轉為 string</span></span><br><span class="line"><span class="keyword">var</span> countyString = <span class="built_in">JSON</span>.stringify(county);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儲存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,countyString);</span><br></pre></td></tr></table></figure>
+<p>😄 可以看到，在 localStorage 裡面，把我的「array 的資料」都用「字串的形式」儲存進去了</p>
+<p><img src="https://i.imgur.com/JWJn3Qt.jpg" alt=""></p>
+</div>
+<h1 id="從-localstorage-取出值"><a class="header-anchor" href="#從-localstorage-取出值"></a>從 localStorage 取出值</h1>
+<p>現在，我想要取出剛才「存到 localStorage 裡面的資料」</p>
+<h2 id="❌-錯誤寫法"><a class="header-anchor" href="#❌-錯誤寫法"></a>❌ 錯誤寫法</h2>
+<div class="danger">
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把 array 轉為 string</span></span><br><span class="line"><span class="keyword">var</span> countyString = <span class="built_in">JSON</span>.stringify(county);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儲存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,countyString);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從 localStorage 取出值</span></span><br><span class="line"><span class="keyword">var</span> getData = localStorage.getItem(<span class="string">'countyItem'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(getData));</span><br></pre></td></tr></table></figure>
+<p>❌ 如果我是直接用<code>var getData = localStorage.getItem('countyItem');</code>來取出值，再用<code>typeof(getData)</code>來看「型別」</p>
+<p>因為「<code>county</code>陣列」已經先被「轉為字串」後，才存到 localStorage 裡面。因此，從 localStorage 取出的值，就會是「string」</p>
+<p><img src="https://i.imgur.com/cvpret2.jpg" alt="" width="370"></p>
+<h2 id="從-localstorage-取出的值-一定都會是-string"><a class="header-anchor" href="#從-localstorage-取出的值-一定都會是-string"></a>‼️ <mark>從 localStorage 取出的值，一定都會是「string」</mark></h2>
+<p>該如何把「string」變回「array 的格式」呢？</p>
+</div>
+<p>JS 作法如下：</p>
+<h2 id="1-先將-string-轉為-array"><a class="header-anchor" href="#1-先將-string-轉為-array"></a>1️⃣ 先將 string 轉為 array</h2>
+<div class="success">
+<p>🎃 從 localStorage 取出值後，先建立一個變數<code>getDataAry</code>，來把 string 轉為 array</p>
+<h2 id="🎃-用json-parse來-格式化-把-string-轉為-array"><a class="header-anchor" href="#🎃-用json-parse來-格式化-把-string-轉為-array"></a>🎃 用<code>JSON.parse</code>來「格式化」–&gt; 把「string」轉為「array」</h2>
+<p>🍋 「parse」是「解析」的意思</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把 array 轉為 string</span></span><br><span class="line"><span class="keyword">var</span> countyString = <span class="built_in">JSON</span>.stringify(county);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儲存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,countyString);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從 localStorage 取出值</span></span><br><span class="line"><span class="keyword">var</span> getData = localStorage.getItem(<span class="string">'countyItem'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 將 string 轉為 array</span></span><br><span class="line"><span class="keyword">var</span> getDataAry = <span class="built_in">JSON</span>.parse(getData);</span><br></pre></td></tr></table></figure>
+<h4 id="🎃-用console-log-typeof-getdataary-來看看-轉為-array-之後的getdataary會是什麼型別"><a class="header-anchor" href="#🎃-用console-log-typeof-getdataary-來看看-轉為-array-之後的getdataary會是什麼型別"></a>🎃 用<code>console.log(typeof(getDataAry));</code>來看看，轉為「array」之後的<code>getDataAry</code>會是什麼型別</h4>
+<p>✅ 在 Console 就會顯示「object」–&gt; 也就是“物件”的格式（JSON 的格式）</p>
+<p><img src="https://i.imgur.com/MITRSkB.jpg" alt="" width="350"></p>
+</div>
+<h2 id="2-再從-array-撈出資料"><a class="header-anchor" href="#2-再從-array-撈出資料"></a>2️⃣ 再從 array 撈出資料</h2>
+<div class="success">
+<p>把 string 轉為 array 後，我就可以很放心的「撈出 array 裡面的資料了」</p>
+<ul>
+<li>現在我想要撈出「陣列中，農夫的名字」：<br>
+<code>console.log(getDataAry[0].farmer);</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> county = [</span><br><span class="line">    &#123;</span><br><span class="line">        farmer: <span class="string">'卡斯伯'</span>,</span><br><span class="line">        chick: <span class="number">90</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把 array 轉為 string</span></span><br><span class="line"><span class="keyword">var</span> countyString = <span class="built_in">JSON</span>.stringify(county);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儲存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'countyItem'</span>,countyString);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從 localStorage 取出值</span></span><br><span class="line"><span class="keyword">var</span> getData = localStorage.getItem(<span class="string">'countyItem'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 將 string 轉為 array</span></span><br><span class="line"><span class="keyword">var</span> getDataAry = <span class="built_in">JSON</span>.parse(getData);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 從 array 撈出資料</span></span><br><span class="line"><span class="built_in">console</span>.log(getDataAry[<span class="number">0</span>].farmer);</span><br></pre></td></tr></table></figure>
+<p>😄 在 Console 就會顯示「farmer 的<code>value</code>」了</p>
+<p><img src="https://i.imgur.com/04AwzaB.jpg" alt="" width="350"></p>
+</div>
+<h1 id="我的-codepen-範例"><a class="header-anchor" href="#我的-codepen-範例"></a>我的 codepen 範例</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL2Z1bGwvd3ZCcHZ3Sw==">https://codepen.io/saffranwang/full/wvBpvwK<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/9ffa65e5/" rel="prev" title="setItem、getItem 基本操作">
+      <i class="fa fa-chevron-left"></i> setItem、getItem 基本操作
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-json-stringify-將-array-轉為-string"><span class="nav-number">1.</span> <span class="nav-text">🎃 JSON.stringify 將 array 轉為 string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🍋-當我要儲存資料到-localstorage-裡面時-如果我的資料是-json-或-object-的格式-都要先把資料格式轉為-string-因為：localstorage-只會儲存-string-的資料"><span class="nav-number">1.0.1.</span> <span class="nav-text">🍋 當我要儲存資料到 localStorage 裡面時，如果我的資料是「JSON 或 object」的格式，都要先把資料格式轉為「string」，因為：localStorage 只會儲存「string」的資料</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-json-parse-將-string-轉為-array"><span class="nav-number">2.</span> <span class="nav-text">🎃 JSON.parse 將 string 轉為 array</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🍋-從-localstorage-取出的資料-都會是-string-的格式-但是我的資料原本是一個-array-我希望把資料變回-array-的格式-json-的格式-才可以去取出-陣列裡面的值"><span class="nav-number">2.0.1.</span> <span class="nav-text">🍋 從 localStorage 取出的資料，都會是「string」的格式，但是我的資料原本是一個「array」，我希望把資料變回「array」的格式（JSON 的格式），才可以去取出「陣列裡面的值」</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#none"><span class="nav-number"></span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#localstorage-會自動把儲存的資料都轉成-string"><span class="nav-number">1.</span> <span class="nav-text">localStorage 會自動把儲存的資料都轉成「string」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#結果-typeof-getdata-回傳的是-string-並不是-array"><span class="nav-number">1.1.</span> <span class="nav-text">‼️ 結果，typeof(getData)回傳的是「string」，並不是「array」</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-使用-localstorage-會自動把儲存的資料都轉成-string"><span class="nav-number">2.</span> <span class="nav-text">🎃 使用 localStorage，會自動把儲存的資料都轉成「string」</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-先把-array-轉為-string"><span class="nav-number"></span> <span class="nav-text">1️⃣ 先把 array 轉為 string</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-用json-stringify把-array-的資料-字串化"><span class="nav-number">1.</span> <span class="nav-text">🎃 用JSON.stringify把「array 的資料“字串化”」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-原本的-array-就被轉為-字串-了"><span class="nav-number">1.1.</span> <span class="nav-text">🎃 原本的 array 就被轉為「字串」了</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-再儲存到-localstorage-裡面"><span class="nav-number"></span> <span class="nav-text">2️⃣ 再儲存到 localStorage 裡面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-用localstorage-setitem把countystring儲存到-localstorage-裡面"><span class="nav-number">0.1.</span> <span class="nav-text">🎃 用localStorage.setItem把countyString儲存到 localStorage 裡面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#從-localstorage-取出值"><span class="nav-number"></span> <span class="nav-text">從 localStorage 取出值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#❌-錯誤寫法"><span class="nav-number">1.</span> <span class="nav-text">❌ 錯誤寫法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#從-localstorage-取出的值-一定都會是-string"><span class="nav-number">2.</span> <span class="nav-text">‼️ 從 localStorage 取出的值，一定都會是「string」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-先將-string-轉為-array"><span class="nav-number">3.</span> <span class="nav-text">1️⃣ 先將 string 轉為 array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-用json-parse來-格式化-把-string-轉為-array"><span class="nav-number">4.</span> <span class="nav-text">🎃 用JSON.parse來「格式化」–&gt; 把「string」轉為「array」</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-用console-log-typeof-getdataary-來看看-轉為-array-之後的getdataary會是什麼型別"><span class="nav-number">4.0.1.</span> <span class="nav-text">🎃 用console.log(typeof(getDataAry));來看看，轉為「array」之後的getDataAry會是什麼型別</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-再從-array-撈出資料"><span class="nav-number">5.</span> <span class="nav-text">2️⃣ 再從 array 撈出資料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的-codepen-範例"><span class="nav-number"></span> <span class="nav-text">我的 codepen 範例</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : 'a18a9e47864ab125469bb228e1bc42aa',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

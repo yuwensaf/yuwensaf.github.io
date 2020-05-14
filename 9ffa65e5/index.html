@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="該如何「存資料到 localStorage 資料庫」呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="setItem、getItem 基本操作">
+<meta property="og:url" content="https://yuwensaf.github.io/9ffa65e5/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="該如何「存資料到 localStorage 資料庫」呢？">
+<meta property="og:image" content="https://i.imgur.com/xI00y3z.jpg">
+<meta property="og:image" content="https://i.imgur.com/0GW70Gg.jpg">
+<meta property="og:image" content="https://i.imgur.com/Ma8NYyO.jpg">
+<meta property="og:image" content="https://i.imgur.com/4UTLnF4.jpg">
+<meta property="og:image" content="https://i.imgur.com/TJxNY6z.jpg">
+<meta property="og:image" content="https://i.imgur.com/1n46I9X.jpg">
+<meta property="og:image" content="https://i.imgur.com/wJpqigt.jpg">
+<meta property="og:image" content="https://i.imgur.com/S7bHbBx.jpg">
+<meta property="article:published_time" content="2020-05-14T13:55:59.000Z">
+<meta property="article:modified_time" content="2020-05-14T13:56:28.842Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/xI00y3z.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/9ffa65e5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>setItem、getItem 基本操作 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">107</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/9ffa65e5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          setItem、getItem 基本操作
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-14 21:55:59 / Modified: 21:56:28" itemprop="dateCreated datePublished" datetime="2020-05-14T21:55:59+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>該如何「存資料到 localStorage 資料庫」呢？</p>
+<a id="more"></a>
+<p>先來看一下 localStorage 長什麼樣子</p>
+<div class="success">
+<p>進入開發者工具 &gt; 選擇 Application 頁籤</p>
+<p>🎃 在 localStorage 下方，有一個「<span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo1NTAw">http://127.0.0.1:5500<i class="fa fa-external-link-alt"></i></span>」</p>
+<p>原因為：</p>
+<p>我現在就是用「<span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo1NTAw">http://127.0.0.1:5500<i class="fa fa-external-link-alt"></i></span>」 來讀取這一頁<br>
+<img src="https://i.imgur.com/xI00y3z.jpg" alt="" width="400"></p>
+<p>🎃 選擇「<span class="exturl" data-url="aHR0cDovLzEyNy4wLjAuMTo1NTAw">http://127.0.0.1:5500<i class="fa fa-external-link-alt"></i></span>」，一開始，localStorage 裡面都會是「空的」（一開始，是沒有資料的）</p>
+<p><img src="https://i.imgur.com/0GW70Gg.jpg" alt=""></p>
+</div>
+<h1 id="setitem-存資料到-localstorage-裡面"><a class="header-anchor" href="#setitem-存資料到-localstorage-裡面"></a><code>.setItem</code> 存資料到 localStorage 裡面</h1>
+<p>作法如下：</p>
+<div class="danger">
+<p>🎃 建立變數<code>str</code>，給它一個值<code>'tom'</code></p>
+<h3 id="🍅-setitem小括弧內的第一個值：會帶到-localstorage-的-key-裡面"><a class="header-anchor" href="#🍅-setitem小括弧內的第一個值：會帶到-localstorage-的-key-裡面"></a>🍅 <code>.setItem</code>小括弧內的第一個值：會帶到 localStorage 的「Key」裡面</h3>
+<h3 id="🍅-setitem小括弧內的第二個值：會帶到-localstorage-的-value-裡面"><a class="header-anchor" href="#🍅-setitem小括弧內的第二個值：會帶到-localstorage-的-value-裡面"></a>🍅 <code>.setItem</code>小括弧內的第二個值：會帶到 localStorage 的「Value」裡面</h3>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'tom'</span>;</span><br><span class="line">localStorage.setItem(<span class="string">'myName'</span>,str);</span><br></pre></td></tr></table></figure>
+<p>🎃 回到開發者工具，可以看到：</p>
+<ul>
+<li><code>myName</code>被帶到「Key」裡面</li>
+<li><code>tom</code>被帶到「Value」裡面</li>
+</ul>
+<p><img src="https://i.imgur.com/Ma8NYyO.jpg" alt=""></p>
+</div>
+<h1 id="getitem-取出-localstorage-裡面的-value"><a class="header-anchor" href="#getitem-取出-localstorage-裡面的-value"></a><code>.getItem</code> 取出 localStorage 裡面的 Value</h1>
+<p>作法如下：</p>
+<div class="danger">
+<p>🎃 用<code>console.log()</code>來看“取出的值”</p>
+<h3 id="🍅-在-getitem小括號裡面-填入-key-就可以取出-localstorage-裡面的-value"><a class="header-anchor" href="#🍅-在-getitem小括號裡面-填入-key-就可以取出-localstorage-裡面的-value"></a>🍅 在<code>.getItem</code>小括號裡面，<mark>填入「Key」</mark>，就可以取出「localStorage 裡面的 Value」</h3>
+<h4 id="注意-getitem小括號要填入的是-key-不是-value"><a class="header-anchor" href="#注意-getitem小括號要填入的是-key-不是-value"></a>‼️ 注意！<mark><code>.getItem</code>小括號要填入的是「Key」，不是「Value」</mark></h4>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'tom'</span>;</span><br><span class="line"><span class="comment">// 存資料到 localStorage 裡面</span></span><br><span class="line">localStorage.setItem(<span class="string">'myName'</span>,str);</span><br><span class="line"><span class="comment">// 取出 localStorage 裡面的值</span></span><br><span class="line"><span class="built_in">console</span>.log(localStorage.getItem(<span class="string">'myName'</span>));</span><br></pre></td></tr></table></figure>
+<p>🎃 在 Console 裡面，就撈出了「localStorage 裡面的 Value」</p>
+<p><img src="https://i.imgur.com/4UTLnF4.jpg" alt="" width="340"></p>
+</div>
+<p>接下來，會分別針對「儲存資料」、「取出值」來做範例：</p>
+<h1 id="我的-codepen-範例"><a class="header-anchor" href="#我的-codepen-範例"></a>我的 codepen 範例</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL2Z1bGwvTFlFT015Wg==">https://codepen.io/saffranwang/full/LYEOMyZ<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="文字欄位的-value-存到-localstorage-裡面"><a class="header-anchor" href="#文字欄位的-value-存到-localstorage-裡面"></a>文字欄位的“<code>value</code>”，存到 localStorage 裡面</h1>
+<p>html:<br>
+🎃 文字欄位的「className 叫做<code>.textClass</code>」–&gt; 會用 JavaScript 去存取它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;請輸入你的姓名&lt;&#x2F;h2&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;textClass&quot;&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;button&quot; class&#x3D;&quot;btnClass&quot; value&#x3D;&quot;點擊&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/TJxNY6z.jpg" alt="" width="230"></p>
+<div class="success">
+<p>現在，我要做的功能是：點擊按鈕後，會撈出「文字欄位的值“<code>value</code>”」，再把“<code>value</code>”存到 localStorage 裡面</p>
+</div>
+<p>JS 作法如下：</p>
+<h2 id="1-在-按鈕-綁定監聽事件-addeventlistener"><a class="header-anchor" href="#1-在-按鈕-綁定監聽事件-addeventlistener"></a>1️⃣ 在「按鈕」綁定監聽事件<code>.addEventListener</code></h2>
+<div class="danger">
+<p>🎃 建立變數<code>btn</code>，來選取「按鈕<code>.btnClass</code>」</p>
+<h3 id="🎃-在-變數btn-綁定監聽事件-addeventlistener"><a class="header-anchor" href="#🎃-在-變數btn-綁定監聽事件-addeventlistener"></a>🎃 在「變數<code>btn</code>」綁定監聽事件<code>.addEventListener</code></h3>
+<p>🍋 點擊<code>btn</code>，就會執行「一個 function 叫做<code>saveName</code>」</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btnClass'</span>);</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>,saveName,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<h2 id="2-撈出-文字欄位的value"><a class="header-anchor" href="#2-撈出-文字欄位的value"></a>2️⃣ 撈出「文字欄位的<code>value</code>」</h2>
+<div class="danger">
+<p>在<code>function saveName(e){}</code>裡面：</p>
+<h3 id="🎃-建立變數str-來記錄-當下-文字欄位的value"><a class="header-anchor" href="#🎃-建立變數str-來記錄-當下-文字欄位的value"></a>🎃 建立變數<code>str</code>，來記錄「當下，文字欄位的<code>value</code>」</h3>
+<p>🍋 用<code>.value</code>取出「文字欄位的<code>value</code>」</p>
+<h4 id="因為要記錄的是-點擊-當下-文字欄位的value-因此-變數str-要寫在function-savename-e-裡面"><a class="header-anchor" href="#因為要記錄的是-點擊-當下-文字欄位的value-因此-變數str-要寫在function-savename-e-裡面"></a>‼️ 因為要記錄的是「“點擊”當下，文字欄位的<code>value</code>」，因此「變數<code>str</code>」要寫在<code>function saveName(e){}</code>裡面</h4>
+<p>❌ 因為「文字欄位本身沒有填寫<code>value</code>屬性」，因此，如果把「變數<code>str</code>」寫在<code>function saveName(e){}</code>外面，就會抓到「空值」</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btnClass'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveName</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">document</span>.querySelector(<span class="string">'.textClass'</span>).value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>,saveName,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<h2 id="3-把value存到-localstorage-裡面"><a class="header-anchor" href="#3-把value存到-localstorage-裡面"></a>3️⃣ 把<code>value</code>存到 localStorage 裡面</h2>
+<div class="danger">
+<p>🎃 用<code>.setItem</code>把<code>value</code>存到 localStorage 裡面</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btnClass'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveName</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">document</span>.querySelector(<span class="string">'.textClass'</span>).value;</span><br><span class="line">    localStorage.setItem(<span class="string">'myName'</span>,str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>,saveName,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<p>寫完 JS 程式碼了！</p>
+<p>在文字欄位輸入「ruta」後，按下「點擊」</p>
+<p>用開發者工具 Application 看：</p>
+<p>🍋 Key 帶入了<code>myName</code></p>
+<p>🍋 Value 帶入了<code>ruta</code></p>
+<p><img src="https://i.imgur.com/1n46I9X.jpg" alt=""></p>
+<h1 id="取出-localstorage-裡面的-value"><a class="header-anchor" href="#取出-localstorage-裡面的-value"></a>取出 localStorage 裡面的 Value</h1>
+<p>html:</p>
+<p>🎃 新增一個按鈕 <code>class=&quot;btnCall&quot;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;請輸入你的姓名&lt;&#x2F;h2&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;textClass&quot;&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;button&quot; class&#x3D;&quot;btnClass&quot; value&#x3D;&quot;點擊&quot;&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;button&quot; class&#x3D;&quot;btnCall&quot; value&#x3D;&quot;點擊呼叫名字&quot;&gt;</span><br></pre></td></tr></table></figure>
+<div class="success">
+<p>現在，我要做的功能是：點擊「點擊呼叫名字」按鈕後，會跳出 alert 顯示「儲存在 localStorage 裡面的 Value」</p>
+</div>
+<p><img src="https://i.imgur.com/wJpqigt.jpg" alt="" width="250"></p>
+<p>JS 作法如下：</p>
+<h2 id="1-在-按鈕-綁定監聽事件-addeventlistener-v2"><a class="header-anchor" href="#1-在-按鈕-綁定監聽事件-addeventlistener-v2"></a>1️⃣ 在「按鈕」綁定監聽事件<code>.addEventListener</code></h2>
+<div class="danger">
+<ul>
+<li>建立變數<code>call</code>，來選取<code>.btnCall</code>：<br>
+<code>var call = document.querySelector('.btnCall');</code></li>
+</ul>
+<h3 id="在-按鈕-綁定監聽事件-addeventlistener"><a class="header-anchor" href="#在-按鈕-綁定監聽事件-addeventlistener"></a>在「按鈕」綁定監聽事件<code>.addEventListener</code></h3>
+<p>🎃 點擊<code>.btnCall</code>，就會執行 function</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 取出 localStorage 裡面的 Value</span></span><br><span class="line">call.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<h2 id="2-取出-localstorage-裡面的-value"><a class="header-anchor" href="#2-取出-localstorage-裡面的-value"></a>2️⃣ 取出「localStorage 裡面的 Value」</h2>
+<div class="danger">
+<p>🎃 在 function 裡面，建立變數<code>str</code>，用<code>.getItem</code>取出「localStorage 裡面的 Value」</p>
+<h3 id="雖然在前一個-function-已經有把變數取名叫str了-但是因為在-function-裡面的是-區域變數-在-function-執行完後-區域變數-就會被銷毀-因此在另一個-function-還是可以把變數取名叫做str"><a class="header-anchor" href="#雖然在前一個-function-已經有把變數取名叫str了-但是因為在-function-裡面的是-區域變數-在-function-執行完後-區域變數-就會被銷毀-因此在另一個-function-還是可以把變數取名叫做str"></a>‼️ 雖然在前一個 function 已經有把變數取名叫<code>str</code>了，但是<mark>因為在 function 裡面的是「區域變數」–&gt; 在 function 執行完後，「區域變數」就會被銷毀</mark>，因此在另一個 function 還是可以把變數取名叫做<code>str</code></h3>
+<p>🎃 再用 alert 顯示出「localStorage 裡面的 Value」</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btnClass'</span>);</span><br><span class="line"><span class="keyword">var</span> call = <span class="built_in">document</span>.querySelector(<span class="string">'.btnCall'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 存資料到 localStorage 裡面</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveName</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">document</span>.querySelector(<span class="string">'.textClass'</span>).value;</span><br><span class="line">    localStorage.setItem(<span class="string">'myName'</span>,str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>,saveName,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取出 localStorage 裡面的 Value</span></span><br><span class="line">call.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = localStorage.getItem(<span class="string">'myName'</span>);</span><br><span class="line">    alert(<span class="string">'你的名字叫做 '</span> + str);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<p>寫完 JS 程式碼了！</p>
+<p>在文字欄位輸入「harry」後，</p>
+<p>🍋 按下「點擊」</p>
+<p>用開發者工具 Application 看：Value 帶入了<code>harry</code></p>
+<p>🍋 按下「點擊呼叫名字」跳出 alert 顯示「你的名字叫做 harry」</p>
+<p><img src="https://i.imgur.com/S7bHbBx.jpg" alt=""></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ed7f182f/" rel="prev" title="什麼是 localStorage？">
+      <i class="fa fa-chevron-left"></i> 什麼是 localStorage？
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/8d482ea/" rel="next" title="透過 JSON.parse、JSON.stringify 來編譯資料">
+      透過 JSON.parse、JSON.stringify 來編譯資料 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#setitem-存資料到-localstorage-裡面"><span class="nav-number">1.</span> <span class="nav-text">.setItem 存資料到 localStorage 裡面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🍅-setitem小括弧內的第一個值：會帶到-localstorage-的-key-裡面"><span class="nav-number">1.0.1.</span> <span class="nav-text">🍅 .setItem小括弧內的第一個值：會帶到 localStorage 的「Key」裡面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#🍅-setitem小括弧內的第二個值：會帶到-localstorage-的-value-裡面"><span class="nav-number">1.0.2.</span> <span class="nav-text">🍅 .setItem小括弧內的第二個值：會帶到 localStorage 的「Value」裡面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#getitem-取出-localstorage-裡面的-value"><span class="nav-number">2.</span> <span class="nav-text">.getItem 取出 localStorage 裡面的 Value</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🍅-在-getitem小括號裡面-填入-key-就可以取出-localstorage-裡面的-value"><span class="nav-number">2.0.1.</span> <span class="nav-text">🍅 在.getItem小括號裡面，填入「Key」，就可以取出「localStorage 裡面的 Value」</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意-getitem小括號要填入的是-key-不是-value"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">‼️ 注意！.getItem小括號要填入的是「Key」，不是「Value」</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的-codepen-範例"><span class="nav-number">3.</span> <span class="nav-text">我的 codepen 範例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文字欄位的-value-存到-localstorage-裡面"><span class="nav-number">4.</span> <span class="nav-text">文字欄位的“value”，存到 localStorage 裡面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-在-按鈕-綁定監聽事件-addeventlistener"><span class="nav-number">4.1.</span> <span class="nav-text">1️⃣ 在「按鈕」綁定監聽事件.addEventListener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-在-變數btn-綁定監聽事件-addeventlistener"><span class="nav-number">4.1.1.</span> <span class="nav-text">🎃 在「變數btn」綁定監聽事件.addEventListener</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-撈出-文字欄位的value"><span class="nav-number">4.2.</span> <span class="nav-text">2️⃣ 撈出「文字欄位的value」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-建立變數str-來記錄-當下-文字欄位的value"><span class="nav-number">4.2.1.</span> <span class="nav-text">🎃 建立變數str，來記錄「當下，文字欄位的value」</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#因為要記錄的是-點擊-當下-文字欄位的value-因此-變數str-要寫在function-savename-e-裡面"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">‼️ 因為要記錄的是「“點擊”當下，文字欄位的value」，因此「變數str」要寫在function saveName(e){}裡面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-把value存到-localstorage-裡面"><span class="nav-number">4.3.</span> <span class="nav-text">3️⃣ 把value存到 localStorage 裡面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取出-localstorage-裡面的-value"><span class="nav-number">5.</span> <span class="nav-text">取出 localStorage 裡面的 Value</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-在-按鈕-綁定監聽事件-addeventlistener-v2"><span class="nav-number">5.1.</span> <span class="nav-text">1️⃣ 在「按鈕」綁定監聽事件.addEventListener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-按鈕-綁定監聽事件-addeventlistener"><span class="nav-number">5.1.1.</span> <span class="nav-text">在「按鈕」綁定監聽事件.addEventListener</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-取出-localstorage-裡面的-value"><span class="nav-number">5.2.</span> <span class="nav-text">2️⃣ 取出「localStorage 裡面的 Value」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#雖然在前一個-function-已經有把變數取名叫str了-但是因為在-function-裡面的是-區域變數-在-function-執行完後-區域變數-就會被銷毀-因此在另一個-function-還是可以把變數取名叫做str"><span class="nav-number">5.2.1.</span> <span class="nav-text">‼️ 雖然在前一個 function 已經有把變數取名叫str了，但是因為在 function 裡面的是「區域變數」–&gt; 在 function 執行完後，「區域變數」就會被銷毀，因此在另一個 function 還是可以把變數取名叫做str</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : 'f078cf92c6b60a9f56a6ee82ac37a095',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
