@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="這章節要介紹的是：鍵盤的事件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="keyCode-鍵盤的事件">
+<meta property="og:url" content="https://yuwensaf.github.io/37eb1aee/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="這章節要介紹的是：鍵盤的事件">
+<meta property="og:image" content="https://i.imgur.com/7jz4CA8.jpg">
+<meta property="og:image" content="https://i.imgur.com/c9Zpc8H.jpg">
+<meta property="og:image" content="https://i.imgur.com/Jlybr6f.jpg">
+<meta property="og:image" content="https://i.imgur.com/C4lhEo3.jpg">
+<meta property="article:published_time" content="2020-05-14T13:45:04.000Z">
+<meta property="article:modified_time" content="2020-05-14T13:45:44.719Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/7jz4CA8.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/37eb1aee/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>keyCode-鍵盤的事件 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">104</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/37eb1aee/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          keyCode-鍵盤的事件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-14 21:45:04 / Modified: 21:45:44" itemprop="dateCreated datePublished" datetime="2020-05-14T21:45:04+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>這章節要介紹的是：鍵盤的事件</p>
+<a id="more"></a>
+<p>🍋 瀏覽器會偵測到「user 在按的是哪個按鍵」</p>
+<h1 id="none"><a class="header-anchor" href="#none"></a></h1>
+<p>html:</p>
+<p>🎃 畫面上，有三支火箭</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;map&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;img class&#x3D;&quot;rocket rocket-1&quot; src&#x3D;&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;bNdXsr3&#x2F;rocket.png&quot;&gt;</span><br><span class="line">&lt;img class&#x3D;&quot;rocket rocket-2&quot; src&#x3D;&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;bNdXsr3&#x2F;rocket.png&quot;&gt;</span><br><span class="line">&lt;img class&#x3D;&quot;rocket rocket-3&quot; src&#x3D;&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;bNdXsr3&#x2F;rocket.png&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<h4 id="🎃-三支火箭-用-絕對定位-來寫它們各自的-初始位置-："><a class="header-anchor" href="#🎃-三支火箭-用-絕對定位-來寫它們各自的-初始位置-："></a>🎃 三支火箭，用「絕對定位」來寫它們各自的「初始位置」：</h4>
+<p>🍋 <code>bottom: 0;</code> 三支火箭的<code>bottom</code>都是靠在最下面<br>
+🍋 用<code>left</code>把三支火箭的位置區隔開來</p>
+<p>🎃 用<code>transition</code>做「漸變效果」</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/F66mWF2/map.png);</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-position</span>: bottom;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.rocket</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">1s</span> <span class="built_in">cubic-bezier</span>(1, 0.08, 0, 1.19);</span><br><span class="line">    <span class="comment">/*ease、linear、ease-in、ease-out、ease-in-out*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.rocket-1</span>&#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">80px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.rocket-2</span>&#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">180px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.rocket-3</span>&#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">280px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/7jz4CA8.jpg" alt=""></p>
+<div class="info">
+<p>我要做的功能是：</p>
+<ul>
+<li>按下「1」，<code>.rocket-1</code>就會發射</li>
+<li>按下「2」，<code>.rocket-2</code>就會發射</li>
+<li>按下「3」，<code>.rocket-3</code>就會發射</li>
+</ul>
+<p><mark>火箭的<code>bottom</code>原本都是在「0」的位置，發射後，就會飛到「超過瀏覽器的位置」</mark></p>
+</div>
+<p>JS 作法如下：</p>
+<h1 id="1-在-body-做監聽事件"><a class="header-anchor" href="#1-在-body-做監聽事件"></a>1️⃣ 在<code>&lt;body&gt;</code>做監聽事件</h1>
+<div class="danger">
+<p>🎃 建立變數<code>body</code>，選取「整個<code>&lt;body&gt;</code>的內容」：<code>var body = document.body;</code></p>
+<h2 id="在-body-做監聽事件-addeventlistener"><a class="header-anchor" href="#在-body-做監聽事件-addeventlistener"></a>在<code>&lt;body&gt;</code>做監聽事件 <code>.addEventListener</code></h2>
+<p>🎃 <mark>當我「點擊鍵盤」時，就會觸發「<code>keydown</code>事件」</mark></p>
+<p>🎃 將 function 命名為<code>goRocket</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在&lt;body&gt;做監聽事件</span></span><br><span class="line">body.addEventListener(<span class="string">'keydown'</span>,goRocket,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="2-function-gorocket-e"><a class="header-anchor" href="#2-function-gorocket-e"></a>2️⃣ <code>function goRocket(e){}</code></h1>
+<h2 id="查詢-我點擊的是哪個按鍵"><a class="header-anchor" href="#查詢-我點擊的是哪個按鍵"></a>查詢「我點擊的是哪個按鍵」</h2>
+<div class="danger">
+<p>先來看一下，點擊「數字 1」會出現什麼結果<br>
+JS:<br>
+🎃 在 function 小括號裡面加上「參數<code>e</code>」，透過「參數<code>e</code>」來得知：我目前在按的是「哪個按鍵」</p>
+<h2 id="🎃-用e-keycode來查詢-目前-我點擊的是哪個按鍵"><a class="header-anchor" href="#🎃-用e-keycode來查詢-目前-我點擊的是哪個按鍵"></a>🎃 <mark>用<code>e.keyCode</code>來查詢「目前，我點擊的是哪個按鍵」</mark></h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goRocket</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.keyCode);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在這個瀏覽器中，<br>
+🍋 我按下「數字 1」，在 Console 就會顯示「49」<br>
+🍋 我按下「數字 2」，在 Console 就會顯示「50」<br>
+🍋 我按下「數字 3」，在 Console 就會顯示「51」<br>
+🍋 我按下「空白鍵」，在 Console 就會顯示「32」</p>
+<h3 id="📖-這些數字代表的是-鍵盤上-每個按鍵的編號"><a class="header-anchor" href="#📖-這些數字代表的是-鍵盤上-每個按鍵的編號"></a>📖 這些數字代表的是 <mark>「鍵盤上，每個按鍵的編號」</mark></h3>
+<p>📖 在做「鍵盤式移動的遊戲」時，就可以利用這個方式去做，例如：當 user 點擊「編號 32」時，就執行某個行為</p>
+<p><img src="https://i.imgur.com/c9Zpc8H.jpg" alt="" width="500"></p>
+</div>
+<h1 id="用switch寫-條件判斷式"><a class="header-anchor" href="#用switch寫-條件判斷式"></a>用<code>switch</code>寫「條件判斷式」</h1>
+<div class="danger">
+<p>‼️ 因為在這個「火箭發射的案例」中，「按下數字 1, 2, 3」分別就會執行「相對應的行為」–&gt; 每個條件都會符合–&gt; 所以這裡很適合用<code>switch</code>來寫</p>
+<p>JS:<br>
+🎃 在<code>switch</code>小括弧中，帶入的參數是「<code>e.keyCode</code>」</p>
+<p>🎃 case: 如果「我點擊的是“編號 49”」，就會去「更改<code>.rocket-1</code>的<code>style</code>狀態」</p>
+<p>🍋 更改<code>style</code>狀態–&gt; 從「<code>bottom: 0;</code>」變成「<code>bottom: 2000px;</code>」</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goRocket</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.keyCode);</span><br><span class="line">    <span class="keyword">switch</span>(e.keyCode)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">49</span>:</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'.rocket-1'</span>).style.bottom = <span class="string">'2000px'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">50</span>:</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'.rocket-2'</span>).style.bottom = <span class="string">'2000px'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">51</span>:</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'.rocket-3'</span>).style.bottom = <span class="string">'2000px'</span>;</span><br><span class="line">            <span class="keyword">break</span>;            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+<p>😄 寫完 JS 程式碼了！</p>
+<h1 id="調整飛行速率"><a class="header-anchor" href="#調整飛行速率"></a>調整飛行速率</h1>
+<p>如何調整「火箭的飛行速率」呢？</p>
+<div class="success">
+<p>在 css 裡面，<br>
+🎃 調整「<code>transition</code>的秒數」就可以調整「飛行速率」了</p>
+<p>例如我把秒數從「1s」改成「5s」，速率就會變很慢</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rocket</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">5s</span> <span class="built_in">cubic-bezier</span>(1, 0.08, 0, 1.19);</span><br><span class="line">    <span class="comment">/*ease、linear、ease-in、ease-out、ease-in-out*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="調整速率曲線"><a class="header-anchor" href="#調整速率曲線"></a>調整速率曲線</h1>
+<div class="success">
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rocket</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">5s</span> <span class="built_in">cubic-bezier</span>(1, 0.08, 0, 1.19);</span><br><span class="line">    <span class="comment">/*ease、linear、ease-in、ease-out、ease-in-out*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="🎃-cubic-bezier-1-0-08-0-1-19-是用來-調整速率的曲線"><a class="header-anchor" href="#🎃-cubic-bezier-1-0-08-0-1-19-是用來-調整速率的曲線"></a>🎃 「<code>cubic-bezier(1, 0.08, 0, 1.19)</code>」是用來「調整速率的曲線」</h3>
+<p>在 Chrome 的開發者工具中，打開<code>cubic-bezier</code>的紫色小框框（下圖紅色箭頭處），就可以用「不同數值」來「調整速率的曲線」</p>
+<p><img src="https://i.imgur.com/Jlybr6f.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/C4lhEo3.jpg" alt="" width="450"></p>
+</div>
+<h2 id="預設的速率曲線"><a class="header-anchor" href="#預設的速率曲線"></a>預設的速率曲線</h2>
+<div class="info">
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rocket</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">5s</span> <span class="built_in">cubic-bezier</span>(1, 0.08, 0, 1.19);</span><br><span class="line">    <span class="comment">/*ease、linear、ease-in、ease-out、ease-in-out*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了「使用<code>cubic-bezier</code>來調整“速率曲線”」之外，在<code>transition</code>中，原本就有一些「預設的速率曲線」可以直接使用：</p>
+<p>🍋 <code>ease</code><br>
+🍋 <code>linear</code><br>
+🍋 <code>ease-in</code><br>
+🍋 <code>ease-out</code><br>
+🍋 <code>ease-in-out</code></p>
+</div>
+<h1 id="完整-js-程式碼："><a class="header-anchor" href="#完整-js-程式碼："></a>完整 JS 程式碼：</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goRocket</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.keyCode);</span><br><span class="line">    <span class="keyword">switch</span>(e.keyCode)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">49</span>:</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'.rocket-1'</span>).style.bottom = <span class="string">'2000px'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">50</span>:</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'.rocket-2'</span>).style.bottom = <span class="string">'2000px'</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">51</span>:</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'.rocket-3'</span>).style.bottom = <span class="string">'2000px'</span>;</span><br><span class="line">            <span class="keyword">break</span>;            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在&lt;body&gt;做監聽事件</span></span><br><span class="line">body.addEventListener(<span class="string">'keydown'</span>,goRocket,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="我的-codepen-範例"><a class="header-anchor" href="#我的-codepen-範例"></a>我的 codepen 範例</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL2Z1bGwvRXhhd1hZTw==">https://codepen.io/saffranwang/full/ExawXYO<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/c8a1ad27/" rel="prev" title="change - 表單內容更動內容時觸發">
+      <i class="fa fa-chevron-left"></i> change - 表單內容更動內容時觸發
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/5d6a6ec1/" rel="next" title="blur - 離開焦點時進行事件觸發">
+      blur - 離開焦點時進行事件觸發 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#none"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#🎃-三支火箭-用-絕對定位-來寫它們各自的-初始位置-："><span class="nav-number">1.0.0.1.</span> <span class="nav-text">🎃 三支火箭，用「絕對定位」來寫它們各自的「初始位置」：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-在-body-做監聽事件"><span class="nav-number">2.</span> <span class="nav-text">1️⃣ 在&lt;body&gt;做監聽事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-body-做監聽事件-addeventlistener"><span class="nav-number">2.1.</span> <span class="nav-text">在&lt;body&gt;做監聽事件 .addEventListener</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-function-gorocket-e"><span class="nav-number">3.</span> <span class="nav-text">2️⃣ function goRocket(e){}</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查詢-我點擊的是哪個按鍵"><span class="nav-number">3.1.</span> <span class="nav-text">查詢「我點擊的是哪個按鍵」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-用e-keycode來查詢-目前-我點擊的是哪個按鍵"><span class="nav-number">3.2.</span> <span class="nav-text">🎃 用e.keyCode來查詢「目前，我點擊的是哪個按鍵」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#📖-這些數字代表的是-鍵盤上-每個按鍵的編號"><span class="nav-number">3.2.1.</span> <span class="nav-text">📖 這些數字代表的是 「鍵盤上，每個按鍵的編號」</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用switch寫-條件判斷式"><span class="nav-number">4.</span> <span class="nav-text">用switch寫「條件判斷式」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#調整飛行速率"><span class="nav-number">5.</span> <span class="nav-text">調整飛行速率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#調整速率曲線"><span class="nav-number">6.</span> <span class="nav-text">調整速率曲線</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-cubic-bezier-1-0-08-0-1-19-是用來-調整速率的曲線"><span class="nav-number">6.0.1.</span> <span class="nav-text">🎃 「cubic-bezier(1, 0.08, 0, 1.19)」是用來「調整速率的曲線」</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#預設的速率曲線"><span class="nav-number">6.1.</span> <span class="nav-text">預設的速率曲線</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完整-js-程式碼："><span class="nav-number">7.</span> <span class="nav-text">完整 JS 程式碼：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的-codepen-範例"><span class="nav-number">8.</span> <span class="nav-text">我的 codepen 範例</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '7ad2c970518b18dba976d8870340f46e',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

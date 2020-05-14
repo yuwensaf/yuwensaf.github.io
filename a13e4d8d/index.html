@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en, zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zGjiThVz0wjTWiYUWkO-P5S4GoAi9ReE3deF_KM2h-8">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuwensaf.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"F8M9TC7VKK","apiKey":"15131e8e4d32a73445f42f4f0b44e34b","indexName":"dev_saffran","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="如何偵測「目前，滑鼠的座標」呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="網頁座標 - 了解 screen、page、client 箇中差異">
+<meta property="og:url" content="https://yuwensaf.github.io/a13e4d8d/index.html">
+<meta property="og:site_name" content="Saffran&#39;s Blog">
+<meta property="og:description" content="如何偵測「目前，滑鼠的座標」呢？">
+<meta property="og:image" content="https://i.imgur.com/T5eEZIH.jpg">
+<meta property="og:image" content="https://i.imgur.com/YG8dvb9.jpg">
+<meta property="og:image" content="https://i.imgur.com/sNCMtke.jpg">
+<meta property="og:image" content="https://i.imgur.com/GRJG4iq.jpg">
+<meta property="og:image" content="https://i.imgur.com/KohqjMe.jpg">
+<meta property="article:published_time" content="2020-05-14T13:49:26.000Z">
+<meta property="article:modified_time" content="2020-05-14T13:49:54.352Z">
+<meta property="article:author" content="Saffran">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/T5eEZIH.jpg">
+
+<link rel="canonical" href="https://yuwensaf.github.io/a13e4d8d/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en, zh-TW'
+  };
+</script>
+
+  <title>網頁座標 - 了解 screen、page、client 箇中差異 | Saffran's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Saffran's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄前端路上的點點滴滴</p>
+      <a>
+        <img class="custom-logo-image" src="/images/saffran-logo.png" alt="Saffran's Blog">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">104</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1d2Vuc2Fm" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en, zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yuwensaf.github.io/a13e4d8d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yuwen.jpg">
+      <meta itemprop="name" content="Saffran">
+      <meta itemprop="description" content="記錄前端路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saffran's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          網頁座標 - 了解 screen、page、client 箇中差異
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-14 21:49:26 / Modified: 21:49:54" itemprop="dateCreated datePublished" datetime="2020-05-14T21:49:26+08:00">2020-05-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>如何偵測「目前，滑鼠的座標」呢？</p>
+<a id="more"></a>
+<h1 id="我的-codepen-範例"><a class="header-anchor" href="#我的-codepen-範例"></a>我的 codepen 範例</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlcGVuLmlvL3NhZmZyYW53YW5nL2Z1bGwvZVltR3FZdw==">https://codepen.io/saffranwang/full/eYmGqYw<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="none"><a class="header-anchor" href="#none"></a></h1>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body id&#x3D;&quot;body&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;wrap&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;header&quot;&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                screenX: &lt;span class&#x3D;&quot;screenX&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">                screenY: &lt;span class&#x3D;&quot;screenY&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;p&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                pageX: &lt;span class&#x3D;&quot;pageX&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">                pageY: &lt;span class&#x3D;&quot;pageY&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;p&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                clientX: &lt;span class&#x3D;&quot;clientX&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">                clientY: &lt;span class&#x3D;&quot;clientY&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">            &lt;&#x2F;p&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src&#x3D;&quot;js&#x2F;all.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span>&#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">1920px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">5000px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#404747</span>;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://i.ibb.co/M2rjV75/dark.png);</span><br><span class="line">    <span class="attribute">background-position</span>: bottom;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.header</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">background-color</span>: peru;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.header</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0.5em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JS:</p>
+<div class="danger">
+<p>🎃 建立變數<code>el</code>，來選取「整個<code>&lt;body&gt;</code>」： <code>var el = document.body;</code></p>
+<h2 id="💡-在-整個-body-做監聽事件-addeventlistener"><a class="header-anchor" href="#💡-在-整個-body-做監聽事件-addeventlistener"></a>💡 在「整個<code>&lt;body&gt;</code>」做監聽事件<code>.addEventListener</code></h2>
+<h3 id="🎃-偵測-整個-body-的-mousemove事件-當-滑鼠滑入-body-時-就會執行-getposition這個-function"><a class="header-anchor" href="#🎃-偵測-整個-body-的-mousemove事件-當-滑鼠滑入-body-時-就會執行-getposition這個-function"></a>🎃 偵測「整個<code>&lt;body&gt;</code>」的「<code>mousemove</code>事件」–&gt; 當「滑鼠滑入<code>&lt;body&gt;</code>」時，就會執行「<code>getPosition</code>這個 function」</h3>
+<h2 id="💡-function-getposition-e"><a class="header-anchor" href="#💡-function-getposition-e"></a>💡 <code>function getPosition(e){}</code></h2>
+<p>🎃 在 function 中，用「參數<code>e</code>」來記錄所有的資訊</p>
+<p>🎃 用<code>console.log(e);</code>來看：</p>
+<p><img src="https://i.imgur.com/T5eEZIH.jpg" alt="" width="550"></p>
+<p>🎃 用<code>.textContent</code>將「撈出的<code>e.screenX</code>值」帶到<code>&lt;span class=&quot;screenX&quot;&gt;&lt;/span&gt;</code>裡面</p>
+<p>🍋 <code>e.screenX</code>代表：目前所在位置的「screen 的 X 軸」<br>
+🍋 <code>e.screenY</code>代表：目前所在位置的「screen 的 Y 軸」</p>
+<p>JS:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> screenX = <span class="built_in">document</span>.querySelector(<span class="string">'.screenX'</span>);</span><br><span class="line"><span class="keyword">var</span> screenY = <span class="built_in">document</span>.querySelector(<span class="string">'.screenY'</span>);</span><br><span class="line"><span class="keyword">var</span> pageX = <span class="built_in">document</span>.querySelector(<span class="string">'.pageX'</span>);</span><br><span class="line"><span class="keyword">var</span> pageY = <span class="built_in">document</span>.querySelector(<span class="string">'.pageY'</span>);</span><br><span class="line"><span class="keyword">var</span> clientX = <span class="built_in">document</span>.querySelector(<span class="string">'.clientX'</span>);</span><br><span class="line"><span class="keyword">var</span> clientY = <span class="built_in">document</span>.querySelector(<span class="string">'.clientY'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPosition</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    screenX.textContent = e.screenX;</span><br><span class="line">    screenY.textContent = e.screenY;</span><br><span class="line">    pageX.textContent = e.pageX;</span><br><span class="line">    pageY.textContent = e.pageY;</span><br><span class="line">    clientX.textContent = e.clientX;</span><br><span class="line">    clientY.textContent = e.clientY;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.body;</span><br><span class="line">el.addEventListener(<span class="string">'mousemove'</span>,getPosition,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</div>
+<p>這樣，就可以分別偵測到</p>
+<ul>
+<li><code>screenX</code></li>
+<li><code>screenY</code></li>
+<li><code>pageX</code></li>
+<li><code>pageY</code></li>
+<li><code>clientX</code></li>
+<li><code>clientY</code></li>
+</ul>
+<p><img src="https://i.imgur.com/YG8dvb9.jpg" alt=""></p>
+<div class="warning">
+<p>❓ 「screen, page, client」有什麼差異呢？</p>
+</div>
+<h1 id="screen"><a class="header-anchor" href="#screen"></a>screen</h1>
+<div class="danger">
+<h2 id="🎃-screen：-滑鼠-在-整個電腦螢幕-的位置"><a class="header-anchor" href="#🎃-screen：-滑鼠-在-整個電腦螢幕-的位置"></a>🎃 screen：”滑鼠“在「整個電腦螢幕」的位置</h2>
+<p>🍋 假設我的電腦螢幕解析度是「1920 * 1080」，「screen」所偵測的「座標範圍」就不會超出「1920 * 1080」</p>
+<p>🍋 把網頁滾輪滾到最上方（紅色箭頭處），把滑鼠移動到畫面左上角（綠色箭頭處）：</p>
+<ul>
+<li>只有「<code>screenX</code>, <code>screenY</code>」的座標是「49, 231」</li>
+<li>「page, client」的座標都是 0</li>
+</ul>
+<p><img src="https://i.imgur.com/sNCMtke.jpg" alt=""></p>
+</div>
+<h1 id="page"><a class="header-anchor" href="#page"></a>page</h1>
+<div class="danger">
+<h2 id="🎃-page：-滑鼠-在-整個網頁-的位置"><a class="header-anchor" href="#🎃-page：-滑鼠-在-整個網頁-的位置"></a>🎃 page：”滑鼠“在「整個網頁」的位置</h2>
+<p>🍋 「page」偵測的是：瀏覽器裡面的「網頁」</p>
+<p>🍋 把網頁滾輪往下滾（紅色箭頭處），同樣是把滑鼠移動到畫面左上角（綠色箭頭處），「<code>pageY</code>」的座標就變成「4246」了（因為這個網頁的“高度很高” <code>height: 5000px;</code>）</p>
+<p><img src="https://i.imgur.com/GRJG4iq.jpg" alt=""></p>
+</div>
+<h1 id="client"><a class="header-anchor" href="#client"></a>client</h1>
+<div class="danger">
+<h2 id="🎃-client：-滑鼠-在-當下的-瀏覽器視窗-的位置"><a class="header-anchor" href="#🎃-client：-滑鼠-在-當下的-瀏覽器視窗-的位置"></a>🎃 client：”滑鼠“在「當下的“瀏覽器視窗”」的位置</h2>
+<p>📖 <mark>「client」就是「窗口」的意思</mark></p>
+<p>🍋 「client」的計算範圍，就是以「當下“瀏覽器視窗”的寬、高」去做計算</p>
+<p>🍋 「client」不會去管「網頁有多高」</p>
+<p>🍋 就算我把網頁滾輪滾到最下方（紅色箭頭處），把滑鼠移動到畫面左下角（綠色箭頭處），「<code>clientY</code>」的座標最多就只會是「471」（當下的瀏覽器視窗，高度就是 471）</p>
+<p><img src="https://i.imgur.com/KohqjMe.jpg" alt=""></p>
+</div>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/cec2e67c/" rel="prev" title="mousemove - 當滑鼠滑入指定內容時觸發">
+      <i class="fa fa-chevron-left"></i> mousemove - 當滑鼠滑入指定內容時觸發
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/59327438/" rel="next" title="網頁座標 - 應用篇">
+      網頁座標 - 應用篇 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我的-codepen-範例"><span class="nav-number">1.</span> <span class="nav-text">我的 codepen 範例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#none"><span class="nav-number">2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-在-整個-body-做監聽事件-addeventlistener"><span class="nav-number">2.1.</span> <span class="nav-text">💡 在「整個&lt;body&gt;」做監聽事件.addEventListener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🎃-偵測-整個-body-的-mousemove事件-當-滑鼠滑入-body-時-就會執行-getposition這個-function"><span class="nav-number">2.1.1.</span> <span class="nav-text">🎃 偵測「整個&lt;body&gt;」的「mousemove事件」–&gt; 當「滑鼠滑入&lt;body&gt;」時，就會執行「getPosition這個 function」</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-function-getposition-e"><span class="nav-number">2.2.</span> <span class="nav-text">💡 function getPosition(e){}</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#screen"><span class="nav-number">3.</span> <span class="nav-text">screen</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-screen：-滑鼠-在-整個電腦螢幕-的位置"><span class="nav-number">3.1.</span> <span class="nav-text">🎃 screen：”滑鼠“在「整個電腦螢幕」的位置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#page"><span class="nav-number">4.</span> <span class="nav-text">page</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-page：-滑鼠-在-整個網頁-的位置"><span class="nav-number">4.1.</span> <span class="nav-text">🎃 page：”滑鼠“在「整個網頁」的位置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#client"><span class="nav-number">5.</span> <span class="nav-text">client</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#🎃-client：-滑鼠-在-當下的-瀏覽器視窗-的位置"><span class="nav-number">5.1.</span> <span class="nav-text">🎃 client：”滑鼠“在「當下的“瀏覽器視窗”」的位置</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Saffran"
+      src="/images/yuwen.jpg">
+  <p class="site-author-name" itemprop="name">Saffran</p>
+  <div class="site-description" itemprop="description">記錄前端路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">104</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saffran - 轉載文章時請附上作者(Saffran)及原文連結(Url)</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'a4f07f7af90fc9605f45',
+      clientSecret: '14e334054f6ed3bb6d872187311d6d7e436d5312',
+      repo        : 'yuwensaf.github.io',
+      owner       : 'yuwensaf',
+      admin       : ['yuwensaf'],
+      id          : '1e68f8d0cd292048b06ff35e5ee1365e',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
